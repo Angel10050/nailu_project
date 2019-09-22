@@ -1,8 +1,11 @@
 const express = require('express')
+const path = require('path')
 
 const app = express()
 
-var distDir = __dirname + "/dist/";
+const distDir =path.join(__dirname,'../', 'build')
+
+console.log(distDir)
 app.use(express.static(distDir));
 
 app.get('/api/*', (req, res) => {
