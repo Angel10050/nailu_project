@@ -5,7 +5,6 @@ const app = express()
 
 const distDir =path.join(__dirname,'../', 'build')
 
-console.log(distDir)
 app.use(express.static(distDir));
 
 app.get('/api/*', (req, res) => {
