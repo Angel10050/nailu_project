@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './Components/logo/Logo'
 import './App.css';
 
 class App extends React.Component {
@@ -9,8 +10,11 @@ class App extends React.Component {
   }
   render() {
     return (
+      <>
       <div className="App">
+        <Logo/>
       </div>
+      </>
     );
   }
 }
