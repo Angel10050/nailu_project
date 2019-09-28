@@ -1,9 +1,9 @@
 import React from "react";
 
-const Button = ({name, callback}) => {
+const Button = ({nameBtn, callback}) => {
   return (
     <div>
-      <button className="button" onClick={callback}>{name}</button>
+      <button className="button" onClick={callback}>{nameBtn}</button>
     </div>
   );
 };
