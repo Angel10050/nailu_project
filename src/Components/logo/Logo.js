@@ -9,9 +9,7 @@ class Logo extends Component {
     }
     render(){
         return(
-            <>
             <img className='imgLogo' src={logo} alt='NaiyLogo' onClick={this.toScrollup}></img>
-            </>
         )
     }
 } 
