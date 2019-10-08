@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Hero from './components/heroComponent/Hero'
+import heroImage from './components/heroComponent/heroMainImage.jpg'
 
 class App extends React.Component {
   componentDidMount() {
@@ -9,8 +11,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App">
-      </div>
+      <Hero heroMainImage={heroImage}/>
     );
   }
 }
