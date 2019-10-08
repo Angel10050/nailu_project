@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './Components/logo/Logo'
 import './App.css';
+import { animateScroll as scroll } from 'react-scroll'
 
 class App extends React.Component {
   componentDidMount() {
@@ -8,11 +9,14 @@ class App extends React.Component {
       .then(response => response.json())
       .then(console.log)
   }
+
+  toScrollup = () => {
+    scroll.scrollToTop()
+}
+
   render() {
     return (
-      <div className="App">
-        <Logo/>
-      </div>
+      <Logo onClick={this.toScrollup}/>
     );
   }
 }
