@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Hero from './Components/heroComponent/Hero'
-import heroImage from './components/heroComponent/heroMainImage.jpg'
+import heroImage from './Components/heroComponent/heroMainImage.jpg'
 
 class App extends React.Component {
   componentDidMount() {
