@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Hero from './components/heroComponent/Hero'
+import Hero from './Components/heroComponent/Hero'
 import heroImage from './components/heroComponent/heroMainImage.jpg'
 
 class App extends React.Component {
