@@ -1,27 +1,23 @@
-import React from 'react';
-import Button from './components/Button'
-import './App.css';
-
+import React from "react";
+import ButtonGeneral from "./components/Button/Button";
+import "./App.css";
 
 class App extends React.Component {
   componentDidMount() {
-    fetch('/api/data')
+    fetch("/api/data")
       .then(response => response.json())
-      .then(console.log)
+      .then(console.log);
   }
 
-  handlerClick = () => {
-    console.log('esto es un click');
-    
-  }
+  handlerClick = () => {};
 
   render() {
     return (
       <div className="App">
-        <Button nameBtn='Inscribete' callback={this.handlerClick}/>
-        <Button nameBtn='Mas informacion' callback={this.handlerClick}/>
-        <Button nameBtn='Agendar' callback={this.handlerClick}/>
-        <Button nameBtn='Agendar tebgrvfacdsfg' callback={this.handlerClick}/>
+        <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
+        <ButtonGeneral nameBtn="Mas informacion" callback={this.handlerClick} />
+        <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
+        <ButtonGeneral nameBtn="Agendar tebgrvfacdsfg" callback={this.handlerClick}/>
       </div>
     );
   }
