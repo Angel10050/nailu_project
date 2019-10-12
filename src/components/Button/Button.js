@@ -1,11 +1,11 @@
-import React from 'react';
-import './ButtonGeneralStyle.css'
+import React from "react";
+import "./ButtonGeneralStyle.css";
 
-const ButtonGeneral = ({nameBtn, callback}) => {
+const ButtonGeneral = ({ nameBtn, callback }) => {
   return (
-    <div>
-      <button type='button' class='btn btn-primary button' onClick={callback}>{nameBtn}</button>
-    </div>
+    <button type="button" class="btn btn-primary button" onClick={callback}>
+      {nameBtn}
+    </button>
   );
 };
 export default ButtonGeneral;
