@@ -1,12 +1,10 @@
 .button {
   color: #fff;
-  min-height: 3rem;
-  width: 10rem;
-  font-weight: bold;
-  padding: -1rem 2rem;
-  margin: 1rem;
+  width: 120px;
+  margin: 10px;
+  min-height: 30px;
   position: relative;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .button:hover {
