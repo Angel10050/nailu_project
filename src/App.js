@@ -1,6 +1,10 @@
 import React from "react";
 import ButtonGeneral from "./components/Button/Button";
 import "./App.css";
+import React from 'react';
+import Logo from './Components/logo/Logo'
+import './App.css';
+import { animateScroll as scroll } from 'react-scroll'
 
 class App extends React.Component {
   componentDidMount() {
@@ -10,15 +14,21 @@ class App extends React.Component {
   }
 
   handlerClick = () => {};
+  toScrollup = () => {
+    scroll.scrollToTop()
+}
 
   render() {
     return (
-      <div className="App">
+      <>
+      <Logo onClick={this.toScrollup}/>
+      <div>
         <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
         <ButtonGeneral nameBtn="Mas informacion" callback={this.handlerClick} />
         <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
         <ButtonGeneral nameBtn="Agendar tebgrvfacdsfg" callback={this.handlerClick}/>
       </div>
+      </>
     );
   }
 }
