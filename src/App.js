@@ -1,9 +1,8 @@
 import React from "react";
-import ButtonGeneral from "./components/Button/Button";
+import ButtonGeneral from "./Components/Button/Button";
 import "./App.css";
 import React from 'react';
 import Logo from './Components/logo/Logo'
-import './App.css';
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
 import { animateScroll as scroll } from 'react-scroll'
