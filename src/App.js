@@ -1,12 +1,9 @@
 import React from "react";
-import ButtonGeneral from "./components/Button/Button";
-import "./App.css";
-import React from 'react';
-import Logo from './Components/logo/Logo'
 import './App.css';
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
-import { animateScroll as scroll } from 'react-scroll'
+import ButtonGeneral from './components/Button/Button'
+import NavComponent from './Components/navComponent/nav_component'
 
 class App extends React.Component {
   componentDidMount() {
@@ -15,16 +12,11 @@ class App extends React.Component {
       .then(console.log);
   }
 
-  handlerClick = () => {};
-  toScrollup = () => {
-    scroll.scrollToTop()
-}
-
   render() {
     return (
       <>
+      <NavComponent/>
         <Hero heroMainImage={heroImage}/>
-      <Logo onClick={this.toScrollup}/>
       <div>
         <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
         <ButtonGeneral nameBtn="Mas informacion" callback={this.handlerClick} />

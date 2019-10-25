@@ -1,0 +1,22 @@
+button {
+  background: transparent;
+  border: none;
+}
+
+.text {
+  color: rgb(255, 255, 255);
+  font-size: 1.3rem;
+  font-size-adjust: initial;
+  margin: 0 5px;
+}
+
+.text:hover {
+  color: violet;
+  transform: scale(1);
+}
+
+@media (max-width: 767.98px) {
+  button {
+    padding-top: 10px;
+  }
+}
