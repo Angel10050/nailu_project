@@ -1,0 +1,44 @@
+
+
+.containerBox{
+    margin-top: 3%;
+    height: 20em;
+    background: rgba(51, 51, 51);
+    justify-items: center;
+    justify-items: center;
+}
+
+.imgCss{
+    width: 80%;
+    margin-top: 4%;
+    
+
+}
+
+.textCss{
+    text-align: justify;
+    color: #ffffff;
+}
+
+.dateNumberCss{
+    font-size: 3em;
+    color: #fff;
+    position:relative;
+    margin-top: 5%;
+
+}
+
+.dateTextCss{
+    font-size: 2em;
+    position: relative;
+    margin-left: 15%;
+    margin-top: -10%;
+}
+
+.infoCss{
+    padding: 2%;
+    margin-left: -2%;
+}
+.Btncss{
+    margin:5% 45%;
+}
