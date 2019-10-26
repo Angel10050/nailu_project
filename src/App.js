@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonGeneral from "./Components/Button/Button";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 import { animateScroll as scroll } from 'react-scroll'
@@ -7,6 +8,7 @@ import { animateScroll as scroll } from 'react-scroll'
 import Logo from './Components/logo/Logo'
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
+import Footer from './Components/Footer/Footer'
 
 
 class App extends React.Component {
@@ -26,12 +28,11 @@ class App extends React.Component {
       <>
         <Hero heroMainImage={heroImage} />
         <Logo onClick={this.toScrollup} />
-        <div>
-          <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
-          <ButtonGeneral nameBtn="Mas informacion" callback={this.handlerClick} />
-          <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
-          <ButtonGeneral nameBtn="Agendar cualquier cosa" callback={this.handlerClick} />
-        </div>
+        <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
+        <ButtonGeneral nameBtn="Mas informacion" callback={this.handlerClick} />
+        <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
+        <ButtonGeneral nameBtn="Agendar cualquier cosa" callback={this.handlerClick} />
+        <Footer />
       </>
 
     );
