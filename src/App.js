@@ -11,6 +11,7 @@ class App extends React.Component {
   // }
 
   state = {
+    // datos de las capacitaciones para mostrar 
     datos: [{
       "imagenUrl": "http://lorempixel.com/300/200",
       "dia": "25",
