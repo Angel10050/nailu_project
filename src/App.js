@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './Components/form/Form'
 import './App.css';
 
 
@@ -11,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      
+      <Form />
     );
   }
 }
