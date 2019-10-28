@@ -1,11 +1,11 @@
 import React from "react";
 import "./navButtonStyle.css";
 
-const Button = ({ name, callback, link }) => {
+const Button = ({ name, link }) => {
   return (
-    <button className="text" name={name} onClick={callback}>
-      {name}
-    </button>
+    <a href={link} target="_blank">
+    {name}
+  </a>
   );
 };
 export default Button;
