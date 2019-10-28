@@ -1,11 +1,13 @@
-import React from "react";
-import "./navButtonStyle.css";
+import React from 'react';
+
+import './navButtonStyle.css'; 
 
 const Button = ({ name, link }) => {
   return (
-    <a href={link} target="_blank">
-    {name}
-  </a>
+    <a className='text' href={link}>
+      {name}
+    </a>
   );
 };
+
 export default Button;

@@ -1,22 +1,15 @@
-button {
-  background: transparent;
-  border: none;
-}
-
 .text {
   color: rgb(255, 255, 255);
-  font-size: 1.3rem;
-  font-size-adjust: initial;
-  margin: 0 5px;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 12px 15px;
+  outline: none;
 }
 
 .text:hover {
   color: violet;
+  text-decoration: none;
   transform: scale(1);
 }
 
-@media (max-width: 767.98px) {
-  button {
-    padding-top: 10px;
-  }
-}
