@@ -1,24 +1,16 @@
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 100%;
-  background: #343a4075;
-}
-.contactos {
-  display: flex;
-  justify-content: flex-start;
-}
 .container {
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
+  background: #343a4075;
   align-items: center;
+  min-width: 100%;
 }
-.container h1 {
+.container h2 {
+  margin-top: 20px;
   color: #ee3f93;
+  margin: 20px;
 }
-.contactos ul li {
+.social-icon li {
   list-style: none;
   margin: 15px;
 }
@@ -32,8 +24,7 @@ span {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0px;
-  margin-bottom: 30px;
+  margin: 20px;
   padding: 0;
 }
 .social-icon p {
