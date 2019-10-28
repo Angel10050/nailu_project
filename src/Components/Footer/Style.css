@@ -1,58 +1,65 @@
-
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-width: 100%;
- background: #343a4075;
+  background: #343a4075;
 }
-.contactos{
+.contactos {
   display: flex;
   justify-content: flex-start;
 }
-.container h1{
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.container h1 {
   color: #ee3f93;
 }
-.contactos ul li{
+.contactos ul li {
   list-style: none;
+  margin: 15px;
 }
-span{
+span {
   display: flex;
   justify-content: center;
 }
-.copy{
+.copy {
   text-align: center;
 }
 
 .social-icon {
   display: flex;
-  flex-direction: column;
-  margin: 0;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0px;
   margin-bottom: 30px;
-  /* padding: 0; */
+  padding: 0;
 }
-.fa{
+.fa {
   font-size: 25px;
-
 }
-.fa-whatsapp{
-  color: #1EBEA5;
+.fa-whatsapp {
+  color: #1ebea5;
 }
-.fa-envelope{
-color: #007bff;
+.fa-envelope {
+  color: #007bff;
 }
-.fa-facebook-official{
-color: #3b5998;
+.fa-facebook-official {
+  color: #3b5998;
 }
-.fa-instagram{
+.fa-instagram {
   color: #fb3958;
 }
-a{
+a {
   color: #000000d9;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-    color: #ee3f93;
-    text-decoration: none;
+  color: #ee3f93;
+  text-decoration: none;
 }
