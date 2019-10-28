@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './App.css';
 
 import { animateScroll as scroll } from 'react-scroll'
@@ -10,7 +10,7 @@ import NavComponent from './Components/navComponent/NavComponent'
 
 class App extends React.Component {
   componentDidMount() {
-    fetch("/api/data")
+    fetch('/api/data')
       .then(response => response.json())
       .then(console.log);
   }
@@ -29,10 +29,10 @@ class App extends React.Component {
       <NavComponent toScrollup={this.toScrollup} />
       <Hero heroMainImage={heroImage}/>
       <div>
-        <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
-        <ButtonGeneral nameBtn="Mas informacion" callback={this.handlerClick} />
-        <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
-        <ButtonGeneral nameBtn="Agendar tebgrvfacdsfg" callback={this.handlerClick}/>
+        <ButtonGeneral nameBtn='Inscribete' callback={this.handlerClick} />
+        <ButtonGeneral nameBtn='Mas informacion' callback={this.handlerClick} />
+        <ButtonGeneral nameBtn='Agendar' callback={this.handlerClick} />
+        <ButtonGeneral nameBtn='Agendar tebgrvfacdsfg' callback={this.handlerClick}/>
       </div>
       </>
 
