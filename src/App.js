@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Boxcomponentimg from './components/boxComponentImg/BoxComponentImg'
 class App extends React.Component {
 
