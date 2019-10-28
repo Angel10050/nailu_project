@@ -6,7 +6,7 @@ import "./ButtonGeneralStyle.css";
 const ButtonGeneral = ({ nameBtn, callback }) => {
 
   return (
-    <button type="button" class="btn btn-primary button" onClick={callback}>
+    <button type="button" className="btn btn-primary button" onClick={callback}>
       {nameBtn}
     </button>
   );

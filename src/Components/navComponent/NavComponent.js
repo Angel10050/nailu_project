@@ -12,8 +12,8 @@ const NavComponent = props => {
       className='componentFlex'
       collapseOnSelect
       sticky='top'
-      expand='sm'
       bg='dark'
+      expand='sm'
       variant='dark'
     >
       <Navbar.Brand className='componentFlexLogo'>
