@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Boxcomponentimg from './components/boxComponentImg/boxComponentImg'
-
+import Boxcomponentimg from './components/boxComponentImg/BoxComponentImg'
 class App extends React.Component {
 
 
@@ -26,7 +25,6 @@ class App extends React.Component {
 
   render() {
     return (
-
       <div className="App">
         <div className="container">
           <Boxcomponentimg datos={this.state.datos} />
