@@ -4,7 +4,6 @@ import './App.css';
 
 
 class App extends React.Component {
-
   componentDidMount() {
     fetch('/api/data')
       .then(response => response.json())
