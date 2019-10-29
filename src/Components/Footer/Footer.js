@@ -10,25 +10,25 @@ function Footer() {
         <ul className="social-icon">
           <li>
             <a>
-              <span className="fa fa-whatsapp" aria-hidden="true"></span>
+              <span className="fa fa-whatsapp"></span>
               <strong> + 57 314 8169284</strong>
             </a>
           </li>
           <li>
             <a>
-              <span className="fa fa-envelope" aria-hidden="true"></span>
+              <span className="fa fa-envelope"></span>
               <strong> lida11jaramillo@hotmail.com</strong>
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/Nailu-130735667644830/">
-              <i className="fa fa-facebook-official" aria-hidden="true"></i>
+              <i className="fa fa-facebook-official"></i>
               <strong> @nailu</strong>
             </a>
           </li>
           <li>
             <a href="https://www.instagram.com/nailu511/">
-              <i className="fa fa-instagram" aria-hidden="true"></i>
+              <i className="fa fa-instagram"></i>
               <strong> @nailu511</strong>
             </a>
           </li>
