@@ -14,11 +14,6 @@
   list-style: none;
   margin: 15px;
 }
-
-span {
-  display: flex;
-  justify-content: center;
-}
 .social-icon {
   display: flex;
   flex-direction: row;
