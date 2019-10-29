@@ -3,7 +3,7 @@
     padding: 0%;
 }
 
-.container {
+.formCntainer {
     display: flex;
     justify-content: center; 
 }
@@ -33,5 +33,5 @@
 }
 
 input:focus {
-    border: 1px solid #166
+    border: 1px solid #166;
 }

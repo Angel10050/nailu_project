@@ -70,7 +70,7 @@ class Form extends Component {
     render () {
         
         return(
-        <div className='container'>
+        <div className='formContainer'>
 
             <form onSubmit={this.handleSubmit} className='form'>
 
