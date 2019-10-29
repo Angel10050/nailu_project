@@ -1,15 +1,15 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
-.formCntainer {
+.formContainer {
     display: flex;
     justify-content: center; 
 }
 
 .form {
-    width: 25%;
+    width: 300px;
     margin: 20px;
     padding: 15px;
     border: 1px solid #ccc;
