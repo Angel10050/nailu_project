@@ -1,6 +1,9 @@
 import React,{ Component } from "react"
+import './form.css'
+import Button from '../Button/Button'
 
 class Form extends Component {
+
     state={
         isInvalid : true,
         name : '',
@@ -14,8 +17,7 @@ class Form extends Component {
     }
 
     handleSubmit = ( event ) => {
-        event.preventDefault()
-        console.log(this.state);
+       event.preventDefault()
     } 
 
     handleOnChange = ( event ) => {
@@ -68,20 +70,25 @@ class Form extends Component {
     render () {
         
         return(
-         <form onSubmit={this.handleSubmit}>
+        <div className='container'>
 
-                 <label htmlFor='name'>Name:</label>
-                 <input type='text' id='name' name='userName' onChange={this.handleOnChange}/>
-             
+            <form onSubmit={this.handleSubmit} className='form'>
 
-                 <label htmlFor='email'>E-mail:</label>
-                 <input type='email' id='email' name='userEmail' onChange={this.handleOnChange}/>
-             
-                 <label htmlFor='tlfNumber'>Phone Number:</label>
-                 <input type="number" id='tlfNumber' name='userTlfNumber' onChange={this.handleOnChange}/>
-             
-             <button type="submit">Send your message</button>
-         </form>   
+            <label htmlFor='name' className='label'>Name:</label>
+            <input type='text' id='name' name='userName' onChange={this.handleOnChange} placeholder='Enter Your FullName' className='input'/>
+
+
+            <label htmlFor='email' className='label'>E-mail:</label>
+            <input type='text' id='email' name='userEmail' onChange={this.handleOnChange} placeholder='Enter Your E-mail' className='input'/>
+
+            <label htmlFor='tlfNumber' className='label'>Phone Number:</label>
+            <input type="tel" id='tlfNumber' name='userTlfNumber' onChange={this.handleOnChange} placeholder='Enter Your Phone Number' className='input'/>
+
+            <Button callback={this.handleSubmit} nameBtn='Submit'/>
+
+            </form>   
+
+        </div>
      )
     }
 }
