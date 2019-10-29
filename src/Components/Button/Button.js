@@ -3,10 +3,10 @@ import React from "react";
 import "./ButtonGeneralStyle.css";
 
 
-const ButtonGeneral = ({ nameBtn, callback }) => {
+const ButtonGeneral = ({ nameBtn, callback, type }) => {
 
   return (
-    <button type="button" class="btn btn-primary button" onClick={callback}>
+    <button type={type} className="btn btn-primary button" onClick={callback}>
       {nameBtn}
     </button>
   );

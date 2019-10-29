@@ -1,15 +1,16 @@
-import React from 'react'
-import ButtonGeneral from './Components/Button/Button'
-import './App.css'
+import React from 'react';
+import './App.css';
 
 import { animateScroll as scroll } from 'react-scroll'
 
-import Logo from './Components/logo/Logo'
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
+import ButtonGeneral from './Components/Button/Button'
+import NavComponent from './Components/navComponent/NavComponent'
 import Footer from './Components/Footer/Footer'
 
 class App extends React.Component {
+  
   componentDidMount() {
     fetch('/api/data')
       .then(response => response.json())
@@ -24,21 +25,15 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Hero heroMainImage={heroImage} />
-        <Logo onClick={this.toScrollup} />
-        <div>
-          <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
-          <ButtonGeneral
-            nameBtn="Mas informacion"
-            callback={this.handlerClick}
-          />
-          <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
-          <ButtonGeneral
-            nameBtn="Agendar cualquier cosa"
-            callback={this.handlerClick}
-          />
-          <Footer />
-        </div>
+      <NavComponent toScrollup={this.toScrollup} />
+      <Hero heroMainImage={heroImage}/>
+      <div>
+        <ButtonGeneral type='button' nameBtn='Inscribete' callback={this.handlerClick} />
+        <ButtonGeneral type='button' nameBtn='Mas informacion' callback={this.handlerClick} />
+        <ButtonGeneral type='button' nameBtn='Agendar' callback={this.handlerClick} />
+        <ButtonGeneral type='button' nameBtn='Agendar cualquier cosa' callback={this.handlerClick}/>
+      </div>
+      <Footer />
       </>
     )
   }
