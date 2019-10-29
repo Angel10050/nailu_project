@@ -5,7 +5,7 @@
   align-items: center;
   min-width: 100%;
 }
-.container h2 {
+.contacts {
   margin-top: 20px;
   color: #ee3f93;
   margin: 20px;
@@ -45,7 +45,7 @@ span {
 .fa-instagram {
   color: #fb3958;
 }
-a {
+.links {
   color: #000000d9;
   text-decoration: none;
   background-color: transparent;
