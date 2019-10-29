@@ -8,6 +8,7 @@ import Logo from './Components/logo/Logo'
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
 import Footer from './Components/Footer/Footer'
+import Login from './Login/loginUser'
 
 class App extends React.Component {
   componentDidMount() {
@@ -37,6 +38,7 @@ class App extends React.Component {
             nameBtn="Agendar cualquier cosa"
             callback={this.handlerClick}
           />
+          <Login />
           <Footer />
         </div>
       </>
