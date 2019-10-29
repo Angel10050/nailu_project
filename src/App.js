@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { animateScroll as scroll } from 'react-scroll'
-import Logo from './Components/logo/Logo'
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
 import ButtonGeneral from './Components/Button/Button'
@@ -25,7 +24,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <Hero heroMainImage={heroImage}/>
       <NavComponent toScrollup={this.toScrollup} />
       <Hero heroMainImage={heroImage}/>
       <div>
