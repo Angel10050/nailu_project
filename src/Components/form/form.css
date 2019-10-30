@@ -27,6 +27,6 @@
     border: 0.5px solid #ccc;
 }
 
-input:focus {
+.input:focus {
     border: 1px solid #166;
 }
