@@ -1,0 +1,30 @@
+.login {
+  background: rgb(75, 10, 75);
+  min-width: 100%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.login-wrap {
+  width: 320px;
+  margin: 30px;
+  border: 1px solid #eee;
+  padding: 30px;
+  padding-bottom: 30px;
+  background: #343a40;
+  border-radius: 4px;
+}
+.inputLogin {
+  height: 50px;
+}
+
+.form-group.last {
+  margin-bottom: 0px;
+}
+.loginI {
+  font-size: 24px;
+}
+.textLogin {
+  color: #fff;
+}
