@@ -1,10 +1,14 @@
 .login {
-  background: rgb(75, 10, 75);
+  background: rgba(238, 130, 238, 0.918);
   min-width: 100%;
+  min-height: 100vh;
 }
 .container {
   display: flex;
   justify-content: center;
+}
+.loginRow {
+  align-items: center;
 }
 .login-wrap {
   width: 320px;
