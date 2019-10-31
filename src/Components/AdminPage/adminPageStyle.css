@@ -14,22 +14,22 @@
     padding: 5px;
 }
 
-.adminSection, .admintitle{
+.admintitle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+}
+
+.adminSection{
+    margin: 50px 0 50px 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
 }
-
-.adminSection{
-    margin: 50px 0 50px 0;
-}
-
-.admintitle{
-    margin: 30px;
-    padding: 20px;
-}
-
 
 
 
