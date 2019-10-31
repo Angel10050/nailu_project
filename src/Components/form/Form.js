@@ -12,6 +12,8 @@ class Form extends Component {
 
     handleSubmit = (event) => {
        event.preventDefault()
+       const InfoToJson = JSON.stringify(this.state)
+       JSON.parse(InfoToJson)
     } 
 
     handleOnChange = (event) => {
