@@ -1,7 +1,5 @@
-import React from 'react';
-import './App.css';
-
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import React from 'react'
+import './App.css'
 import { animateScroll as scroll } from 'react-scroll'
 
 import Hero from './Components/heroComponent/Hero'
@@ -12,9 +10,10 @@ import NavComponent from './Components/navComponent/NavComponent'
 import Footer from './Components/Footer/Footer'
 
 import AdminPage from './Components/AdminPage/AdminPage'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Login from './Components/adminPage/Login/loginUser'
 
 class App extends React.Component {
-  
   componentDidMount() {
     fetch('/api/data')
       .then(response => response.json())
@@ -31,12 +30,16 @@ class App extends React.Component {
       <Router> 
          <Switch>
 
+         <Route exact path="/admin">
+              <Login />
+              
+         </Route>
+
           <Route exact path='/admin/content'>
 
             <AdminPage />
 
           </Route>
-
           <Route>
 
               <NavComponent toScrollup={this.toScrollup} />
@@ -54,7 +57,6 @@ class App extends React.Component {
          </Switch>
       </Router>
     )
-
   }
 }
 
