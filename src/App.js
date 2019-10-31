@@ -6,7 +6,7 @@ import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
 import ButtonGeneral from './Components/Button/Button'
 import NavComponent from './Components/navComponent/NavComponent'
 import Footer from './Components/Footer/Footer'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from './Components/adminPage/Login/loginUser'
 
 class App extends React.Component {

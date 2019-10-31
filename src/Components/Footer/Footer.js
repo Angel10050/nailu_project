@@ -9,13 +9,15 @@ function Footer() {
       <div>
         <ul className="social-icon">
           <li>
-            <a className="links">
+            <a href="#">
+              className="links">
               <span className="fa fa-whatsapp"></span>
               <strong> + 57 314 8169284</strong>
             </a>
           </li>
           <li>
-            <a className="links">
+            <a href="#">
+              className="links">
               <span className="fa fa-envelope"></span>
               <strong> lida11jaramillo@hotmail.com</strong>
             </a>
