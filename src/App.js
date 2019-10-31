@@ -37,7 +37,7 @@ class App extends React.Component {
 
           </Route>
 
-          <Route exact path='/main'>
+          <Route>
 
               <NavComponent toScrollup={this.toScrollup} />
                 <Hero heroMainImage={heroImage}/>

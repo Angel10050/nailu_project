@@ -1,5 +1,7 @@
 import React from 'react'
-import AdminForm from './adminMainStyle.css'
+import AdminForm from '../AdminForm/AdminForm'
+import './adminMainStyle.css'
+
 
 const AdminMain = ({eventNumber, img}) => {
     return(

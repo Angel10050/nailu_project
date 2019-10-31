@@ -12,6 +12,8 @@ class AdminForm extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
+        console.log(this.state);
+        
      } 
 
     handleChange = (event) => {
@@ -19,9 +21,10 @@ class AdminForm extends Component{
          this.setState({
                 [id] : value
          })
+         console.log(this.state);
+         
     }
     render(){
-        console.log(this.state.eventImage)
         return(
             <>
                 <form className='adminForm' onSubmit={this.handleSubmit} method='post'>
@@ -57,10 +60,9 @@ class AdminForm extends Component{
                             <label htmlFor='description' className='adminLabel'>Describre el evento (Se breve):</label>
                             <textarea value={this.state.description} name='description' id='description' className='adminInput textarea' onChange={this.handleChange}/>
 
-                            <p>Carga una imagen para este evento</p>
-                            <label htmlFor='eventImage' className='adminLabel labelButton'>Selecciona una imagen:</label> 
+                            <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
                             <input value={this.state.eventImage} type='file' name='eventImage' id='eventImage' className='adminInput' onChange={this.handleChange} />
-                            <p>{this.state.eventImage}</p>
+                            <span>{this.state.eventImage.toString()}</span>
               
                     </div>
 
