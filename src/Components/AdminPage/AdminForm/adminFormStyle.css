@@ -1,0 +1,40 @@
+.adminForm {
+    width: 55%;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formEventDate, .formEventContent {
+    padding: 30px;
+}
+
+.formEventContent > .adminInput {
+    width: 100%;
+}
+
+.textarea {
+    resize: vertical;
+    max-height: 50px;
+    min-height: 50px;
+}
+
+.adminLabel {
+    font-size: 12px;
+    margin: 10px 0 1px 0;
+    padding: 1px;
+}
+
+.adminInput[type='file']{
+    display: none;
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.labelButton{
+    background-color: aquamarine;
+    padding: 10px;
+}
