@@ -5,7 +5,7 @@ import '../AdminPage/adminPageStyle.css'
 import img1 from './srcImg/Evento1.png'
 import img2 from './srcImg/Evento2.png'
 
-import AdminForm from './AdminForm/AdminForm'
+import AdminMain from './mainAdminPage/AdminMain'
 import Logo from '../logo/Logo'
 
 
@@ -23,27 +23,8 @@ class AdminPage extends Component{
                     </div>
                 </div>
                     
-                <section className='adminSection'>
-           
-                        <h5>actualiza tus eventos mas proximos</h5>
-                        <p>Evento #1</p>
-                 
-                    <img className='ImgEventOne' src={img2} alt='primer evento' />
-
-                        <AdminForm />
-
-                </section>
-
-                <section className='adminSection'>
-
-                        <h5>actualiza tus eventos mas proximos</h5>
-                        <p>Evento #2</p>
-
-                    <img className='ImgEventOne' src={img1} alt='primer evento' />
-
-                        <AdminForm />
-
-                </section>
+                    <AdminMain img={img1} eventNumber={'Evento #1'}/>
+                    <AdminMain img={img2} eventNumber={'Evento #2'} />
             </>
 
         )

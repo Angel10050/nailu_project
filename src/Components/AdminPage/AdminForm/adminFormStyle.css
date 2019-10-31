@@ -1,24 +1,29 @@
 .adminForm {
-    width: 55%;
+    width: 300px;
     margin: 20px;
     padding: 15px;
     border: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 }
 
 .formEventDate, .formEventContent {
-    padding: 30px;
+    padding: 0px;
+    margin: 0px;
 }
 
-.formEventContent > .adminInput {
+.adminInput {
     width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 0.5px solid #ccc;
 }
 
 .textarea {
     resize: vertical;
-    max-height: 50px;
+    max-height: 200px;
     min-height: 50px;
 }
 
@@ -37,4 +42,10 @@
 .labelButton{
     background-color: aquamarine;
     padding: 10px;
+}
+
+.adminForm >.btn-primary{
+    
+    bottom: 10px;
+    margin: 20PX;
 }

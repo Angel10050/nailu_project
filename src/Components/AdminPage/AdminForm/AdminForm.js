@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
 import '../AdminForm/adminFormStyle.css'
-
-import {Form, FormGroup , FormControl, AlertDismissable, Glyphicon} from 'react-bootstrap'
-import {FieldGroup} from 'react-bootstrap'
-
+import Button from '../../Button/Button'
 
 class AdminForm extends Component{
     state={
@@ -67,9 +64,8 @@ class AdminForm extends Component{
               
                     </div>
 
-
-
-
+                <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
+                
                 </form> 
             </>
         )
