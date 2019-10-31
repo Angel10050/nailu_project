@@ -11,7 +11,7 @@ import Footer from './Components/Footer/Footer'
 
 import AdminPage from './Components/AdminPage/AdminPage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Login from './Components/adminPage/Login/loginUser'
+import Login from './Components/AdminPage/Login/loginUser'
 
 class App extends React.Component {
   componentDidMount() {

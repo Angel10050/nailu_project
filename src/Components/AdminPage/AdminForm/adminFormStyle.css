@@ -1,12 +1,14 @@
 .adminForm {
     width: 500px;
     margin: 20px;
-    padding: 15px;
+    padding: 15px 30px;
     border: 1px solid #ccc;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
+    background-color:#343a40;
+    border-radius:4px;
 }
 
 .formEventDate, .formEventContent {
@@ -16,10 +18,13 @@
 
 .adminInput {
     width: 100%;
+    height: 50px;
     padding: 5px 10px;
     margin: 5px 0 20px 0;
     box-sizing: border-box;
     border: 0.5px solid #ccc;
+    border-radius: 4px;
+    background-color: aliceblue;
 }
 
 .textarea {
@@ -28,20 +33,16 @@
     min-height: 150px;
 }
 
-.adminLabel {
+.adminLabel, .labelButton {
     font-size: 12px;
     margin: 10px 0 1px 0;
     padding: 1px;
+    color: white;
 }
 
 .adminInput[type='file']{
     /* display: none; */
-    background-color: aquamarine;
-    padding: 10px;
-}
-
-.labelButton{
-    background-color: aquamarine;
+    background-color: aliceblue;
     padding: 10px;
 }
 

@@ -12,17 +12,15 @@ class AdminForm extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        console.log(this.state);
-        
-     } 
+        const infoToJson = JSON.stringify(this.state)
+        JSON.parse(infoToJson)  
+     }
 
     handleChange = (event) => {
         const {id, value} = event.target
          this.setState({
                 [id] : value
-         })
-         console.log(this.state);
-         
+         })      
     }
     render(){
         return(
@@ -62,8 +60,7 @@ class AdminForm extends Component{
 
                             <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
                             <input value={this.state.eventImage} type='file' name='eventImage' id='eventImage' className='adminInput' onChange={this.handleChange} />
-                            <span>{this.state.eventImage.toString()}</span>
-              
+        
                     </div>
 
                 <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
