@@ -8,9 +8,11 @@ import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
 import ButtonGeneral from './Components/Button/Button'
 import NavComponent from './Components/navComponent/NavComponent'
+import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
 import Login from './Components/adminPage/Login/loginUser'
+import { ListGroupItem } from 'react-bootstrap'
 
 class App extends React.Component {
   componentDidMount() {
@@ -22,6 +24,39 @@ class App extends React.Component {
   handlerClick = () => {}
   toScrollup = () => {
     scroll.scrollToTop()
+  }
+
+  state = {
+    datas: [
+      {
+        imagenUrl: 'http://lorempixel.com/300/200',
+        dia: '25',
+        mes: 'octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'http://lorempixel.com/300/200',
+        dia: '31',
+        mes: 'octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'http://lorempixel.com/300/200',
+        dia: '31',
+        mes: 'octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'http://lorempixel.com/300/200',
+        dia: '31',
+        mes: 'octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      }
+    ]
   }
 
   render() {
@@ -40,28 +75,7 @@ class App extends React.Component {
             <Route>
               <NavComponent toScrollup={this.toScrollup} />
               <Hero heroMainImage={heroImage} />
-              <div>
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Inscribete"
-                  callback={this.handlerClick}
-                />
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Mas informacion"
-                  callback={this.handlerClick}
-                />
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Agendar"
-                  callback={this.handlerClick}
-                />
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Agendar cualquier cosa"
-                  callback={this.handlerClick}
-                />
-              </div>
+              <BoxComponent datas={this.state.datas} />
               <Footer />
             </Route>
           </Switch>
