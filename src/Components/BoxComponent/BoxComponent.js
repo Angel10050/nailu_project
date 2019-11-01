@@ -5,7 +5,7 @@ import ButtonGeneral from '../../Components/Button/Button'
 class Boxcomponent extends Component {
   render() {
     return (
-      <>
+      <div className="container-fluid fluid">
         {this.props.datas.map((data, index) => {
           return (
             <div
@@ -29,7 +29,7 @@ class Boxcomponent extends Component {
             </div>
           )
         })}
-      </>
+      </div>
     )
   }
 }

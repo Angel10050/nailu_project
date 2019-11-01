@@ -3,7 +3,6 @@
   margin: 20px 0px 20px 0px;
   background: #343a40;
   justify-items: center;
-  width: 100vw;
 }
 .reverse {
   flex-direction: row-reverse;
@@ -14,6 +13,10 @@
   width: 100%;
   padding-right: 0;
   padding-left: 0;
+}
+
+.fluid {
+  padding: 0;
 }
 
 .Img {
