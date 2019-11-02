@@ -1,12 +1,12 @@
 .container-box {
   display: flex;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
   background: #343a40;
   justify-items: center;
 }
 .reverse {
   flex-direction: row-reverse;
-  margin: 20px 0 20px 0;
+  margin: 20px 0;
 }
 .col {
   position: relative;
@@ -19,12 +19,12 @@
   padding: 0;
 }
 
-.Img {
+.imgBox {
   min-height: 100%;
   min-width: 100%;
 }
 
-.Text {
+.textBox {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -32,7 +32,7 @@
   margin: 0;
 }
 
-.DateNumber {
+.dateNumberBox {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -41,32 +41,32 @@
   margin: 5%;
 }
 
-.DateText {
+.dateTextBox {
   display: flex;
   align-items: center;
   font-size: 2em;
   margin: -5% 0 0 15%;
 }
 
-.Info {
+.infoBox {
   padding: 20px;
 }
 
-.Text > .btn {
+.textBox > .btn {
   align-self: center;
 }
 @media (max-width: 761px) {
   .container-box {
     flex-direction: column;
   }
-  .Text {
+  .textBox {
     align-items: center;
     margin: 0;
   }
-  .DateText {
+  .dateTextBox {
     margin: 0;
   }
-  .Info {
+  .infoBox {
     text-align: center;
   }
 }

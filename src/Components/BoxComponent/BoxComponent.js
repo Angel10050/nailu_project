@@ -15,16 +15,16 @@ class BoxComponent extends Component {
             >
               <div className="col">
                 <img
-                  className="img-fluid  mb-3 mb-md-0 Img"
+                  className="img-fluid  mb-3 mb-md-0 imgBox"
                   src={data.imagenUrl}
                   alt="imagen del evento"
                 />
               </div>
-              <div className="col Text">
-                <h4 className="DateNumber">{data.dia}</h4>
-                <small class="text-muted DateText">{data.mes}</small>
-                <p className="font-weight-normal Info">{data.descripcion}</p>
-                <ButtonGeneral type="button" nameBtn="Registrarse" />
+              <div className="col textBox">
+                <h4 className="dateNumberBox">{data.dia}</h4>
+                <small class="text-muted dateTextBox">{data.mes}</small>
+                <p className="font-weight-normal infoBox">{data.descripcion}</p>
+                <ButtonGeneral type="button" nameBtn="Información" />
               </div>
             </div>
           )
