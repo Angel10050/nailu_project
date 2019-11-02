@@ -1,6 +1,11 @@
 import React from 'react'
 import './App.css'
+
 import { animateScroll as scroll } from 'react-scroll'
+
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
@@ -9,9 +14,12 @@ import ButtonGeneral from './Components/Button/Button'
 import NavComponent from './Components/navComponent/NavComponent'
 import Footer from './Components/Footer/Footer'
 
+
 import AdminPage from './Components/AdminPage/AdminPage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from './Components/AdminPage/Login/loginUser'
+import Form from './Components/form/Form'
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -41,6 +49,12 @@ class App extends React.Component {
 
           </Route>
           <Route>
+
+            <Route exact path="/user/form">
+              <Form />
+            </Route>
+
+            <Route>
 
               <NavComponent toScrollup={this.toScrollup} />
                 <Hero heroMainImage={heroImage}/>
