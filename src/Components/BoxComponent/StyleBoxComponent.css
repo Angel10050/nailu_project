@@ -29,7 +29,7 @@
   flex-direction: column;
   text-align: left;
   color: #ffffff;
-  margin: 5px;
+  margin: 0;
 }
 
 .DateNumber {
@@ -45,8 +45,7 @@
   display: flex;
   align-items: center;
   font-size: 2em;
-  margin-left: 15%;
-  margin-top: -5%;
+  margin: -5% 0 0 15%;
 }
 
 .Info {
@@ -62,9 +61,10 @@
   }
   .Text {
     align-items: center;
+    margin: 0;
   }
   .DateText {
-    margin-left: 0;
+    margin: 0;
   }
   .Info {
     text-align: center;

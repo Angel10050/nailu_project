@@ -9,6 +9,9 @@
   border-bottom: 3px solid rgba(238, 130, 238, 0.918);
 }
 
+.responsiveNavbar {
+  width: 100px;
+}
 .fluidNav {
   padding: 0;
 }
