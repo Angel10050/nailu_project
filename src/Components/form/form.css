@@ -39,14 +39,9 @@
 }
 
 .input:focus {
-    border: 1px solid #166;
-
-}
-
-
     border: 5px solid rgba(238, 130, 238, 0.918);
-}
 
+}
 
 @media (max-width: 826px){
     .form {
