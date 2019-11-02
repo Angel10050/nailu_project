@@ -29,28 +29,28 @@ class App extends React.Component {
   state = {
     datas: [
       {
-        imagenUrl: 'http://lorempixel.com/300/200',
-        dia: '25',
-        mes: 'octubre',
-        descripcion:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
-      },
-      {
-        imagenUrl: 'http://lorempixel.com/300/200',
+        imagenUrl: 'https://i.ibb.co/BB0vNRw/4.jpg',
         dia: '31',
-        mes: 'octubre',
+        mes: 'Octubre',
         descripcion:
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+          'Maquillaje ArtisticoO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
       },
       {
-        imagenUrl: 'http://lorempixel.com/300/200',
+        imagenUrl: 'https://i.ibb.co/V9M7KCL/3.jpg',
         dia: '31',
-        mes: 'octubre',
+        mes: 'Octubre',
         descripcion:
           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
       },
       {
-        imagenUrl: 'http://lorempixel.com/300/200',
+        imagenUrl: 'https://i.ibb.co/k29f4Ws/1.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/t86mKW9/2.jpg',
         dia: '31',
         mes: 'octubre',
         descripcion:

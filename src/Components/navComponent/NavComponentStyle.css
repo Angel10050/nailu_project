@@ -1,24 +1,38 @@
 .componentFlexButton {
-  margin-top: 20px;
-  max-width: 100%;
-  outline: none;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
-
 .componentFlex {
   display: flex;
   border-bottom: 3px solid rgba(238, 130, 238, 0.918);
 }
-
+.responsiveNavbar {
+  width: 100px;
+}
+.fluidNav {
+  padding: 0;
+}
+.imgLogo {
+  width: 70px;
+}
 .componentFlexLogo {
   flex: 1 1 auto;
   align-self: center;
   max-width: 200px;
 }
-
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
 @media (min-width: 768px) {
   .componentFlexButton {
     flex: 3 1 auto;
     align-self: center;
-    padding: 0 30%;
   }
 }
