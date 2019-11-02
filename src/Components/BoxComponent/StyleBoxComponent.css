@@ -1,12 +1,12 @@
 .container-box {
   display: flex;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0 20px 0;
   background: #343a40;
   justify-items: center;
 }
 .reverse {
   flex-direction: row-reverse;
-  margin: 20px 0px 20px 0px;
+  margin: 20px 0 20px 0;
 }
 .col {
   position: relative;
@@ -56,7 +56,7 @@
 .Text > .btn {
   align-self: center;
 }
-@media (max-width: 684px) {
+@media (max-width: 761px) {
   .container-box {
     flex-direction: column;
   }
@@ -64,7 +64,7 @@
     align-items: center;
   }
   .DateText {
-    margin-left: 0px;
+    margin-left: 0;
   }
   .Info {
     text-align: center;

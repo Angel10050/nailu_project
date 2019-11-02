@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './StyleBoxComponent.css'
 import ButtonGeneral from '../../Components/Button/Button'
 
-class Boxcomponent extends Component {
+class BoxComponent extends Component {
   render() {
     return (
       <div className="container-fluid fluid">
@@ -24,7 +24,7 @@ class Boxcomponent extends Component {
                 <h4 className="DateNumber">{data.dia}</h4>
                 <small class="text-muted DateText">{data.mes}</small>
                 <p className="font-weight-normal Info">{data.descripcion}</p>
-                <ButtonGeneral type="button" nameBtn="Información" />
+                <ButtonGeneral type="button" nameBtn="Registrarse" />
               </div>
             </div>
           )
@@ -34,4 +34,4 @@ class Boxcomponent extends Component {
   }
 }
 
-export default Boxcomponent
+export default BoxComponent
