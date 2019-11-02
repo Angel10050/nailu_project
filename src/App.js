@@ -33,7 +33,7 @@ class App extends React.Component {
               <Login />
             </Route>
 
-            <Route exact path="/user/info">
+            <Route exact path="/user/form">
               <Form />
             </Route>
 
