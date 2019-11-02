@@ -12,8 +12,6 @@ class AdminForm extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const infoToJson = JSON.stringify(this.state)
-        JSON.parse(infoToJson)  
      }
 
     handleChange = (event) => {
