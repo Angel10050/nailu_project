@@ -12,7 +12,6 @@ class Form extends Component {
 
     handleSubmit = (event) => {
        event.preventDefault()
-       console.log(this.state)
     } 
 
     handleOnChange = (event) => {
@@ -20,7 +19,6 @@ class Form extends Component {
         this.setState({
             [id] : value
         })
-        console.log(this.state)
     }
     render () {
         
