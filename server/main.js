@@ -27,10 +27,12 @@ app.get('/api/customer', (req, res) => {
   }).catch(console.error)
 })
 
-const options = !isProd ? {
-  key: fs.readFileSync(`${ROOT_PATH}/server/key.pem`),
-  cert: fs.readFileSync(`${ROOT_PATH}/server/cert.pem`),
-  passphrase: process.env.PS_PWS
-} : null
-
-https.createServer(options, app).listen(process.env.PORT || 8080);
+if (isProd) {
+  app.listen(process.env.PORT || 8080, () => console.log(`Example app listening!`))
+} else {
+  https.createServer({
+    key: fs.readFileSync(`${ROOT_PATH}/server/key.pem`),
+    cert: fs.readFileSync(`${ROOT_PATH}/server/cert.pem`),
+    passphrase: process.env.PS_PWS
+  }, app).listen(process.env.PORT || 8080);
+}
