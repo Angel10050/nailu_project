@@ -1,0 +1,67 @@
+.galleryContainer{
+    width: 100vw;
+    display:grid;
+    grid-auto-flow: dense;
+    grid-template: "1fr 1fr 1fr 1fr 1fr" 33.33vh
+                   "1fr 1fr 1fr 1fr 1fr" 33.33vh
+                   "1fr 1fr 1fr 1fr 1fr" 33.33vh;
+    grid-gap: 5px;
+}
+
+.galleryContainer .box{
+    position: relative;
+    background: #ccc;
+}
+
+.galleryContainer .box img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.galleryContainer .box.a{
+    grid-row: span 2;
+}
+
+.galleryContainer .box.b,
+.galleryContainer .box.f,
+.galleryContainer .box.h,
+.galleryContainer .box.j{
+    grid-column: span 2;
+}
+
+@media (max-width: 991px){
+    .galleryContainer{
+        width: 100vw;
+        display:grid;
+        grid-auto-flow: dense;
+        grid-template: "1fr 1fr 1fr" 250px
+                       "1fr 1fr 1fr" 250px
+                       "1fr 1fr 1fr" 250px
+                       "1fr 1fr 1fr" 250px
+                       "1fr 1fr 1fr" 250px;
+        grid-gap: 5px;  
+    }
+}
+
+@media (max-width: 768px){
+    .galleryContainer{
+        width: 100vw;
+        display:grid;
+        grid-auto-flow: dense;
+        grid-template: "1fr 1fr" 200px
+                       "1fr 1fr" 200px
+                       "1fr 1fr" 200px
+                       "1fr 1fr" 200px
+                       "1fr 1fr" 200px
+                       "1fr 1fr" 200px
+                       "1fr 1fr" 200px;
+        grid-gap: 5px;  
+    }
+    .galleryContainer .box.h{
+        grid-column: span 1;
+    }
+}

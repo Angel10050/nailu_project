@@ -13,6 +13,7 @@ import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
 import Login from './Components/adminPage/Login/loginUser'
 import { ListGroupItem } from 'react-bootstrap'
+import Gallery from './Components/gallery/Gallery'
 
 class App extends React.Component {
   componentDidMount() {
@@ -76,6 +77,7 @@ class App extends React.Component {
               <NavComponent toScrollup={this.toScrollup} />
               <Hero heroMainImage={heroImage} />
               <BoxComponent datas={this.state.datas} />
+              <Gallery />
               <Footer />
             </Route>
           </Switch>
