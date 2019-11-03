@@ -22,7 +22,7 @@
     padding: 5px 10px;
     margin: 5px 0 20px 0;
     box-sizing: border-box;
-    border: 0.5px solid #ccc;
+    border: 5px solid #ccc;
     border-radius: 4px;
     background-color: aliceblue;
 }
@@ -41,9 +41,7 @@
 }
 
 .adminInput[type='file']{
-    /* display: none; */
     background-color: aliceblue;
-    padding: 10px;
 }
 
 .adminForm >.btn-primary{

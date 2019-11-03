@@ -22,7 +22,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="container login">
+      <div className="container login containerLogin">
         <div className="row loginRow">
           <div className="login-wrap">
             <Form

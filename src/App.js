@@ -8,6 +8,7 @@ import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
 import ButtonGeneral from './Components/Button/Button'
 import NavComponent from './Components/navComponent/NavComponent'
+import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
 import Login from './Components/AdminPage/Login/loginUser'
@@ -23,6 +24,39 @@ class App extends React.Component {
   handlerClick = () => {}
   toScrollup = () => {
     scroll.scrollToTop()
+  }
+
+  state = {
+    datas: [
+      {
+        imagenUrl: 'https://i.ibb.co/BB0vNRw/4.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Maquillaje ArtisticoO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/V9M7KCL/3.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/k29f4Ws/1.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/t86mKW9/2.jpg',
+        dia: '31',
+        mes: 'octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      }
+    ]
   }
 
   render() {
@@ -45,28 +79,7 @@ class App extends React.Component {
             <Route>
               <NavComponent toScrollup={this.toScrollup} />
               <Hero heroMainImage={heroImage} />
-              <div>
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Inscribete"
-                  callback={this.handlerClick}
-                />
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Mas informacion"
-                  callback={this.handlerClick}
-                />
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Agendar"
-                  callback={this.handlerClick}
-                />
-                <ButtonGeneral
-                  type="button"
-                  nameBtn="Agendar cualquier cosa"
-                  callback={this.handlerClick}
-                />
-              </div>
+              <BoxComponent datas={this.state.datas} />
               <Footer />
             </Route>
           </Switch>
