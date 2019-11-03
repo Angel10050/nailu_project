@@ -1,10 +1,11 @@
 .galleryContainer{
-    width: 100vw;
+    min-width: 100%;
     display:grid;
     grid-auto-flow: dense;
-    grid-template: "1fr 1fr 1fr 1fr 1fr" 33.33vh
-                   "1fr 1fr 1fr 1fr 1fr" 33.33vh
-                   "1fr 1fr 1fr 1fr 1fr" 33.33vh;
+    grid-template: 
+        "1fr 1fr 1fr 1fr 1fr" 33.33vh
+        "1fr 1fr 1fr 1fr 1fr" 33.33vh
+        "1fr 1fr 1fr 1fr 1fr" 33.33vh;
     grid-gap: 5px;
     margin-bottom: 15px;
     /* background: #343a40; */
@@ -40,11 +41,12 @@
         width: 100vw;
         display:grid;
         grid-auto-flow: dense;
-        grid-template: "1fr 1fr 1fr" 250px
-                       "1fr 1fr 1fr" 250px
-                       "1fr 1fr 1fr" 250px
-                       "1fr 1fr 1fr" 250px
-                       "1fr 1fr 1fr" 250px;
+        grid-template: 
+            "1fr 1fr 1fr" 250px
+            "1fr 1fr 1fr" 250px
+            "1fr 1fr 1fr" 250px
+            "1fr 1fr 1fr" 250px
+            "1fr 1fr 1fr" 250px;
         grid-gap: 5px; 
         margin-bottom: 15px; 
     }
@@ -55,13 +57,14 @@
         width: 100vw;
         display:grid;
         grid-auto-flow: dense;
-        grid-template: "1fr 1fr" 200px
-                       "1fr 1fr" 200px
-                       "1fr 1fr" 200px
-                       "1fr 1fr" 200px
-                       "1fr 1fr" 200px
-                       "1fr 1fr" 200px
-                       "1fr 1fr" 200px;
+        grid-template:
+            "1fr 1fr" 200px
+            "1fr 1fr" 200px
+            "1fr 1fr" 200px
+            "1fr 1fr" 200px
+            "1fr 1fr" 200px
+            "1fr 1fr" 200px
+            "1fr 1fr" 200px;
         grid-gap: 5px;
         margin-bottom: 15px;  
     }
