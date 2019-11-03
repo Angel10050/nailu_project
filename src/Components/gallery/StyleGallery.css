@@ -6,6 +6,7 @@
                    "1fr 1fr 1fr 1fr 1fr" 33.33vh
                    "1fr 1fr 1fr 1fr 1fr" 33.33vh;
     grid-gap: 5px;
+    margin-bottom: 15px;
 }
 
 .galleryContainer .box{
@@ -43,7 +44,8 @@
                        "1fr 1fr 1fr" 250px
                        "1fr 1fr 1fr" 250px
                        "1fr 1fr 1fr" 250px;
-        grid-gap: 5px;  
+        grid-gap: 5px; 
+        margin-bottom: 15px; 
     }
 }
 
@@ -59,7 +61,8 @@
                        "1fr 1fr" 200px
                        "1fr 1fr" 200px
                        "1fr 1fr" 200px;
-        grid-gap: 5px;  
+        grid-gap: 5px;
+        margin-bottom: 15px;  
     }
     .galleryContainer .box.h{
         grid-column: span 1;
