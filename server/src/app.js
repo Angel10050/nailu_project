@@ -8,7 +8,7 @@ const path = require("path");
 const distDir = path.join(__dirname, "../", "build");
 
 const authInit = require('./routes/admin')
-const homeInit = require('./routes/home')
+const contactInit = require('./routes/contact')
 const trainingsInit = require('./routes/trainings')
 
 function initApp () {
@@ -18,7 +18,7 @@ function initApp () {
   app.use(express.static(distDir));
 
   authInit(app)
-  homeInit(app)
+  contactInit(app)
   trainingsInit(app)
 
   return app
