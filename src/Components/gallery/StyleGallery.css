@@ -7,6 +7,7 @@
                    "1fr 1fr 1fr 1fr 1fr" 33.33vh;
     grid-gap: 5px;
     margin-bottom: 15px;
+    /* background: #343a40; */
 }
 
 .galleryContainer .box{
