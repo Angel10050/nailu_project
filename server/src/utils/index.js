@@ -1,15 +1,20 @@
 'use strict'
 
 function validateData (props, data) {
-  let valid = true
-  props.forEach(key => {
-    if (!data[key]) {
-      valid = false
-    }
-  });
-  return valid
+  return props.every(key => data[key]);
+}
+
+function validateEmail (value) {
+  const regExpPassword = new RegExp( /^(([^<>()*#$`~'"=+!¡¿?%^&{}/äáàëéèíìöóòúùñ|ºª·ç¨\[\]\.,;:\s@\"]+(\.[^<>()*#$`~'"=+!¡¿?%^&{}/äáàëéèíìöóòúùñ|ºª·ç¨\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+  console.log("esto es una prueba", regExpPassword.test(value));
+  return regExpPassword.test(value);
+}
+
+function validatePhone (value) {
+  const regExpPassword = new RegExp(/^([0-9])*$/);
+  return regExpPassword.test(value);
 }
 
 module.exports = {
-  validateData
+  validateData, validateEmail, validatePhone
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-const { validateData } = require('../utils')
+const { validateData, validateEmail, validatePhone } = require('../utils')
 
 const customers = [];
 
@@ -14,7 +14,7 @@ function contact (app) {
       body
     )
 
-    if (!valid) {
+    if (!valid || !validateEmail(req.body.email) || !validatePhone(req.body.phone)) {
       return res.status(400).json({ message: 'datos invalidos' })
     }
     
