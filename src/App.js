@@ -16,12 +16,12 @@ import { ListGroupItem } from 'react-bootstrap'
 
 class App extends React.Component {
   componentDidMount() {
-    fetch('/api/data')
+    fetch('/api/customer')
       .then(response => response.json())
       .then(console.log)
   }
 
-  handlerClick = () => {}
+  handlerClick = () => { }
   toScrollup = () => {
     scroll.scrollToTop()
   }
