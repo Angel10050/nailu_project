@@ -1,5 +1,5 @@
 const ROOT_PATH = process.cwd();
-const isProd = process.env.NODE_ENV === 'PROD'
+const isProd = process.env.NODE_ENV === 'production'
 
 const express = require('express')
 const path = require('path')
