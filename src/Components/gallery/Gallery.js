@@ -1,11 +1,9 @@
 import React, {Component } from 'react';
 import '../gallery/StyleGallery.css'
 
-class Gallery extends Component {
-
-    render() { 
-        return ( 
-            <div className="galleryContainer">
+const Gallery = () => {
+    return ( 
+        <div className="galleryContainer">
                 <div className="box a"><img src={require('./img/1.jpg')} alt="imagen de uñas"></img></div>
                 <div className="box b"><img src={require('./img/2.jpg')} alt="imagen de uñas"></img></div>
                 <div className="box c"><img src={require('./img/3.jpg')} alt="imagen de uñas"></img></div>
@@ -17,8 +15,8 @@ class Gallery extends Component {
                 <div className="box i"><img src={require('./img/9.jpg')} alt="imagen de uñas"></img></div>
                 <div className="box j"><img src={require('./img/10.jpg')} alt="imagen de uñas"></img></div>
             </div>
-         );
-    }
+     );
 }
  
+
 export default Gallery;
