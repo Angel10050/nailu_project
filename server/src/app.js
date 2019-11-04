@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParse = require('body-parser')
 const path = require('path')
 
-const distDir = path.join(__dirname, "../", "build");
+const distDir = path.join(__dirname, "../../", "build");
 
 const authInit = require('./routes/admin')
 const contactInit = require('./routes/contact')
