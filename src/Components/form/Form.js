@@ -24,11 +24,14 @@ class Form extends Component {
     render () {
         
         return(
-            <>
-              <NavComponent />  
-                <div className='formContainer'>
+            
+            <div className='formContainer'>
 
-                    <form onSubmit={this.handleSubmit} className='form'>
+                    <NavComponent />  
+
+                <form onSubmit={this.handleSubmit} className='form'>
+
+                        <h5>Déjanos tu Datos para contactarte</h5>
 
                     <label htmlFor='name' className='label'>Nombre:</label>
                     <input type='text' value={this.state.name} id='name' name='userName' onChange={this.handleOnChange} placeholder='Ingresa tu nombre completo' className='input'/>
@@ -39,12 +42,11 @@ class Form extends Component {
                     <label htmlFor='tlfNumber' className='label'>Numero De Telefono:</label>
                     <input type='tel' value={this.state.tlfNumber} id='tlfNumber' name='userTlfNumber' onChange={this.handleOnChange} placeholder='Ingresa tu numero telefonico' className='input'/>
 
-                    <Button type='submit' nameBtn='Submit'/>
+                        <Button type='submit' nameBtn='Enviar'/>
 
-                    </form>   
+                </form>   
 
-                </div>
-            </>    
+            </div>
      )
     }
 }

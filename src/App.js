@@ -6,13 +6,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
-import ButtonGeneral from './Components/Button/Button'
 import NavComponent from './Components/navComponent/NavComponent'
 import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
-import Login from './Components/adminPage/Login/loginUser'
-import { ListGroupItem } from 'react-bootstrap'
+import Login from './Components/AdminPage/Login/loginUser'
+import AdminPage from './Components/AdminPage/AdminPage'
 
 class App extends React.Component {
   componentDidMount() {
@@ -68,7 +67,11 @@ class App extends React.Component {
               <Login />
             </Route>
 
-            <Route exact path="/user/form">
+            <Route path="/admin/content">
+              <AdminPage />
+            </Route>
+
+            <Route exact path="/user/contactme">
               <Form />
             </Route>
 
