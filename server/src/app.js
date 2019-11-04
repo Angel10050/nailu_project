@@ -10,7 +10,7 @@ const authInit = require('./routes/admin')
 const contactInit = require('./routes/contact')
 const trainingsInit = require('./routes/trainings')
 
-const { getCustomers } = require('./query')
+const { getCustomers } = require('../query')
 
 function initApp() {
   const app = express()
