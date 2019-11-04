@@ -15,7 +15,7 @@ import AdminPage from './Components/AdminPage/AdminPage'
 
 class App extends React.Component {
   componentDidMount() {
-    fetch('/api/customer')
+    fetch('/api/capacitaciones')
       .then(response => response.json())
       .then(console.log)
   }
