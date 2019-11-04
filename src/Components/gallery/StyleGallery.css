@@ -1,15 +1,16 @@
-.galleryContainer{
-    min-width: 100%;
-    display:grid;
+
+.galleryContainer {
+    display: grid;
     grid-auto-flow: dense;
-    grid-template: 
-        "1fr 1fr 1fr 1fr 1fr" 33.33vh
-        "1fr 1fr 1fr 1fr 1fr" 33.33vh
-        "1fr 1fr 1fr 1fr 1fr" 33.33vh;
+    grid-template:
+        '1fr 1fr 1fr 1fr 1fr' 33.33vh
+        '1fr 1fr 1fr 1fr 1fr' 33.33vh
+        '1fr 1fr 1fr 1fr 1fr' 33.33vh;
     grid-gap: 5px;
     margin-bottom: 15px;
-    /* background: #343a40; */
+    width: 100%;
 }
+
 
 .galleryContainer .box{
     position: relative;
@@ -38,7 +39,7 @@
 
 @media (max-width: 991px){
     .galleryContainer{
-        width: 100vw;
+        width: 100%;
         display:grid;
         grid-auto-flow: dense;
         grid-template: 
@@ -54,7 +55,7 @@
 
 @media (max-width: 768px){
     .galleryContainer{
-        width: 100vw;
+        width: 100%;
         display:grid;
         grid-auto-flow: dense;
         grid-template:
