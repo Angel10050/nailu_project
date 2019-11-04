@@ -5,8 +5,22 @@ import { Form } from 'react-bootstrap'
 
 class Login extends Component {
   state = {
-    user: '',
-    password: ''
+    user: []
+  }
+
+  getInfo = () => {
+    fetch('/api/login')
+      .then(response => response.JSON())
+      .then(data => {
+        this.setState({ user: data })
+      })
+      .catch(error => {
+        alert('Ha ocurrido un error', error)
+      })
+  }
+
+  componentDidMount() {
+    this.getInfo()
   }
 
   handleSubmit = event => {
