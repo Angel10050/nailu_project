@@ -12,6 +12,7 @@ class BoxComponent extends Component {
               className={`row container-box ${
                 index % 2 === 0 ? '' : 'reverse'
               }`}
+              key={index}
             >
               <div className="col">
                 <img
@@ -22,7 +23,7 @@ class BoxComponent extends Component {
               </div>
               <div className="col textBox">
                 <h4 className="dateNumberBox">{data.dia}</h4>
-                <small class="text-muted dateTextBox">{data.mes}</small>
+                <small className="text-muted dateTextBox">{data.mes}</small>
                 <p className="font-weight-normal infoBox">{data.descripcion}</p>
                 <ButtonGeneral type="button" nameBtn="Información" />
               </div>
