@@ -68,12 +68,12 @@ class App extends React.Component {
               <Login />
             </Route>
 
-            <Route exact path="/user/form">
-              <Form />
+            <Route path="/admin/content">
+              <AdminPage />
             </Route>
 
-            <Route exact path="/admin/content">
-              <AdminPage />
+            <Route exact path="/user/form">
+              <Form />
             </Route>
 
             <Route>
