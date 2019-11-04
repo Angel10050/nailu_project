@@ -1,14 +1,17 @@
 import React from 'react'
-import ButtonGeneral from './Components/Button/Button'
 import './App.css'
 
 import { animateScroll as scroll } from 'react-scroll'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import Logo from './Components/logo/Logo'
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
+import NavComponent from './Components/navComponent/NavComponent'
+import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
-import Login from './Login/loginUser'
+import Form from './Components/form/Form'
+import Login from './Components/AdminPage/Login/loginUser'
+import AdminPage from './Components/AdminPage/AdminPage'
 
 class App extends React.Component {
   componentDidMount() {
@@ -22,25 +25,64 @@ class App extends React.Component {
     scroll.scrollToTop()
   }
 
+  state = {
+    datas: [
+      {
+        imagenUrl: 'https://i.ibb.co/BB0vNRw/4.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Maquillaje ArtisticoO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/V9M7KCL/3.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/k29f4Ws/1.jpg',
+        dia: '31',
+        mes: 'Octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      },
+      {
+        imagenUrl: 'https://i.ibb.co/t86mKW9/2.jpg',
+        dia: '31',
+        mes: 'octubre',
+        descripcion:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+      }
+    ]
+  }
+
   render() {
     return (
       <>
-        <Hero heroMainImage={heroImage} />
-        <Logo onClick={this.toScrollup} />
-        <div>
-          <ButtonGeneral nameBtn="Inscribete" callback={this.handlerClick} />
-          <ButtonGeneral
-            nameBtn="Mas informacion"
-            callback={this.handlerClick}
-          />
-          <ButtonGeneral nameBtn="Agendar" callback={this.handlerClick} />
-          <ButtonGeneral
-            nameBtn="Agendar cualquier cosa"
-            callback={this.handlerClick}
-          />
-          <Login />
-          <Footer />
-        </div>
+        <Router>
+          <Switch>
+            <Route exact path="/admin">
+              <Login />
+            </Route>
+
+            <Route path="/admin/content">
+              <AdminPage />
+            </Route>
+
+            <Route exact path="/user/contactme">
+              <Form />
+            </Route>
+
+            <Route>
+              <NavComponent toScrollup={this.toScrollup} />
+              <Hero heroMainImage={heroImage} />
+              <BoxComponent datas={this.state.datas} />
+              <Footer />
+            </Route>
+          </Switch>
+        </Router>
       </>
     )
   }

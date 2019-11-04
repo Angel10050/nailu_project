@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './Logo-Nailu-Amarillo.png'
+import '../../App.css'
 
 function Logo (props) {
         return(
