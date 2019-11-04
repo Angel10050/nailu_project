@@ -8,7 +8,6 @@ function contact (app) {
 
   app.post('/api/contacto', (req, res, next) => {
     const { body } = req
-    console.group('body', body)
     const valid = validateData(
       ['name', 'email', 'phone'],
       body

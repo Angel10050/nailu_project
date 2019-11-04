@@ -6,7 +6,6 @@ function validateData (props, data) {
 
 function validateEmail (value) {
   const regExpPassword = new RegExp( /^(([^<>()*#$`~'"=+!¡¿?%^&{}/äáàëéèíìöóòúùñ|ºª·ç¨\[\]\.,;:\s@\"]+(\.[^<>()*#$`~'"=+!¡¿?%^&{}/äáàëéèíìöóòúùñ|ºª·ç¨\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-  console.log("esto es una prueba", regExpPassword.test(value));
   return regExpPassword.test(value);
 }
 
