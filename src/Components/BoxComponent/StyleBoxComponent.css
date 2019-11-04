@@ -1,4 +1,207 @@
-.container-box {
+.mainBoxContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 100%;
+}
+.caseBox, .caseBoxReverse {
+  display: flex;
+  height: 22em;
+  margin: 20px 0;
+}
+.caseBoxReverse {
+  flex-direction: row-reverse;
+}
+.img, .textBox {
+  height: 100%;
+  width: 50%;
+}
+.img {
+  object-fit: cover;
+}
+
+.textBox > .btn {
+  align-self: center;
+}
+
+.textBox {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background: #343a40;
+}
+.dateNumberBox {
+  font-size: 3em;
+  margin: 5% 5% 2% 5%;
+}
+.dateTextBox {
+  font-size: 2em;
+  margin: 0 0 0 15%;
+  color: #6c757d;
+}
+.infoBox {
+  padding: 20px;
+}
+
+@media (max-width: 761px) {
+  .caseBox, .caseBoxReverse {
+      flex-direction: column;
+      height: auto;
+  }
+  .img, .textBox {
+      min-width: 100%;
+      min-height: auto;
+  }
+  .textBox {
+    align-items: center;
+    margin: 0;
+  }
+  .dateTextBox {
+    margin: 0;
+  }
+  .infoBox {
+    text-align: center;
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .container-box {
   display: flex;
   margin: 20px 0;
   background: #343a40;
@@ -70,3 +273,4 @@
     text-align: center;
   }
 }
+ */
