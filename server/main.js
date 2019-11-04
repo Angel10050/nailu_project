@@ -1,31 +1,21 @@
+'use strict'
+
 const ROOT_PATH = process.cwd();
 const isProd = process.env.NODE_ENV === 'production'
 
-const express = require('express')
-const path = require('path')
 const https = require('https');
 const fs = require('fs');
 const dotEnv = require('dotenv');
+const path = require('path')
 
 if (!isProd) {
   dotEnv.config()
   dotEnv.config({ path: path.resolve(ROOT_PATH, '.env.heroku') })
 }
 
-const { getCustomers } = require('./query')
+const initApp = require('./src/app')
 
-const distDir = path.join(__dirname, '../', 'build')
-const app = express()
-
-app.use(express.static(distDir));
-
-app.get('/api/customer', (req, res) => {
-  getCustomers().then(data => {
-    res.json({
-      data
-    })
-  }).catch(console.error)
-})
+const app = initApp()
 
 if (isProd) {
   app.listen(process.env.PORT || 8080, () => console.log(`Example app listening!`))

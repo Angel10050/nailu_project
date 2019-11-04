@@ -10,9 +10,6 @@
 .responsiveNavbar {
   width: 100px;
 }
-.fluidNav {
-  padding: 0;
-}
 .imgLogo {
   width: 70px;
 }
@@ -21,7 +18,7 @@
   align-self: center;
   max-width: 200px;
 }
-.navbar-brand {
+.navbar-branddiv.fluidNav {
   display: inline-block;
   padding-top: 0;
   padding-bottom: 0;
@@ -35,4 +32,9 @@
     flex: 3 1 auto;
     align-self: center;
   }
+}
+div.fluidNav{
+  position: fixed;
+  z-index: 2;
+  padding: 0;
 }

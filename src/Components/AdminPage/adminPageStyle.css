@@ -1,0 +1,29 @@
+.topContent{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.adminHeader{
+    background-color: #343a40;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.admintitle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+}
+
+
+
+
+
