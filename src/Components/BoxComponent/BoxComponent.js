@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './SSSS.css'
+import './StyleBoxComponent.css'
 import ButtonGeneral from '../../Components/Button/Button'
 
 class BoxComponent extends Component {
@@ -12,6 +12,7 @@ class BoxComponent extends Component {
               className={`caseBox ${
                 index % 2 === 0 ? '' : 'caseBoxReverse'
               }`}
+              key={index}
             >
            
                 <img
