@@ -71,7 +71,7 @@ class App extends React.Component {
               <AdminPage />
             </Route>
 
-            <Route exact path="/user/contactarme">
+            <Route exact path="/user/form">
               <Form />
             </Route>
 
