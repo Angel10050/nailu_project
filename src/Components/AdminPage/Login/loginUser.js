@@ -5,13 +5,15 @@ import { Form } from 'react-bootstrap'
 
 class Login extends Component {
   state = {
-    userName: []
+    user: []
   }
 
   getInfo = () => {
     fetch('/api/login')
-      .then(response => response.json())
-      .then(data => this.setState({ user: data }))
+      .then(response => response.JSON())
+      .then(data => {
+        this.setState({ user: data })
+      })
       .catch(error => {
         alert('Ha ocurrido un error', error)
       })
