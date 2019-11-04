@@ -10,8 +10,8 @@ import NavComponent from './Components/navComponent/NavComponent'
 import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
-import Login from './Components/adminPage/Login/loginUser'
-import AdminPage from './Components/adminPage/AdminPage'
+import Login from './Components/AdminPage/Login/loginUser'
+import AdminPage from './Components/AdminPage/AdminPage'
 
 class App extends React.Component {
   componentDidMount() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import '../adminPage/adminPageStyle.css'
+import '../AdminPage/adminPageStyle.css'
 
 import img1 from './srcImg/Evento1.png'
 import img2 from './srcImg/Evento2.png'
