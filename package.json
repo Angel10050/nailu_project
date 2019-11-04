@@ -22,7 +22,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "npm run build",
-    "heroku:env": "heroku config:get DATABASE_URL -s -a nailu  >> .env.heroku"
+    "env:set": "npm run env:url && npm run env:pws",
+    "env:url": "heroku config:get DATABASE_URL -s -a nailu  >> .env.heroku",
+    "env:pws": "heroku config:get PS_PWS -s -a nailu  >> .env.heroku"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -9,7 +9,6 @@ const dotEnv = require('dotenv');
 const path = require('path')
 
 if (!isProd) {
-  dotEnv.config({ path: path.resolve(ROOT_PATH, '.env.local') })
   dotEnv.config({ path: path.resolve(ROOT_PATH, '.env.heroku') })
 }
 
