@@ -6,23 +6,26 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
-import ButtonGeneral from './Components/Button/Button'
 import NavComponent from './Components/navComponent/NavComponent'
 import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
-import Login from './Components/adminPage/Login/loginUser'
-import { ListGroupItem } from 'react-bootstrap'
+
+
 import Gallery from './Components/gallery/Gallery'
+
+import Login from './Components/AdminPage/Login/loginUser'
+import AdminPage from './Components/AdminPage/AdminPage'
+
 
 class App extends React.Component {
   componentDidMount() {
-    fetch('/api/data')
+    fetch('/api/customer')
       .then(response => response.json())
       .then(console.log)
   }
 
-  handlerClick = () => {}
+  handlerClick = () => { }
   toScrollup = () => {
     scroll.scrollToTop()
   }
@@ -34,7 +37,7 @@ class App extends React.Component {
         dia: '31',
         mes: 'Octubre',
         descripcion:
-          'Maquillaje ArtisticoO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
       },
       {
         imagenUrl: 'https://i.ibb.co/V9M7KCL/3.jpg',
@@ -69,7 +72,11 @@ class App extends React.Component {
               <Login />
             </Route>
 
-            <Route exact path="/user/form">
+            <Route path="/admin/content">
+              <AdminPage />
+            </Route>
+
+            <Route exact path="/user/contactme">
               <Form />
             </Route>
 
