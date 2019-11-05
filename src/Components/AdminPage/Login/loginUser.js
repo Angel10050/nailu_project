@@ -11,8 +11,8 @@ class Login extends Component {
   getInfo = () => {
     fetch('/api/login')
       .then(response => response.JSON())
-      .then(data => {
-        this.setState({ user: data })
+      .then(messages => {
+        console.log('messages')
       })
       .catch(error => {
         alert('Ha ocurrido un error', error)
