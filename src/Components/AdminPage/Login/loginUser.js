@@ -9,6 +9,21 @@ class Login extends Component {
     password: ''
   }
 
+  getInfo = () => {
+    fetch('/api/login')
+      .then(response => response.JSON())
+      .then(messages => {
+        console.log('messages')
+      })
+      .catch(error => {
+        alert('Ha ocurrido un error', error)
+      })
+  }
+
+  componentDidMount() {
+    this.getInfo()
+  }
+
   handleSubmit = event => {
     event.preventDefault()
     fetch('/api/login', {

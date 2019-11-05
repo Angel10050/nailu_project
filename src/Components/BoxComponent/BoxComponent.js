@@ -5,25 +5,24 @@ import ButtonGeneral from '../../Components/Button/Button'
 class BoxComponent extends Component {
   render() {
     return (
-      <div className="container-fluid fluid">
+      <div className="mainBoxContainer">
         {this.props.datas.map((data, index) => {
           return (
             <div
-              className={`row container-box ${
-                index % 2 === 0 ? '' : 'reverse'
-              }`}
+              className={`caseBox ${index % 2 === 0 ? '' : 'caseBoxReverse'}`}
+              key={index}
             >
-              <div className="col">
-                <img
-                  className="img-fluid  mb-3 mb-md-0 imgBox"
-                  src={data.imagenUrl}
-                  alt="imagen del evento"
-                />
-              </div>
-              <div className="col textBox">
+              <img
+                className="img"
+                src={data.imagenUrl}
+                alt="imagen del evento"
+              />
+
+              <div className="textBox">
                 <h4 className="dateNumberBox">{data.dia}</h4>
-                <small class="text-muted dateTextBox">{data.mes}</small>
-                <p className="font-weight-normal infoBox">{data.descripcion}</p>
+                <small className="dateTextBox">{data.mes}</small>
+                <p className="infoBox">{data.descripcion}</p>
+
                 <ButtonGeneral type="button" nameBtn="Información" />
               </div>
             </div>

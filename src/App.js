@@ -10,12 +10,17 @@ import NavComponent from './Components/navComponent/NavComponent'
 import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
+
+
+import Gallery from './Components/gallery/Gallery'
+
 import Login from './Components/AdminPage/Login/loginUser'
 import AdminPage from './Components/AdminPage/AdminPage'
 
+
 class App extends React.Component {
   componentDidMount() {
-    fetch('/api/data')
+    fetch('/api/customer')
       .then(response => response.json())
       .then(console.log)
   }
@@ -32,7 +37,7 @@ class App extends React.Component {
         dia: '31',
         mes: 'Octubre',
         descripcion:
-          'Maquillaje ArtisticoO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
       },
       {
         imagenUrl: 'https://i.ibb.co/V9M7KCL/3.jpg',
@@ -79,6 +84,7 @@ class App extends React.Component {
               <NavComponent toScrollup={this.toScrollup} />
               <Hero heroMainImage={heroImage} />
               <BoxComponent datas={this.state.datas} />
+              <Gallery />
               <Footer />
             </Route>
           </Switch>
