@@ -5,6 +5,8 @@ server/cert.pem
 server/key.pem
 
 #  .pem
+.pem
+
 # dependencies
 /node_modules
 /.pnp
