@@ -5,26 +5,21 @@ import { Form } from 'react-bootstrap'
 
 class Login extends Component {
   state = {
-    user: []
-  }
-
-  getInfo = () => {
-    fetch('/api/login')
-      .then(response => response.JSON())
-      .then(data => {
-        this.setState({ user: data })
-      })
-      .catch(error => {
-        alert('Ha ocurrido un error', error)
-      })
-  }
-
-  componentDidMount() {
-    this.getInfo()
+    username: '',
+    password: ''
   }
 
   handleSubmit = event => {
     event.preventDefault()
+    fetch('/api/login', {
+      method: 'POST',
+      body: this.state
+    })
+      .then(response => response.json())
+      .then(console.log)
+      .catch(error => {
+        alert('Ha ocurrido un error', error)
+      })
   }
 
   handleOnChange = event => {
@@ -56,8 +51,8 @@ class Login extends Component {
                   </div>
                   <input
                     type="text"
-                    value={this.state.user}
-                    name="user"
+                    value={this.state.username}
+                    name="username"
                     onChange={this.handleOnChange}
                     placeholder="NombreUsuario"
                     className="form-control inputLogin"
