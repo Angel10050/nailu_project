@@ -12,10 +12,8 @@
 }
 .login-wrap {
   width: 320px;
-  margin: 30px;
   border: 1px solid #eee;
   padding: 30px;
-  padding-bottom: 30px;
   background: #343a40;
   border-radius: 4px;
 }

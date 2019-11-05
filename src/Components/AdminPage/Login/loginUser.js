@@ -9,26 +9,14 @@ class Login extends Component {
     password: ''
   }
 
-  getInfo = () => {
-    fetch('/api/login')
-      .then(response => response.JSON())
-      .then(messages => {
-        console.log('messages')
-      })
-      .catch(error => {
-        alert('Ha ocurrido un error', error)
-      })
-  }
-
-  componentDidMount() {
-    this.getInfo()
-  }
-
   handleSubmit = event => {
     event.preventDefault()
     fetch('/api/login', {
       method: 'POST',
-      body: this.state
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.state)
     })
       .then(response => response.json())
       .then(console.log)
