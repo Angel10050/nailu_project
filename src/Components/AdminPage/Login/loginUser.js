@@ -6,8 +6,11 @@ import { Form } from 'react-bootstrap'
 
 class Login extends Component {
   state = {
-    username: '',
-    password: ''
+    login : {
+      username: '',
+      password: ''
+    },
+   error : false
   }
 
   handleSubmit = event => {
@@ -17,20 +20,21 @@ class Login extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(this.state.login)
     })
       .then(response => response.json())
       .then(console.log)
-      .catch(error => {
-        alert('Ha ocurrido un error', error)
-      })
+      .catch(this.setState({error : true}))
   }
 
-  handleOnChange = event => {
-    const { name, value } = event.target
-    this.setState({
-      [name]: value
-    })
+  handleOnChange = (event) => {
+    const { value, name } = event.target
+    this.setState(prevState => ({
+      login : {
+        ...prevState.login,
+          [name]:value
+      }
+    }))
   }
 
   render() {
@@ -59,7 +63,7 @@ class Login extends Component {
                     </div>
                     <input
                       type="text"
-                      value={this.state.username}
+                      
                       name="username"
                       onChange={this.handleOnChange}
                       placeholder="NombreUsuario"
@@ -82,7 +86,7 @@ class Login extends Component {
                     <input
                       type="password"
                       className="form-control inputLogin"
-                      value={this.state.password}
+                      
                       name="password"
                       onChange={this.handleOnChange}
                       placeholder="Contraseña"
@@ -104,6 +108,7 @@ class Login extends Component {
                 </div>
               </Form>
             </div>
+            {this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> : ''} 
           </div>
         </div>
       </>

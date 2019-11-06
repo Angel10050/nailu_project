@@ -17,6 +17,7 @@
 .loginRow {
   align-items: center;
   display: flex;
+  justify-content: center;
   align-self: center;
   margin: 50px;
 }
@@ -36,4 +37,16 @@
 }
 .textLogin {
   color: #fff;
+}
+.errorMensage{
+  margin: 30px;
+  padding: 10px 20px 20px 20px;
+  text-align: center;
+  font-size: 30px;
+  background-color: rgba(95, 44, 104, 0.322);
+  min-width: 70%;
+  letter-spacing: 2px;
+  color: #eee;
+  border-radius: 10px;
+  border-top: 20px inset #7738388c;
 }
