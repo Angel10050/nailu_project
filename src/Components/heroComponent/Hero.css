@@ -1,4 +1,9 @@
 .heroMainImage{
-    height: 100vh;
-    width: 100vw;
+   min-width: 100%;
+}
+
+@media (max-width: 1280px) {
+    .heroMainImage{
+        max-width: 20%;
+    }
 }

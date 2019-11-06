@@ -1,16 +1,26 @@
-const express = require('express')
+'use strict'
+
+const ROOT_PATH = process.cwd();
+const isProd = process.env.NODE_ENV === 'production'
+
+const https = require('https');
+const fs = require('fs');
+const dotEnv = require('dotenv');
 const path = require('path')
 
-const app = express()
+if (!isProd) {
+  dotEnv.config({ path: path.resolve(ROOT_PATH, '.env.heroku') })
+}
 
-const distDir =path.join(__dirname,'../', 'build')
+const initApp = require('./src/app')
+const app = initApp()
 
-app.use(express.static(distDir));
-
-app.get('/api/*', (req, res) => {
-  res.json({
-    data: 'this will have a nice API'
-  })
-})
-
-app.listen(process.env.PORT || 8080, () => console.log(`Example app listening!`))
+if (isProd) {
+  app.listen(process.env.PORT || 8080, () => console.log(`Example app listening!`))
+} else {
+  https.createServer({
+    key: fs.readFileSync(`${ROOT_PATH}/server/key.pem`),
+    cert: fs.readFileSync(`${ROOT_PATH}/server/cert.pem`),
+    passphrase: process.env.PS_PWS
+  }, app).listen(process.env.PORT || 8080);
+}
