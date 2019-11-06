@@ -1,3 +1,7 @@
+.adminHeader {
+  padding: 0;
+  margin: 0;
+}
 .login {
   background: rgba(238, 130, 238, 0.918);
   min-width: 100%;
@@ -5,17 +9,22 @@
 }
 .containerLogin {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  /* justify-content: center; */
 }
 .loginRow {
   align-items: center;
+  display: flex;
+  align-self: center;
+  margin: 50px;
 }
 .login-wrap {
-  width: 320px;
-  margin: 30px;
+  align-self: center;
+  width: auto;
   border: 1px solid #eee;
   padding: 30px;
-  padding-bottom: 30px;
   background: #343a40;
   border-radius: 4px;
 }
