@@ -8,7 +8,6 @@ async function login(req, res, next) {
   console.log('estuve aqui');
   try {
     response = await userService.login({ username, password })
-    console.log('estuve aqui');
     
     if (response.failed) {
       return res.status(response.status).send({ message: response.message })

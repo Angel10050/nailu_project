@@ -5,13 +5,11 @@ const userRepository = require('../repositories/user')
 
 async function validateToken (req, res, next) {
   const { authorization } = req.headers
-  console.log('authorization', authorization)
   const auth = authorization || ''
   if (!auth.startsWith('Bearer')) {
     return res.status(403).send('Invalid')
   }
   const split = authorization.split(' ')
-  console.log(split)
   if (split.length !== 2) {
     return res.status(403).send('Forbiden')
   }

@@ -12,7 +12,6 @@ async function login({ username, password }) {
 
   const response = await userRepository.login(username)
   const admin = response.rows.length ? response.rows[0] : null
-  console.log('user', admin)
   
   if (!admin) {
     return { failed: true, status: 404, message: "Usuario o contraseña invalidos" }
