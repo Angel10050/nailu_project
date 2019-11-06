@@ -5,7 +5,7 @@ import { animateScroll as scroll } from 'react-scroll'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Hero from './Components/heroComponent/Hero'
-import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
+import heroImage from './Components/heroComponent/pink-manicure-939836.jpg'
 import NavComponent from './Components/navComponent/NavComponent'
 import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
