@@ -1,7 +1,7 @@
 "use strict";
 
 function trainings(app) {
-  app.get("/api/capacitaciones", (req, res, next) => {
+  app.get("/api/training", (req, res, next) => {
     return res.json({
       data: [
         {
