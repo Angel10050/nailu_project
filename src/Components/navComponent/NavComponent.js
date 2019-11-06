@@ -10,7 +10,7 @@ const NavComponent = props => {
   return (
     <div className="container-fluid fluidNav">
       <Navbar
-        className="componentFlex"
+       className="componentFlex"
         collapseOnSelect
         sticky="top"
         bg="dark"

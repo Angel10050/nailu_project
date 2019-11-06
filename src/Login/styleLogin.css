@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.login-wrap {
+  width: 320px;
+  margin: 20px;
+  border: 1px solid #eee;
+  padding: 15px;
+  background: #343a40;
+  border-radius: 4px;
+}
+
+.form-group.last {
+  margin-bottom: 0px;
+}
