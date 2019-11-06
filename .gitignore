@@ -3,6 +3,8 @@
 # certs
 
 
+#  .pem
+
 # dependencies
 /node_modules
 /.pnp
