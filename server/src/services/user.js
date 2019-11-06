@@ -25,7 +25,9 @@ async function login({ username, password }) {
       const token = jwt.sign(
         { username: admin.username },
         "689cba29d8f0ab3d5c9028a307fa061b",
-        {}
+        {
+          expiresIn: 40000*60 // expires in 30 minutos
+        }
       );
       return { data: { admin, token } };
     }
