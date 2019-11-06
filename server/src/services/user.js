@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const userRepository = require("../repositories/user");
+const key = process.env.SECRET_KEY
 
 async function login({ username, password }) {
   if (!username || !password) {
@@ -20,8 +21,7 @@ async function login({ username, password }) {
     if (compare) {
       delete admin.password;
       const token = jwt.sign(
-        { username: admin.username },
-        "689cba29d8f0ab3d5c9028a307fa061b",
+        { username: admin.username }, key , 
         {
           expiresIn: 60*30 // expires in 30 minutos
         }

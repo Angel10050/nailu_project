@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 
 const userRepository = require('../repositories/user')
 
+const key = process.env.SECRET_KEY
 async function validateToken (req, res, next) {
   const { authorization } = req.headers
   const auth = authorization || ''
@@ -14,7 +15,7 @@ async function validateToken (req, res, next) {
     return res.status(403).send('Forbiden')
   }
   const token = split[1]
-  jwt.verify(token, "689cba29d8f0ab3d5c9028a307fa061b", async (err, token) => {
+  jwt.verify(token, key , async (err, token) => {
     if (err) {
       return res.status(401).json({ ok: false, message: 'La sesión ha caducado'});
     } 
