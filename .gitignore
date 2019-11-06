@@ -5,6 +5,7 @@
 /server/key.pem
 
 #  .pem
+.pem
 
 # dependencies
 /node_modules

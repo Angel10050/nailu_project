@@ -1,5 +1,3 @@
-"use strict";
-
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -25,7 +23,7 @@ async function login({ username, password }) {
         { username: admin.username },
         "689cba29d8f0ab3d5c9028a307fa061b",
         {
-          expiresIn: 40000*60 // expires in 30 minutos
+          expiresIn: 60*30 // expires in 30 minutos
         }
       );
       return { data: { admin, token } };

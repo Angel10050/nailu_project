@@ -6,9 +6,7 @@ const { validateToken } = require("../middleware/index")
 function initUser(app) {
   app.post("/api/login", controller.login);
 
-  app.get('/admin', validateToken,  (req, res, next) => {
-    res.send('autorizado')
-  })
+  app.get('/api/authorization', validateToken)
 }
 
 module.exports = initUser;

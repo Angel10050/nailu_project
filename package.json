@@ -25,7 +25,8 @@
     "postinstall": "npm run build",
     "env:set": "npm run env:url && npm run env:pws",
     "env:url": "heroku config:get DATABASE_URL -s -a nailu  >> .env.heroku",
-    "env:pws": "heroku config:get PS_PWS -s -a nailu  >> .env.heroku"
+    "env:pws": "heroku config:get PS_PWS -s -a nailu  >> .env.heroku",
+    "dev": "nodemon"
   },
   "eslintConfig": {
     "extends": "react-app"
