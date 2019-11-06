@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './StyleBoxComponent.css'
+import {Link} from "react-router-dom"
 import ButtonGeneral from '../../Components/Button/Button'
 
 class BoxComponent extends Component {
@@ -23,7 +24,7 @@ class BoxComponent extends Component {
                 <small className="dateTextBox">{data.mes}</small>
                 <p className="infoBox">{data.descripcion}</p>
 
-                <ButtonGeneral type="button" nameBtn="Información" />
+                <Link to='/user/contactme' className='link'><ButtonGeneral type="button" nameBtn="Información" /></Link>
               </div>
             </div>
           )
