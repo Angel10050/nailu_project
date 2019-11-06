@@ -1,26 +1,22 @@
 'use strict'
 
-const { validateData, validateEmail, validatePhone } = require('../utils')
+const controller = require('../controllers/contact')
+const { getCustomers } = require('../libs/query')
 
-const customers = [];
-
-function contact (app) {
-
-  app.post('/api/contacto', (req, res, next) => {
-    const { body } = req
-    const valid = validateData(
-      ['name', 'email', 'phone'],
-      body
-    )
-
-    if (!valid || !validateEmail(req.body.email) || !validatePhone(req.body.phone)) {
-      return res.status(400).json({ message: 'datos invalidos' })
-    }
-    
-    customers.push(body)
-
-    res.status(201).json({ message: "informacion enviada" })
+function initContact(app) {
+  app.post('/api/customer', controller.contact)
+  app.get('/api/customer', (req, res) => {
+    getCustomers().then(data => {
+      res.json({
+        data
+      })
+    })
+    .catch(err => {
+      return res.status(400).json({ message: 'el usuario no existe' })
+    })
   })
+
+  return app
 }
 
-module.exports = contact
+module.exports = initContact
