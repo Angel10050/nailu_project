@@ -21,7 +21,7 @@ async function validateToken (req, res, next) {
   const response = await userRepository.login(payload.username)
   const admin = response.rows.length ? response.rows[0] : null
   if (!admin) {
-    return res.status(401).send('Unauthorize')
+    return res.status(401).send('no esta autorizado')
   }
   req.user = {
     claims: payload.claims,
