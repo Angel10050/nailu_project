@@ -39,7 +39,7 @@ class Login extends Component {
 
   render() {
     return (
-      <>
+        <>
         <div className="container login containerLogin">
           <header className="adminHeader">
             <Logo />
@@ -110,8 +110,8 @@ class Login extends Component {
             </div>
             {this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> : ''} 
           </div>
-        </div>
-      </>
+      </div>
+    </>
     )
   }
 }
