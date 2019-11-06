@@ -13,7 +13,6 @@ const NavComponent = props => {
         className="componentFlex"
         collapseOnSelect
         sticky="top"
-        bg="dark"
         expand="sm"
         variant="dark"
       >
