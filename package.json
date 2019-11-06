@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dotenv": "^8.2.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^1.19.4",
     "pg": "^7.12.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.14",
@@ -24,7 +26,8 @@
     "postinstall": "npm run build",
     "env:set": "npm run env:url && npm run env:pws",
     "env:url": "heroku config:get DATABASE_URL -s -a nailu  >> .env.heroku",
-    "env:pws": "heroku config:get PS_PWS -s -a nailu  >> .env.heroku"
+    "env:pws": "heroku config:get PS_PWS -s -a nailu  >> .env.heroku",
+    "dev": "nodemon"
   },
   "eslintConfig": {
     "extends": "react-app"

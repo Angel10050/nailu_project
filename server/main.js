@@ -1,5 +1,3 @@
-'use strict'
-
 const ROOT_PATH = process.cwd();
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -18,9 +16,10 @@ const app = initApp()
 if (isProd) {
   app.listen(process.env.PORT || 8080, () => console.log(`Example app listening!`))
 } else {
-  https.createServer({
+  /* https.createServer({
     key: fs.readFileSync(`${ROOT_PATH}/server/key.pem`),
     cert: fs.readFileSync(`${ROOT_PATH}/server/cert.pem`),
     passphrase: process.env.PS_PWS
-  }, app).listen(process.env.PORT || 8080);
+  }, app).listen(process.env.PORT || 8080, () => console.log(`corriendo!`)); */
+  app.listen(process.env.PORT || 8080, () => console.log(`Example app listening!`))
 }
