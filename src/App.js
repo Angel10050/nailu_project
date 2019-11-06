@@ -5,18 +5,16 @@ import { animateScroll as scroll } from 'react-scroll'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Hero from './Components/heroComponent/Hero'
-import heroImage from './Components/heroComponent/hands-1751637_1280.jpg'
+import heroImage from './Components/gallery/img/10.jpeg'
 import NavComponent from './Components/navComponent/NavComponent'
 import BoxComponent from './Components/BoxComponent/BoxComponent'
 import Footer from './Components/Footer/Footer'
 import Form from './Components/form/Form'
 
-
 import Gallery from './Components/gallery/Gallery'
 
 import Login from './Components/AdminPage/Login/loginUser'
 import AdminPage from './Components/AdminPage/AdminPage'
-
 
 class App extends React.Component {
   componentDidMount() {
