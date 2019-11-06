@@ -11,7 +11,7 @@
   width: 100px;
 }
 .imgLogo {
-  width: 100px;
+  width: 70px;
 }
 .componentFlexLogo {
   flex: 1 1 auto;
@@ -33,7 +33,7 @@
     align-self: center;
   }
 }
-div.fluidNav {
+div.fluidNav{
   position: fixed;
   z-index: 2;
   padding: 0;

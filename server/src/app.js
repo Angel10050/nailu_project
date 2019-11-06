@@ -1,35 +1,22 @@
 'use strict'
 
 const express = require('express')
-const bodyParse = require('body-parser')
-const path = require('path')
+const bodyParser = require('body-parser')
 
-const distDir = path.join(__dirname, "../../", "build");
+const initUser = require('./routes/user')
+const initContact = require('./routes/contact')
 
-const authInit = require('./routes/admin')
-const contactInit = require('./routes/contact')
-const trainingsInit = require('./routes/trainings')
+const { handlerError } = require('../src/middleware')
 
-const { getCustomers } = require('../query')
-
-function initApp() {
+function initApp () {
   const app = express()
 
-  app.use(bodyParse.json())
-  app.use(express.static(distDir));
+  app.use(bodyParser.json())
 
-  authInit(app)
-  contactInit(app)
-  trainingsInit(app)
+  initUser(app)
+  initContact(app)
 
-  app.get('/api/customer', (req, res) => {
-    // esto es un ejemplo
-    getCustomers().then(data => {
-      res.json({
-        data
-      })
-    }).catch(console.error)
-  })
+  app.use(handlerError)
 
   return app
 }
