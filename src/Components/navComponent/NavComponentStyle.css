@@ -6,6 +6,7 @@
 .componentFlex {
   display: flex;
   border-bottom: 3px solid rgba(238, 130, 238, 0.918);
+  background-color: #09030aad;
 }
 .responsiveNavbar {
   width: 100px;
