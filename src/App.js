@@ -25,7 +25,7 @@ class App extends React.Component {
       .then(console.log)
   }
 
-  handlerClick = () => { }
+  handlerClick = () => {}
   toScrollup = () => {
     scroll.scrollToTop()
   }
