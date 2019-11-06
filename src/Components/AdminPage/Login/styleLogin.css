@@ -43,9 +43,14 @@
   text-align: center;
   font-size: 30px;
   background-color: rgba(95, 44, 104, 0.322);
-  min-width: 70%;
+  min-width: 100%;
   letter-spacing: 2px;
   color: #eee;
   border-radius: 10px;
   border-top: 20px inset #7738388c;
+}
+@media (max-width: 768px) {
+    .errorMensage{
+      font-size: 15px;
+    }
 }
