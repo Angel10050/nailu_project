@@ -7,7 +7,7 @@ class BoxComponent extends Component {
   render() {
     return (
       <div className="mainBoxContainer">
-        {this.props.datas.map((data, index) => {
+        {this.props.trainings.map((training, index) => {
           return (
             <div
               className={`caseBox ${index % 2 === 0 ? '' : 'caseBoxReverse'}`}
@@ -15,17 +15,16 @@ class BoxComponent extends Component {
             >
               <img
                 className="img"
-                src={data.imagenUrl}
+                src={training.imagenUrl}
                 alt="imagen del evento"
               />
 
               <div className="textBox">
-                <h4 className="dateNumberBox">{data.dia}</h4>
-                <small className="dateTextBox">{data.mes}</small>
-                <p className="infoBox">{data.descripcion}</p>
+                <h4 className="dateNumberBox">{training.day}</h4>
+                <small className="dateTextBox">{training.month}</small>
+                <p className="infoBox">{training.description}</p>
 
                 <Route to='/user/contactme' className='link' button={<ButtonGeneral type="button" nameBtn="Información" />}/>
-                
               </div>
             </div>
           )

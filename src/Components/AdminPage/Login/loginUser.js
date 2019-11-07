@@ -21,9 +21,7 @@ class Login extends Component {
     })
       .then(response => response.json())
       .then(console.log)
-      .catch(error => {
-        alert('Ha ocurrido un error', error)
-      })
+      .catch(Error)
   }
 
   handleOnChange = event => {
