@@ -43,15 +43,12 @@ class App extends React.Component {
             <Route exact path="/admin">
               <Login />
             </Route>
-
             <Route path="/admin/content">
               <AdminPage />
             </Route>
-
             <Route exact path="/user/contactme">
               <Form />
             </Route>
-
             <Route>
               <NavComponent toScrollup={this.toScrollup} />
               <Hero heroMainImage={heroImage} />
