@@ -42,51 +42,55 @@ class Form extends Component {
     return (
       <div className="formContainer">
         <NavComponent />
+          <div className='mainFormCustomer'>
 
-        <form onSubmit={this.handleSubmit} className="form">
-          <h5>Déjanos tu Datos para contactarte</h5>
+          <form onSubmit={this.handleSubmit} className="form">
+              <h5>Déjanos tu Datos para contactarte</h5>
 
-          <label htmlFor="name" className="label">
-            Nombre:
-          </label>
-          <input
-            type="text"
-            value={this.state.name}
-            id="name"
-            name="name"
-            onChange={this.handleOnChange}
-            placeholder="Ingresa tu nombre completo"
-            className="input"
-          />
+              <label htmlFor="name" className="label">
+                Nombre:
+              </label>
+              <input
+                type="text"
+                value={this.state.name}
+                id="name"
+                name="name"
+                onChange={this.handleOnChange}
+                placeholder="Ingresa tu nombre completo"
+                className="input"
+              />
 
-          <label htmlFor="email" className="label">
-            Correo:
-          </label>
-          <input
-            type="email"
-            value={this.state.email}
-            id="email"
-            name="email"
-            onChange={this.handleOnChange}
-            placeholder="ejemplo@ejemplo.com"
-            className="input"
-          />
+              <label htmlFor="email" className="label">
+                Correo:
+              </label>
+              <input
+                type="email"
+                value={this.state.email}
+                id="email"
+                name="email"
+                onChange={this.handleOnChange}
+                placeholder="ejemplo@ejemplo.com"
+                className="input"
+              />
 
-          <label htmlFor="tlfNumber" className="label">
-            Numero De Telefono:
-          </label>
-          <input
-            type="tel"
-            value={this.state.phone}
-            id="phone"
-            name="phone"
-            onChange={this.handleOnChange}
-            placeholder="Ingresa tu numero telefonico"
-            className="input"
-          />
+              <label htmlFor="tlfNumber" className="label">
+                Numero De Telefono:
+              </label>
+              <input
+                type="tel"
+                value={this.state.phone}
+                id="phone"
+                name="phone"
+                onChange={this.handleOnChange}
+                placeholder="Ingresa tu numero telefonico"
+                className="input"
+              />
 
-          <Button type="submit" nameBtn="Enviar" />
-        </form>
+              <Button type="submit" nameBtn="Enviar" />
+            </form>
+            {this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> : ''} 
+
+          </div>
       </div>
     )
   }
