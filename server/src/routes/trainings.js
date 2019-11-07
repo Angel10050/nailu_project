@@ -5,7 +5,7 @@ function trainings(app) {
     return res.json({
       data: [
         {
-          imagenUrl: 'https://i.ibb.co/BB0vNRw/4.jpg',
+          imagenUrl: 'https://i.ibb.co/RQ85y2S/2019-11-04-at-9-31-48-PM4.jpg',
           day: '31',
           month: 'Octubre',
           description:

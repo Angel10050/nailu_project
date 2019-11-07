@@ -5,7 +5,7 @@ import ButtonGeneral from '../../Components/Button/Button'
 class BoxComponent extends Component {
   render() {
     return (
-      <div className="mainBoxContainer">
+      <div className="mainBoxContainer" id="boxComponent">
         {this.props.trainings.map((training, index) => {
           return (
             <div

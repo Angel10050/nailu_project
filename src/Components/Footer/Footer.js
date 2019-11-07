@@ -4,7 +4,7 @@ import '../Footer/Style.css'
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <h2 className="contacts">Contactos</h2>
       <div>
         <ul className="social-icon">
