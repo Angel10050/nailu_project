@@ -1,8 +1,6 @@
 
 const jwt = require('jsonwebtoken')
 
-const userRepository = require('../repositories/user')
-
 const key = process.env.SECRET_KEY
 async function validateToken (req, res, next) {
   const { authorization } = req.headers
