@@ -6,11 +6,8 @@ const path = require('path')
 
 const distDir = path.join(__dirname, "../../", "build");
 
-const authInit = require('./routes/admin')
+const authInit = require('./routes/user')
 const contactInit = require('./routes/contact')
-const trainingsInit = require('./routes/trainings')
-
-const { getCustomers } = require('../query')
 
 function initApp() {
   const app = express()
@@ -20,16 +17,6 @@ function initApp() {
 
   authInit(app)
   contactInit(app)
-  trainingsInit(app)
-
-  app.get('/api/customer', (req, res) => {
-    // esto es un ejemplo
-    getCustomers().then(data => {
-      res.json({
-        data
-      })
-    }).catch(console.error)
-  })
 
   return app
 }
