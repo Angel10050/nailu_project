@@ -4,11 +4,28 @@
   height: 100%;
   min-width: 100%;
 }
+
 .caseBox, .caseBoxReverse {
   display: flex;
-  height: 22em;
-  margin: 20px 0;
+  height: 20em;
+  margin: 30px 0;
 }
+
+.caseBox:hover, .caseBoxReverse:hover {
+  border-top:solid 3px  rgba(199, 41, 152, 0.938);
+  border-bottom:solid  3px rgba(199, 41, 152, 0.938);
+  transition: all .1s;
+}
+
+.caseBox > .textBox > .textMainConteiner {
+  text-align: right;
+}
+
+.caseBoxReverse > .textBox > .textMainConteiner {
+  text-align: left;
+  direction: rtl;
+}
+
 .caseBoxReverse {
   flex-direction: row-reverse;
 }
@@ -20,27 +37,55 @@
   object-fit: cover;
 }
 
-.textBox > .btn {
-  align-self: center;
-}
-
 .textBox {
   color: white;
   display: flex;
+  justify-content: flex-start;
+  position: relative;
   flex-direction: column;
-  background: #343a40;
+  background: #904973f5;
 }
+
+.textBox > .btn {
+  align-self: center;
+  position: absolute;
+  bottom: 5px;
+}
+
 .dateNumberBox {
   font-size: 3em;
-  margin: 5% 5% 2% 5%;
+  margin: 2% 5% 0 5%;
+  font-weight: 100;
 }
 .dateTextBox {
   font-size: 2em;
+  padding-bottom: 10px;
   margin: 0 0 0 15%;
-  color: #6c757d;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
 }
+
+.textMainConteiner {
+  overflow: auto;
+  height: 33%;
+  display: flex;
+}
+
+.textMainConteiner::-webkit-scrollbar{
+  width: 5px;     
+  height: 5px;   
+ 
+} 
+
+.textMainConteiner::-webkit-scrollbar-thumb {
+  background-color: rgba(218, 118, 151, 0.582);
+  border-radius: 50px;
+}
+
 .infoBox {
-  padding: 20px;
+  padding: 0 10px 0 10px;
+  margin: 0;
+  align-self: center;
 }
 
 @media (max-width: 761px) {
@@ -61,6 +106,7 @@
   }
   .infoBox {
     text-align: center;
+    margin-bottom: 70px;
   }
 }
  
