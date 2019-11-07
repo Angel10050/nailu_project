@@ -31,7 +31,7 @@ class App extends React.Component {
   state = {
     datas: [
       {
-        imagenUrl: 'https://i.ibb.co/BB0vNRw/4.jpg',
+        imagenUrl: 'https://i.ibb.co/RQ85y2S/2019-11-04-at-9-31-48-PM4.jpg',
         dia: '31',
         mes: 'Octubre',
         descripcion:
