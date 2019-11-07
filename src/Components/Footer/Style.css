@@ -1,14 +1,17 @@
 .footer {
   display: flex;
   flex-direction: column;
-  background: #343a4075;
+  background: #945078;
   align-items: center;
   min-width: 100%;
+  color: white;
+  font-weight: 300;
 }
 .contacts {
   margin-top: 20px;
-  color: #ee3f93;
+  color: #ffffff;
   margin: 20px;
+  font-weight: 300;
 }
 .social-icon li {
   list-style: none;
@@ -45,10 +48,20 @@
   text-decoration: none;
   background-color: transparent;
 }
+
+.links > strong {
+  color: white;
+}
+
 a:hover {
   color: #ee3f93;
   text-decoration: none;
 }
 .footer:last-child {
   text-align: center;
+  letter-spacing: 3px;
+}
+.footer > p {
+  text-align: center;
+  letter-spacing: 6px;
 }
