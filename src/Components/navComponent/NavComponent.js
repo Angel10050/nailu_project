@@ -24,7 +24,7 @@ const NavComponent = props => {
           <Nav className="componentFlexButton mr-auto">
             <NavButton link="#inicio" name="Inicio" />
             <NavButton link="#reservas" name="Reservas" />
-            <NavButton link="#galeria" name="Galeria" />
+            <NavButton link="#gallery" name="Galeria" />
             <NavButton link="#contacto" name="Contacto" />
           </Nav>
         </Navbar.Collapse>

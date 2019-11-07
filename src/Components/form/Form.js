@@ -5,30 +5,38 @@ import NavComponent from '../navComponent/NavComponent'
 
 class Form extends Component {
   state = {
-    name: '',
-    email: '',
-    tlfNumber: ''
+    error : false,
+      customer :{
+          name: '',
+          email: '',
+          phone: ''
+      }
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    fetch('../repositories/contact', {
+    fetch('/api/customer', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(this.state.customer)
     })
       .then(response => response.json())
       .then(console.log)
-      .catch(Error)
+      .catch(this.setState({
+        error : true
+      }))
   }
 
   handleOnChange = event => {
-    const { id, value } = event.target
-    this.setState({
-      [id]: value
-    })
+    const { name, value } = event.target
+    this.setState(prevStete => ({
+      customer : {
+        ...prevStete.customer,
+          [name] : value
+      }
+    }))
   }
   render() {
     return (
@@ -45,7 +53,7 @@ class Form extends Component {
             type="text"
             value={this.state.name}
             id="name"
-            name="userName"
+            name="name"
             onChange={this.handleOnChange}
             placeholder="Ingresa tu nombre completo"
             className="input"
@@ -58,7 +66,7 @@ class Form extends Component {
             type="email"
             value={this.state.email}
             id="email"
-            name="userEmail"
+            name="email"
             onChange={this.handleOnChange}
             placeholder="ejemplo@ejemplo.com"
             className="input"
@@ -69,9 +77,9 @@ class Form extends Component {
           </label>
           <input
             type="tel"
-            value={this.state.tlfNumber}
-            id="tlfNumber"
-            name="userTlfNumber"
+            value={this.state.phone}
+            id="phone"
+            name="phone"
             onChange={this.handleOnChange}
             placeholder="Ingresa tu numero telefonico"
             className="input"
