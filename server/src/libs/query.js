@@ -17,6 +17,5 @@ const getAdmin = () => doQuery('SELECT * FROM admin')
 module.exports = {
   getCustomers,
   getAdmin,
-  doQuery,
   connection
 };

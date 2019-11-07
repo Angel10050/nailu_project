@@ -29,7 +29,9 @@ async function login({ username, password }) {
       return { data: { admin, token } };
     }
     return { failed: true, status: 404, message: "Usuario o contraseña invalidos" }
-  } catch (err) {}
+  } catch (err) {
+    throw err
+  }
 }
 
 module.exports = {

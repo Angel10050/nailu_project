@@ -10,7 +10,10 @@ function initContact(app) {
       res.json({
         data
       })
-    }).catch(console.error)
+    })
+    .catch(err => {
+      return res.status(400).json({ message: 'el usuario no existe' })
+    })
   })
 
   return app

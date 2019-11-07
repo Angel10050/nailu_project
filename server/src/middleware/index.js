@@ -22,16 +22,15 @@ async function validateToken (req, res, next) {
     }
   })
   
-  
   next()
 }
 
 function handlerError (err, req, res, next) {
-  if (err.message.endsWith('"users_email_key"')) {
-    return res.status(400).json({ message: 'user already exist' })
+  if (err.message.endsWith('"users_username_key"')) {
+    return res.status(400).json({ message: 'el usuario no existe' })
   }
 
-  res.status(500).json({ message: 'Internal server error' })
+  res.status(500).json({ message: 'Error interno del sistema' })
 }
 
 module.exports = {
