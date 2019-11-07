@@ -6,9 +6,8 @@ import { Form } from 'react-bootstrap'
 
 class Login extends Component {
   state = {
-      username: '',
-      password: ''
-
+    username: '',
+    password: ''
   }
 
   handleSubmit = event => {
@@ -18,7 +17,7 @@ class Login extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state.login)
+      body: JSON.stringify(this.state)
     })
       .then(response => response.json())
       .then(console.log)
@@ -34,7 +33,7 @@ class Login extends Component {
 
   render() {
     return (
-        <>
+      <>
         <div className="container login containerLogin">
           <header className="adminHeader">
             <Logo />
@@ -104,8 +103,8 @@ class Login extends Component {
               </Form>
             </div>
           </div>
-      </div>
-    </>
+        </div>
+      </>
     )
   }
 }

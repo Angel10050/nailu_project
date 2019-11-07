@@ -23,7 +23,6 @@ class App extends React.Component {
   componentDidMount() {
     fetch('/api/training')
       .then(response => response.json())
-      // .then(console.log)
       .then(data => this.setState({ trainings: data.data }))
 
     fetch('/api/customer')
