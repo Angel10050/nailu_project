@@ -3,7 +3,7 @@ import '../gallery/StyleGallery.css'
 
 const Gallery = () => {
     return ( 
-        <div className="galleryContainer">
+        <div className="galleryContainer" id="gallery">
                 <div className="box a"><img src={require('./img/1.jpeg')} alt="imagen de uñas"></img></div>
                 <div className="box b"><img src={require('./img/2.jpeg')} alt="imagen de uñas"></img></div>
                 <div className="box c"><img src={require('./img/3.jpg')} alt="imagen de uñas"></img></div>
