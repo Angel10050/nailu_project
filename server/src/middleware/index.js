@@ -1,5 +1,7 @@
 
 const jwt = require('jsonwebtoken')
+const multer = require('multer')
+
 
 const key = process.env.SECRET_KEY
 async function validateToken (req, res, next) {
@@ -33,7 +35,14 @@ function handlerError (err, req, res, next) {
   res.status(500).json({ message: 'Error interno del sistema' })
 }
 
+function saveImage(req, res, next) {
+  const upload = multer({ dest: '/tmp/uploads'})
+  upload.single('image')
+  next();
+}
+
 module.exports = {
   validateToken,
-  handlerError
+  handlerError,
+  saveImage
 }

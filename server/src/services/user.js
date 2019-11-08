@@ -1,19 +1,19 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-const userRepository = require("../repositories/user");
+const userRepository = require('../repositories/user');
 const key = process.env.SECRET_KEY
 
 async function login({ username, password }) {
   if (!username || !password) {
-    return { failed: true, status: 400, message: "los campos son requeridos" };
+    return { failed: true, status: 400, message: 'los campos son requeridos' };
   }
 
   const response = await userRepository.login(username)
   const admin = response.rows.length ? response.rows[0] : null
   
   if (!admin) {
-    return { failed: true, status: 404, message: "Usuario o contraseña invalidos" }
+    return { failed: true, status: 404, message: 'Usuario o contraseña invalidos' }
   }
 
   try {
@@ -28,7 +28,7 @@ async function login({ username, password }) {
       );
       return { data: { admin, token } };
     }
-    return { failed: true, status: 404, message: "Usuario o contraseña invalidos" }
+    return { failed: true, status: 404, message: 'Usuario o contraseña invalidos' }
   } catch (err) {
     throw err
   }
