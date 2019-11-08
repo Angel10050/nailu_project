@@ -23,7 +23,7 @@ class Login extends Component {
       body: JSON.stringify(this.state.login)
     })
       .then(response => response.json())
-      .then(console.log)
+      .then(tkn => localStorage.setItem(tkn.token, tkn.username))
       .catch(this.setState({ error: true }))
   }
 
