@@ -11,6 +11,7 @@ const { getTrainings } = require('../libs/query');
 
 function trainings(app) {
   app.post('/api/training', upload.single('image'), (req, res, next) => {
+     //const form = JSON.parse(JSON.stringify(req.body)); : Revisar y encontrar mejor solucion
     const form = JSON.parse(JSON.stringify(req.body));
     const valid = validateData(['day', 'month', 'description'], form);
 
@@ -21,10 +22,8 @@ function trainings(app) {
       if (err) {
         return res.status(500).send('Internal server error');
       }
-      console.log(result);
-
+     
       // guardar en db
-
       const { day, month, description } = form;
       const image = result.url;
       connection.query(
