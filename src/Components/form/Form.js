@@ -24,7 +24,7 @@ class Form extends Component {
     })
       .then(response => response.json())
       .then(console.log)
-      .catch(this.setState({
+      .catch(() => this.setState({
         error : true
       }))
   }
