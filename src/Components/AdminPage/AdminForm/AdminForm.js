@@ -24,7 +24,7 @@ class AdminForm extends Component{
         })
         .then(response => response.json())
         .then(console.log)
-        .catch(this.setState({error : true}))
+        .catch(() => this.setState({error : true}))
      }
 
     handleChange = (event) => {
