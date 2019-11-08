@@ -6,11 +6,11 @@ import { Form } from 'react-bootstrap'
 
 class Login extends Component {
   state = {
-    login: {
-      username: '',
-      password: ''
-    },
-    error: false
+    error: null,
+      login: {
+        username: '',
+        password: ''
+      }
   }
 
   handleSubmit = event => {
@@ -22,9 +22,9 @@ class Login extends Component {
       },
       body: JSON.stringify(this.state.login)
     })
-      .then(response => response.json())
-      .then(console.log)
-      .catch(this.setState({ error: true }))
+    .then(response => response.json() && response.ok ? this.setState({error : false}) : this.setState({error : true}) )
+      .then(console.log())
+      .catch(console.log())
   }
 
   handleOnChange = event => {
@@ -108,13 +108,10 @@ class Login extends Component {
                 </div>
               </Form>
             </div>
-            {this.state.error ? (
-              <p className="errorMensage">
-                Error en los datos intentalo nuevamente
-              </p>
-            ) : (
-              ''
-            )}
+            {
+              this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+               this.state.error === false ? <p className='errorMensage'>Autenticacion exitosa</p> : '' 
+            } 
           </div>
         </div>
       </>

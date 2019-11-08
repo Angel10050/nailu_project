@@ -22,11 +22,9 @@ class Form extends Component {
       },
       body: JSON.stringify(this.state.customer)
     })
-      .then(response => response.json())
-      .then(() => this.setState({error : false}))
-      .catch(() => this.setState({
-        error : true
-      }))
+      .then(response => response.json() && response.ok ? this.setState({error : false}) : this.setState({error : true}) )
+      .then(console.log())
+      .catch(console.log())
   }
 
   handleOnChange = event => {
@@ -92,7 +90,7 @@ class Form extends Component {
             </form>
             {
               this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-               this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+               this.state.error === false ? <p className='errorMensage'>Envio exitoso, Gracias</p> : '' 
             } 
 
           </div>
