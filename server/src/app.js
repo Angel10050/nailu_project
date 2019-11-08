@@ -10,6 +10,7 @@ const authInit = require('./routes/user')
 const contactInit = require('./routes/contact')
 const trainingInit = require('./routes/trainings')
 
+
 function initApp() {
   const app = express()
 
