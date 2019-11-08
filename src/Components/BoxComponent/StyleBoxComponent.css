@@ -37,6 +37,10 @@
   object-fit: cover;
 }
 
+.textBox > .link {
+  align-self: center;
+}
+
 .textBox {
   color: white;
   display: flex;

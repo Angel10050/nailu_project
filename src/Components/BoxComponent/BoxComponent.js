@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './StyleBoxComponent.css'
-import ButtonGeneral from '../../Components/Button/Button'
+import Route from '../routeComponent/Route'
 
 class BoxComponent extends Component {
   render() {
@@ -20,11 +20,10 @@ class BoxComponent extends Component {
 
               <div className="textBox">
                 <h4 className="dateNumberBox">{training.day}</h4>
-                  <small className="dateTextBox">{training.month}</small>
-                      <div className='textMainConteiner'>
-                          <p className="infoBox">{training.description}</p>
-                      </div>
-                <ButtonGeneral type="button" nameBtn="Información" />
+                <small className="dateTextBox">{training.month}</small>
+                <p className="infoBox">{training.description}</p>
+
+                <Route to='/user/contactme' className='link' name='informacion'/>
               </div>
             </div>
           )
