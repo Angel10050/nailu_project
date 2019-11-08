@@ -1,40 +1,57 @@
-'use strict'
+'use strict';
+
+const fs = require('fs');
+const multer = require('multer');
+
+const upload = multer({ dest: '/tmp/uploads' });
+const { connection } = require('../libs/query');
+const { cloudinary } = require('../libs/query');
+const { validateData } = require('../utils');
+const { getTrainings } = require('../libs/query');
 
 function trainings(app) {
-  app.get('/api/training', (req, res, next) => {
-    return res.json({
-      data: [
-        {
-          imagenUrl: 'https://i.ibb.co/RQ85y2S/2019-11-04-at-9-31-48-PM4.jpg',
-          day: '31',
-          month: 'Octubre',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
-        },
-        {
-          imagenUrl: 'https://i.ibb.co/V9M7KCL/3.jpg',
-          day: '31',
-          month: 'Octubre',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
-        },
-        {
-          imagenUrl: 'https://i.ibb.co/k29f4Ws/1.jpg',
-          day: '31',
-          month: 'Octubre',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
-        },
-        {
-          imagenUrl: 'https://i.ibb.co/t86mKW9/2.jpg',
-          day: '31',
-          month: 'octubre',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quose.'
+  app.post('/api/training', upload.single('image'), (req, res, next) => {
+     //const form = JSON.parse(JSON.stringify(req.body)); : Revisar y encontrar mejor solucion
+    const form = JSON.parse(JSON.stringify(req.body));
+    const valid = validateData(['day', 'month', 'description'], form);
+
+    if (!valid) {
+      return res.status(400).json({ message: 'los datos no son validos' });
+    }
+    cloudinary.uploader.upload(req.file.path, (err, result) => {
+      if (err) {
+        return res.status(500).send('Internal server error');
+      }
+     
+      // guardar en db
+      const { day, month, description } = form;
+      const image = result.url;
+      connection.query(
+        `INSERT INTO trainings (day, month, description, image) VALUES ('${day}', '${month}', '${description}', '${image}');`,
+        (err, data) => {
+          if (err) {
+            return res.status(500).send('Error');
+          }
+          fs.unlink(req.file.path, (err, result) => {
+            return res.send(result);
+          });
+          return res.status(201).json({ message: 'se guardo con exito' });
         }
-      ]
-    })
-  })
+      );
+    });
+  });
+
+  app.get('/api/training', (req, res, next) => {
+    getTrainings()
+      .then(data => {
+        res.json({
+          data
+        });
+      })
+      .catch(err => {
+        return res.status(500).json({ message: 'Error interno del servidor' });
+      });
+  });
 }
 
-module.exports = trainings
+module.exports = trainings;

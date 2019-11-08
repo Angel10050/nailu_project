@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const { connection } = require("../libs/query");
+const { connection } = require('../libs/query');
 
 async function login(username) {
   const user = await connection.query(
