@@ -20,12 +20,23 @@ class Login extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state.login)
+         body: JSON.stringify(this.state.login)
+    }) 
+    .then(response => {
+      this.handleErros(response.ok)
+       return response.json()
     })
-    .then(response => response.json() && response.ok ? this.setState({error : false}) : this.setState({error : true}) )
-      .then(console.log())
-      .catch(console.log())
+    .then(console.log)
+    .catch(error => alert(error.message))
   }
+
+  handleErros = (validation) => {
+    if(validation){
+      this.setState({error : false})
+    }else{
+      this.setState({error : true})
+    }
+}
 
   handleOnChange = event => {
     const { value, name } = event.target
