@@ -5,7 +5,7 @@ import NavComponent from '../navComponent/NavComponent'
 
 class Form extends Component {
   state = {
-    error : false,
+    error : null,
       customer :{
           name: '',
           email: '',
@@ -23,7 +23,7 @@ class Form extends Component {
       body: JSON.stringify(this.state.customer)
     })
       .then(response => response.json())
-      .then(console.log)
+      .then(() => this.setState({error : false}))
       .catch(() => this.setState({
         error : true
       }))
@@ -40,6 +40,8 @@ class Form extends Component {
   }
   render() {
     return (
+
+
       <div className="formContainer">
         <NavComponent />
           <div className='mainFormCustomer'>
@@ -88,7 +90,10 @@ class Form extends Component {
 
               <Button type="submit" nameBtn="Enviar" />
             </form>
-            {this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> : ''} 
+            {
+              this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+               this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+            } 
 
           </div>
       </div>
