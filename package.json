@@ -17,8 +17,8 @@
     "react-scroll": "^1.7.14"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:dev": "node server/main.js",
+    "start:dev": "react-scripts start",
+    "start": "node server/main.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
