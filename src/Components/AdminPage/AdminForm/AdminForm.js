@@ -4,7 +4,7 @@ import Button from '../../Button/Button'
 
 class AdminForm extends Component{
     state={
-        error : false,
+        error : null,
         eventData : {
             day : '',
             month : '',
@@ -23,7 +23,7 @@ class AdminForm extends Component{
             body : JSON.stringify(this.state.eventData)
         })
         .then(response => response.json())
-        .then(console.log)
+        .then(() => this.setState({error : false}))
         .catch(() => this.setState({error : true}))
      }
 
@@ -82,13 +82,10 @@ class AdminForm extends Component{
                         <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
 
                     </form> 
-
-                {this.state.error ? 
-                    <p className="errorMensage">
-                            Datos invalidos intenta nuevamente
-                    </p> 
-                    : ''
-                }
+                  {
+                    this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+                    this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+                  }  
                 </div>   
             </>
         )
