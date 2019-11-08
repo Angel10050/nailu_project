@@ -11,6 +11,18 @@
     border-radius:4px;
 }
 
+.formContainerMain {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+
+.formContainerMain > .errorMensage {
+   min-width: 0;
+   align-self: flex-end;
+}
+
 .formEventDate, .formEventContent {
     padding: 0px;
     margin: 0px;
@@ -53,4 +65,14 @@
 .formEventContent > p{
     font-size: 12px;
     margin-bottom: 0;
+}
+
+@media (max-width: 826px){
+    .formContainerMain{
+        flex-direction: column;
+    }
+    .formContainerMain > .errorMensage {
+        align-self: center;
+        font-size: 25px;
+     }
 }
