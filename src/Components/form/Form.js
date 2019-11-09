@@ -23,7 +23,7 @@ class Form extends Component {
       body: JSON.stringify(this.state.customer)
     })
       .then(response => this.handleErros(response.ok))
-      .catch((error) => alert(error.message))
+      .catch(() => alert('Error en el servidor'))
   }
 
   handleErros = (validation) => {

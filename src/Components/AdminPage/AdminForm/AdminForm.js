@@ -22,10 +22,21 @@ class AdminForm extends Component{
             },
             body : JSON.stringify(this.state.eventData)
         })
-        .then(response => response.json() && response.ok ? this.setState({error : false}) : this.setState({error : true}) )
+        .then(response => {
+            this.handleErros(response.ok )
+            return response.json()
+        })
         .then(console.log())
         .catch(console.log())
-     }
+    }
+
+     handleErros = (validation) => {
+        if(validation){
+          this.setState({error : false})
+        }else{
+          this.setState({error : true})
+        }
+    } 
 
     handleChange = (event) => {
         const {name, value} = event.target
@@ -54,7 +65,7 @@ class AdminForm extends Component{
                                 <input value={this.state.month} type='text' list='months' name='month' id='month' className='adminInput' onChange={this.handleChange} />
                                     <datalist id='months'>
                                         <option value='Enero' />
-                                        <option value='Frebrero' />
+                                        <option value='Febrero' />
                                         <option value='Marzo' />
                                         <option value='Abril' />
                                         <option value='Mayo' />
