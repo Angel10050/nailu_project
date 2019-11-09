@@ -11,13 +11,13 @@ const { getTrainings } = require('../libs/query');
 
 function trainings(app) {
   app.post('/api/training', upload.single('image'), (req, res, next) => {
-     //const form = JSON.parse(JSON.stringify(req.body)); : Revisar y encontrar mejor solucion
-    const form = JSON.parse(JSON.stringify(req.body));
+    const form = req.body;
     const valid = validateData(['day', 'month', 'description'], form);
 
-    if (!valid) {
+    if (!valid || !req.file) {
       return res.status(400).json({ message: 'los datos no son validos' });
     }
+  
     cloudinary.uploader.upload(req.file.path, (err, result) => {
       if (err) {
         return res.status(500).send('Internal server error');
