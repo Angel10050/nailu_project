@@ -9,38 +9,58 @@ class AdminForm extends Component{
             day : '',
             month : '',
             description : '', 
-            image : undefined
+            image : ''
         }
 }
 
     handleSubmit = (event) => {
         console.log(this.state)
         event.preventDefault()
-        fetch('/api/training',{
+        fetch('https://localhost:8080/api/training',{
             method : 'POST',
             headers : {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body : JSON.stringify(this.state.eventData)
+            body : JSON.stringify({data : this.state.eventData})
         })
-        .then(response => response.json())
-        .then(console.log)
-        .catch(console.log)
-        // .then(response => response.json())
-        // .then(() => this.setState({error : false}))
-        // .catch(() => this.setState({error : true}))
+        .then(response => {
+            this.handleErros(response.ok)
+             return response.json()
+          })
+          .then(console.log)
+          .catch(console.error)
      }
+
+     handleErros = (validation) => {
+        if(validation){
+          this.setState({error : false})
+        }else{
+          this.setState({error : true})
+        }
+    } 
 
     handleChange = (event) => {
         const {name, value} = event.target
          this.setState(prevState => ({
              eventData : {
                 ...prevState.eventData,
-                    [name]:value
+                    [name]:value,
                 }
             })
          )      
     }
+
+    handleimage = (event) => {
+        const {id,files} = event.target
+         this.setState(prevState => ({
+             eventData : {
+                ...prevState.eventData,
+                    [id] : files[0]
+                }
+            })
+         )      
+    }
+
     render(){
         return(
             <>
@@ -79,12 +99,12 @@ class AdminForm extends Component{
                                 <textarea value={this.state.eventData.description} name='description' id='description' className='adminInput textarea' onChange={this.handleChange}/>
 
                                 <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
-                                <input value={this.state.eventData.eventImage} type='file' name='image' id='image' className='adminInput' onChange={this.handleChange} />
+                                <input type='file' id='image' className='adminInput' onChange={this.handleimage} />
 
                         </div>
 
                         <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
-
+<p>{toString(this.state)}</p>
                     </form> 
                   {
                     this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
