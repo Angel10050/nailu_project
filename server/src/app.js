@@ -3,6 +3,7 @@
 const express = require('express')
 const bodyParse = require('body-parser')
 const path = require('path')
+const cors = require('cors')
 
 const distDir = path.join(__dirname, "../../", "build");
 
@@ -13,6 +14,7 @@ const trainingInit = require('./routes/trainings')
 function initApp() {
   const app = express()
 
+  app.use(cors())
   app.use(bodyParse.json())
   app.use(express.static(distDir));
 
