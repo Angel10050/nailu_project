@@ -14,14 +14,10 @@ class AdminForm extends Component{
 }
 
     handleSubmit = (event) => {
-        console.log(this.state)
         event.preventDefault()
-        fetch('https://localhost:8080/api/training',{
+        fetch('/api/training',{
             method : 'POST',
-            headers : {
-                'Content-Type': 'application/json',
-            },
-            body : JSON.stringify({data : this.state.eventData})
+            body : this.formData()
         })
         .then(response => {
             this.handleErros(response.ok)
@@ -39,23 +35,21 @@ class AdminForm extends Component{
         }
     } 
 
-    handleChange = (event) => {
-        const {name, value} = event.target
-         this.setState(prevState => ({
-             eventData : {
-                ...prevState.eventData,
-                    [name]:value,
-                }
-            })
-         )      
-    }
+    formData = () => {
+        const value = new FormData()
+        value.append('image', this.state.eventData.image)
+        value.append('day', this.state.eventData.day)
+        value.append('month', this.state.eventData.month)
+        value.append('description', this.state.eventData.description)
+        return value
+      }
 
-    handleimage = (event) => {
-        const {id,files} = event.target
+    handleChange = (event) => {
+        const {name, value, files} = event.target
          this.setState(prevState => ({
              eventData : {
                 ...prevState.eventData,
-                    [id] : files[0]
+                    [name]: name === 'image' ? files[0] : value
                 }
             })
          )      
@@ -99,12 +93,11 @@ class AdminForm extends Component{
                                 <textarea value={this.state.eventData.description} name='description' id='description' className='adminInput textarea' onChange={this.handleChange}/>
 
                                 <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
-                                <input type='file' id='image' className='adminInput' onChange={this.handleimage} />
+                                <input type='file' name='image' id='image' className='adminInput' onChange={this.handleChange} />
 
                         </div>
 
                         <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
-<p>{toString(this.state)}</p>
                     </form> 
                   {
                     this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
