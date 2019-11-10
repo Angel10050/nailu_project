@@ -33,7 +33,7 @@ class AdminForm extends Component {
         this.handleErros(response.ok)
         return response.json()
       })
-      .catch(error => alert('A ocurrido un error, verifica los datos'))
+      .catch(console.log)
   }
 
   handleErros = validation => {
