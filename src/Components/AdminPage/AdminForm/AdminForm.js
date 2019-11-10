@@ -46,9 +46,9 @@ class AdminForm extends Component{
                         <div className='formEventDate'>
                             <div>
                                 <label htmlFor='day' className='adminLabel'>Dia del evento:</label>
-                                <input value={this.state.day} type='number' name='day' id='day' className='adminInput inputDay' onChange={this.handleChange} />
+                                <input value={this.state.day} type='number' name='day' id='day' min="1" max="31" className='adminInput inputDay' onChange={this.handleChange} />
                             </div>
-
+                         
                             <div>
                                 <label htmlFor='month' className='adminLabel'>Mes del evento:</label>
                                 <input value={this.state.month} type='text' list='months' name='month' id='month' className='adminInput' onChange={this.handleChange} />
