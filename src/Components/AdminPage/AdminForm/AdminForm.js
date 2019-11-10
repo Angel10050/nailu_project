@@ -21,6 +21,7 @@ class AdminForm extends Component {
   }
 
   handleSubmit = event => {
+    console.log(this.state)
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',
@@ -73,12 +74,12 @@ class AdminForm extends Component {
           >
             <div className="formEventDate">
               <div>
-                <label htmlFor="date" className="adminLabel">
+                <label htmlFor="date" className="adminLabel" type="date">
                   Fecha del evento:
                 </label>
                 <input
                   value={this.state.eventData.date}
-                  type="text"
+                  type="date"
                   name="date"
                   id="date"
                   className="adminInput inputDate"
