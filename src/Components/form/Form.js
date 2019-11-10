@@ -34,6 +34,14 @@ class Form extends Component {
       }
   }
 
+  handleErros = (validation) => {
+    if(validation){
+      this.setState({error : !validation})
+    }else{
+      this.setState({error : true})
+    }
+}
+
   handleOnChange = event => {
     const { name, value } = event.target
     this.setState(prevStete => ({
