@@ -1,41 +1,69 @@
 import React, { Component } from 'react'
 import '../AdminForm/adminFormStyle.css'
 import Button from '../../Button/Button'
+import { withRouter } from 'react-router'
 
 class AdminForm extends Component {
   state = {
     error: null,
     eventData: {
-      day: '',
-      month: '',
+      date: '',
       description: '',
-      eventImage: ''
+      image: ''
+    }
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      this.props.history.push('/admin')
     }
   }
 
   handleSubmit = event => {
+    console.log(this.state)
     event.preventDefault()
-    fetch('api/trainings', {
+    fetch('/api/training', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        authorization: `Bearer ${localStorage.getItem('token')}`
       },
-      body: JSON.stringify(this.state.eventData)
+      body: this.formData()
     })
-      .then(response => response.json())
-      .then(() => this.setState({ error: false }))
-      .catch(() => this.setState({ error: true }))
+      .then(response => {
+        this.handleErros(response.ok)
+        return response.json()
+      })
+      .then(err => console.log(err))
+      .catch(error => alert(error.message))
+  }
+
+  handleErros = validation => {
+    if (validation) {
+      this.setState({ error: false })
+    } else {
+      this.setState({ error: true })
+    }
+  }
+
+  formData = () => {
+    const value = new FormData()
+    value.append('image', this.state.eventData.image)
+    value.append('date', this.state.eventData.date)
+    value.append('description', this.state.eventData.description)
+    return value
   }
 
   handleChange = event => {
-    const { name, value } = event.target
+    const { name, value, files } = event.target
     this.setState(prevState => ({
       eventData: {
         ...prevState.eventData,
-        [name]: value
+        [name]: name === 'image' ? files[0] : value
       }
     }))
   }
+
   render() {
     return (
       <>
@@ -47,46 +75,17 @@ class AdminForm extends Component {
           >
             <div className="formEventDate">
               <div>
-                <label htmlFor="day" className="adminLabel">
+                <label htmlFor="date" className="adminLabel">
                   Dia del evento:
                 </label>
                 <input
-                  value={this.state.day}
-                  type="number"
-                  name="day"
-                  id="day"
-                  className="adminInput inputDay"
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="month" className="adminLabel">
-                  Mes del evento:
-                </label>
-                <input
-                  value={this.state.month}
+                  value={this.state.eventData.date}
                   type="text"
-                  list="months"
-                  name="month"
-                  id="month"
-                  className="adminInput"
+                  name="date"
+                  id="date"
+                  className="adminInput inputdate"
                   onChange={this.handleChange}
                 />
-                <datalist id="months">
-                  <option value="Enero" />
-                  <option value="Frebrero" />
-                  <option value="Marzo" />
-                  <option value="Abril" />
-                  <option value="Mayo" />
-                  <option value="Junio" />
-                  <option value="Julio" />
-                  <option value="Agosto" />
-                  <option value="Septiembre" />
-                  <option value="Octubre" />
-                  <option value="Noviembre" />
-                  <option value="Diciembre" />
-                </datalist>
               </div>
             </div>
 
@@ -95,7 +94,7 @@ class AdminForm extends Component {
                 Describre el evento (Se breve):
               </label>
               <textarea
-                value={this.state.description}
+                value={this.state.eventData.description}
                 name="description"
                 id="description"
                 className="adminInput textarea"
@@ -106,10 +105,9 @@ class AdminForm extends Component {
                 Elige una imagen:
               </label>
               <input
-                value={this.state.eventImage}
                 type="file"
-                name="eventImage"
-                id="eventImage"
+                name="image"
+                id="image"
                 className="adminInput"
                 onChange={this.handleChange}
               />
@@ -136,4 +134,4 @@ class AdminForm extends Component {
   }
 }
 
-export default AdminForm
+export default withRouter(AdminForm)
