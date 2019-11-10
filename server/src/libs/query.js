@@ -20,7 +20,7 @@ const doQuery = query => client.query(query).then(({ rows = [] }) => rows)
 
 const getCustomers = () => doQuery('SELECT * FROM customer')
 const getAdmin = () => doQuery('SELECT * FROM admin')
-const getTrainings = () => doQuery('SELECT * FROM trainings')
+const getTrainings = () => doQuery('SELECT * FROM trainings WHERE date > now()')
 
 module.exports = {
   getCustomers,
