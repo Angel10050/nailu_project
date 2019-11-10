@@ -1,6 +1,6 @@
 'use strict'
 
-const { validateData, validateEmail, validatePhone} = require('../utils')
+const { validateData, validateEmail, validatePhone , validateTexto} = require('../utils')
 const contactRepository = require('../repositories/contact')
 
 async function contact (data) {
@@ -9,7 +9,7 @@ async function contact (data) {
     data
   )
 
-  if (!valid || !validateEmail(data.email) || !validatePhone(data.phone)) {
+  if (!valid || !validateEmail(data.email) || !validatePhone(data.phone) || !validateTexto(data.name)) {
     return { failed: true, status: 400, message: 'Datos invalidos' }
   }
 
