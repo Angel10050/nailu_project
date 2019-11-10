@@ -34,8 +34,8 @@ class AdminForm extends Component {
         this.handleErros(response.ok)
         return response.json()
       })
-      .then(err => console.log(err))
-      .catch(error => alert(error.message))
+      // .then(err => console.log(err))
+      .catch(error => alert('A ocurrido un error, verifica los datos'))
   }
 
   handleErros = validation => {
@@ -106,6 +106,7 @@ class AdminForm extends Component {
               </label>
               <input
                 type="file"
+                accept="image/*"
                 name="image"
                 id="image"
                 className="adminInput"
