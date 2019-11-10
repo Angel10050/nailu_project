@@ -14,6 +14,11 @@ function validatePhone (value) {
   return regExpPassword.test(value);
 }
 
+function validateTexto (value) {
+  const regExpPassword = new RegExp(/^([A-Za-z ñ]+)*$/);
+  return regExpPassword.test(value);
+}
+
 module.exports = {
-  validateData, validateEmail, validatePhone
+  validateData, validateEmail, validatePhone, validateTexto
 }

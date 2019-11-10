@@ -3,14 +3,15 @@ import React, { Component } from 'react'
 import '../Login/styleLogin.css'
 import Logo from '../../logo/Logo'
 import { Form } from 'react-bootstrap'
+import { withRouter } from 'react-router'
 
 class Login extends Component {
   state = {
     error: null,
-      login: {
-        username: '',
-        password: ''
-      }
+    login: {
+      username: '',
+      password: ''
+    }
   }
 
   handleSubmit = event => {
@@ -20,23 +21,28 @@ class Login extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-         body: JSON.stringify(this.state.login)
-    }) 
-    .then(response => {
-      this.handleErros(response.ok)
-       return response.json()
+      body: JSON.stringify(this.state.login)
     })
-    .then(console.log)
-    .catch(error => alert(error.message))
+      .then(response => {
+        this.handleErros(response.ok)
+        return response.json()
+      })
+      .then(result => {
+        if (result.token) {
+          localStorage.setItem('token', result.token)
+          this.props.history.push('/admin/content')
+        }
+      })
+      .catch(error => alert(error.message))
   }
 
-  handleErros = (validation) => {
-    if(validation){
-      this.setState({error : !validation})
-    }else{
-      this.setState({error : true})
+  handleErros = validation => {
+    if (validation) {
+      this.setState({ error: !validation })
+    } else {
+      this.setState({ error: true })
     }
-}
+  }
 
   handleOnChange = event => {
     const { value, name } = event.target
@@ -119,10 +125,15 @@ class Login extends Component {
                 </div>
               </Form>
             </div>
-            {
-              this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-               this.state.error === false ? <p className='errorMensage'>Autenticacion exitosa</p> : '' 
-            } 
+            {this.state.error ? (
+              <p className="errorMensage">
+                Error en los datos intentalo nuevamente
+              </p>
+            ) : this.state.error === false ? (
+              <p className="errorMensage">Autenticacion exitosa</p>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </>
@@ -130,4 +141,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login)
