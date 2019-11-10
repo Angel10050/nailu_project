@@ -47,7 +47,7 @@ function trainings(app) {
     getTrainings()
       .then(datas => {
         moment.locale('es')
-        const data = datas.map(data =>{
+        let data = datas.map(data => {
           return {
             date: data.date,
             day:  moment(data.date).format("DD"),
