@@ -38,7 +38,7 @@ class AdminForm extends Component {
 
   handleErros = validation => {
     if (validation) {
-      this.setState({ error: false })
+      this.setState({ error: !validation })
     } else {
       this.setState({ error: true })
     }
