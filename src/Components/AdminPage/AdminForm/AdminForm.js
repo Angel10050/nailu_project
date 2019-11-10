@@ -34,7 +34,6 @@ class AdminForm extends Component {
         this.handleErros(response.ok)
         return response.json()
       })
-      // .then(err => console.log(err))
       .catch(error => alert('A ocurrido un error, verifica los datos'))
   }
 
