@@ -9,7 +9,7 @@ class AdminForm extends Component{
             day : '',
             month : '',
             description : '', 
-            eventImage : ''
+            image : ''
         }
 }
 
@@ -26,13 +26,12 @@ class AdminForm extends Component{
             this.handleErros(response.ok )
             return response.json()
         })
-        .then(console.log())
-        .catch(console.log())
+        .catch(err => alert(err))
     }
 
      handleErros = (validation) => {
         if(validation){
-          this.setState({error : false})
+          this.setState({error : !validation})
         }else{
           this.setState({error : true})
         }
@@ -85,8 +84,8 @@ class AdminForm extends Component{
                                 <label htmlFor='description' className='adminLabel'>Describre el evento (Se breve):</label>
                                 <textarea value={this.state.description} name='description' id='description' className='adminInput textarea' onChange={this.handleChange}/>
 
-                                <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
-                                <input value={this.state.eventImage} type='file' name='eventImage' id='eventImage' className='adminInput' onChange={this.handleChange} />
+                                <label htmlFor='image' className='adminLabel labelButton'>Elige una imagen:</label> 
+                                <input value={this.state.image} type='file' name='image' id='image' className='adminInput' onChange={this.handleChange} />
 
                         </div>
 
