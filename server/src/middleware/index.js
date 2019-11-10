@@ -16,9 +16,6 @@ async function validateToken (req, res, next) {
   jwt.verify(token, key , async (err, token) => {
     if (err) {
       return res.status(401).json({ ok: false, message: 'La sesión ha caducado'});
-    } 
-    else {
-      return res.status(200).json({ ok: true, message: token})
     }
   })
   
