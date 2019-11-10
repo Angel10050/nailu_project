@@ -19,7 +19,7 @@ const connection = client
 
 const doQuery = query => client.query(query).then(({ rows = [] }) => rows)
 
-const getCustomers = () => doQuery(`SELECT * FROM customer WHERE date < '${moment().subtract(15, 'days').calendar()}'`)
+const getCustomers = () => doQuery(`SELECT * FROM customer WHERE date > '${moment().subtract(15, 'days').calendar()}'`)
 const getAdmin = () => doQuery('SELECT * FROM admin')
 const getTrainings = () => doQuery('SELECT * FROM trainings WHERE date > now()')
 

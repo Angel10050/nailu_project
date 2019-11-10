@@ -6,8 +6,7 @@ const { getCustomers } = require('../libs/query')
 function initContact(app) {
   app.post('/api/customer', controller.contact)
   app.get('/api/customer', (req, res) => {
-    getCustomers().then(datas => {
-      const data = datas.filter(data => (Date.parse(data.date) - Date.now()) > -1369960506) 
+    getCustomers().then(data => {
       res.json({
         data
       })
