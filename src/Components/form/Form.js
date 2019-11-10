@@ -22,12 +22,25 @@ class Form extends Component {
       },
       body: JSON.stringify(this.state.customer)
     })
-      .then(response => response.json())
-      .then(() => this.setState({error : false}))
-      .catch(() => this.setState({
-        error : true
-      }))
+      .then(response => this.handleErros(response.ok))
+      .catch(() => alert('Error en el servidor'))
   }
+
+  handleErros = (validation) => {
+      if(validation){
+        this.setState({error : !validation})
+      }else{
+        this.setState({error : true})
+      }
+  }
+
+  handleErros = (validation) => {
+    if(validation){
+      this.setState({error : !validation})
+    }else{
+      this.setState({error : true})
+    }
+}
 
   handleOnChange = event => {
     const { name, value } = event.target
@@ -92,7 +105,7 @@ class Form extends Component {
             </form>
             {
               this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-               this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+               this.state.error === false ? <p className='errorMensage'>Envio exitoso, Gracias</p> : '' 
             } 
 
           </div>
