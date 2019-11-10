@@ -80,12 +80,12 @@ class AdminForm extends Component{
                         </div>
 
                         <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
-
+                            {
+                                this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+                                this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+                            }  
                     </form> 
-                  {
-                    this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-                    this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
-                  }  
+                  
                 </div>   
             </>
         )

@@ -8,7 +8,7 @@ import Logo from '../logo/Logo'
 class AdminPage extends Component {
     render() {
         return (
-            <>
+            <div>
                 <div className='topContent'>
                     <header className='adminHeader'>
                         <Logo />
@@ -21,7 +21,7 @@ class AdminPage extends Component {
 
                 <section className='adminSection'>
                         
-                        <h4>actualiza tus eventos mas proximos</h4>
+                        <h4 className="eventDescription">actualiza tus eventos mas proximos</h4>
                     
                             <img className='ImgEventOne' src={require('./AdminForm/nail.jpg')} alt='primer evento' />
 
@@ -29,7 +29,7 @@ class AdminPage extends Component {
 
                 </section>
 
-            </>
+            </div>
 
         )
     }
