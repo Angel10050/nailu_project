@@ -9,7 +9,7 @@ class AdminForm extends Component{
             day : '',
             month : '',
             description : '', 
-            eventImage : ''
+            image : ''
         }
 }
 
@@ -22,10 +22,20 @@ class AdminForm extends Component{
             },
             body : JSON.stringify(this.state.eventData)
         })
-        .then(response => response.json())
-        .then(() => this.setState({error : false}))
-        .catch(() => this.setState({error : true}))
-     }
+        .then(response => {
+            this.handleErros(response.ok )
+            return response.json()
+        })
+        .catch(err => alert(err))
+    }
+
+     handleErros = (validation) => {
+        if(validation){
+          this.setState({error : !validation})
+        }else{
+          this.setState({error : true})
+        }
+    } 
 
     handleChange = (event) => {
         const {name, value} = event.target
@@ -54,7 +64,7 @@ class AdminForm extends Component{
                                 <input value={this.state.month} type='text' list='months' name='month' id='month' className='adminInput' onChange={this.handleChange} />
                                     <datalist id='months'>
                                         <option value='Enero' />
-                                        <option value='Frebrero' />
+                                        <option value='Febrero' />
                                         <option value='Marzo' />
                                         <option value='Abril' />
                                         <option value='Mayo' />
@@ -74,18 +84,18 @@ class AdminForm extends Component{
                                 <label htmlFor='description' className='adminLabel'>Describre el evento (Se breve):</label>
                                 <textarea value={this.state.description} name='description' id='description' className='adminInput textarea' onChange={this.handleChange}/>
 
-                                <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
-                                <input value={this.state.eventImage} type='file' name='eventImage' id='eventImage' className='adminInput' onChange={this.handleChange} />
+                                <label htmlFor='image' className='adminLabel labelButton'>Elige una imagen:</label> 
+                                <input value={this.state.image} type='file' name='image' id='image' className='adminInput' onChange={this.handleChange} />
 
                         </div>
 
                         <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
 
                     </form> 
-                  {
-                    this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-                    this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
-                  }  
+                    {
+                        this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+                        this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+                   } 
                 </div>   
             </>
         )
