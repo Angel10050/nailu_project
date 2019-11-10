@@ -22,12 +22,19 @@ class Form extends Component {
       },
       body: JSON.stringify(this.state.customer)
     })
-      .then(response => response.json())
-      .then(() => this.setState({error : false}))
-      .catch(() => this.setState({
-        error : true
-      }))
+    .then(response => {
+      this.handleErros(response.ok)
+    })
+    .catch(error => alert(error.message))
   }
+
+  handleErros = (validation) => {
+    if(validation){
+      this.setState({error : !validation})
+    }else{
+      this.setState({error : true})
+    }
+}
 
   handleOnChange = event => {
     const { name, value } = event.target
