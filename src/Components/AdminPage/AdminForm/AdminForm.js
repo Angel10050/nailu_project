@@ -20,13 +20,19 @@ class AdminForm extends Component{
             body : this.formData()
         })
         .then(response => {
-            this.handleErros(response.ok)
-             return response.json()
-          })
-          .then(console.log)
-          .catch(console.error)
-     }
+            this.handleErros(response.ok )
+            return response.json()
+        })
+        .catch(err => alert(err))
+    }
 
+     handleErros = (validation) => {
+        if(validation){
+          this.setState({error : !validation})
+        }else{
+          this.setState({error : true})
+        }
+    } 
      handleErros = (validation) => {
         if(validation){
           this.setState({error : !validation})
@@ -72,7 +78,7 @@ class AdminForm extends Component{
                                 <input value={this.state.eventData.month} type='text' list='months' name='month' id='month' className='adminInput' onChange={this.handleChange} />
                                     <datalist id='months'>
                                         <option value='Enero' />
-                                        <option value='Frebrero' />
+                                        <option value='Febrero' />
                                         <option value='Marzo' />
                                         <option value='Abril' />
                                         <option value='Mayo' />
@@ -93,16 +99,16 @@ class AdminForm extends Component{
                                 <textarea value={this.state.eventData.description} name='description' id='description' className='adminInput textarea' onChange={this.handleChange}/>
 
                                 <label htmlFor='eventImage' className='adminLabel labelButton'>Elige una imagen:</label> 
-                                <input type='file' name='image' id='image' className='adminInput' onChange={this.handleChange} />
+                                <input type='file' name='image' id='image' className='adminInput' onChange={this.handleChange}
 
                         </div>
 
                         <Button type={'submit'} nameBtn={'Confirmar'} className='adminButtonForm'/>    
                     </form> 
-                  {
-                    this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-                    this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
-                  }  
+                    {
+                        this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+                        this.state.error === false ? <p className='errorMensage'>Envio exitoso</p> : '' 
+                   } 
                 </div>   
             </>
         )
