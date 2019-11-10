@@ -17,15 +17,6 @@
   transition: all .1s;
 }
 
-.caseBox > .textBox > .textMainConteiner {
-  text-align: right;
-}
-
-.caseBoxReverse > .textBox > .textMainConteiner {
-  text-align: left;
-  direction: rtl;
-}
-
 .caseBoxReverse {
   flex-direction: row-reverse;
 }
@@ -88,7 +79,8 @@
 
 .infoBox {
   padding: 0 10px 0 10px;
-  margin: 0;
+  margin: 0 10px 0 10px;
+  text-align: justify;
   align-self: center;
 }
 
