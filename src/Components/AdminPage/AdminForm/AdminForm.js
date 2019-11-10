@@ -75,14 +75,14 @@ class AdminForm extends Component {
             <div className="formEventDate">
               <div>
                 <label htmlFor="date" className="adminLabel">
-                  Dia del evento:
+                  Fecha del evento:
                 </label>
                 <input
                   value={this.state.eventData.date}
                   type="text"
                   name="date"
                   id="date"
-                  className="adminInput inputdate"
+                  className="adminInput inputDate"
                   onChange={this.handleChange}
                 />
               </div>
