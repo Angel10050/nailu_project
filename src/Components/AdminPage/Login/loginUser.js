@@ -7,11 +7,11 @@ import { withRouter } from 'react-router'
 
 class Login extends Component {
   state = {
-    login: {
-      username: '',
-      password: ''
-    },
-    error: false
+    error: null,
+      login: {
+        username: '',
+        password: ''
+      }
   }
 
   handleSubmit = event => {
@@ -21,15 +21,29 @@ class Login extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.state.login)
+         body: JSON.stringify(this.state.login)
+    }) 
+    .then(response => {
+      this.handleErros(response.ok)
+       return response.json()
     })
+
       .then(response => response.json())
       .then(result => {
         localStorage.setItem('token', result.token)
         this.props.history.push('/admin/content')
       })
       .catch(error => alert(error.message))
+
   }
+
+  handleErros = (validation) => {
+    if(validation){
+      this.setState({error : !validation})
+    }else{
+      this.setState({error : true})
+    }
+}
 
   handleOnChange = event => {
     const { value, name } = event.target
@@ -112,13 +126,10 @@ class Login extends Component {
                 </div>
               </Form>
             </div>
-            {this.state.error ? (
-              <p className="errorMensage">
-                Error en los datos intentalo nuevamente
-              </p>
-            ) : (
-              ''
-            )}
+            {
+              this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
+               this.state.error === false ? <p className='errorMensage'>Autenticacion exitosa</p> : '' 
+            } 
           </div>
         </div>
       </>

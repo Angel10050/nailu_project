@@ -63,6 +63,7 @@ class AdminForm extends Component {
     }))
   }
 
+
   render() {
     return (
       <>
@@ -131,6 +132,5 @@ class AdminForm extends Component {
       </>
     )
   }
-}
 
 export default withRouter(AdminForm)
