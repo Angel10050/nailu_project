@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const multer = require('multer');
-var moment = require('moment');
+let moment = require('moment');
 
 const { validateToken } = require('../middleware/index')
 const upload = multer({ dest: '/tmp/uploads' });
@@ -47,7 +47,7 @@ function trainings(app) {
     getTrainings()
       .then(datas => {
         moment.locale('es')
-        let data = datas.map(data => {
+        const data = datas.filter(data => {if((Date.parse(data.date) - Date.now()) > -1 ){
           return {
             date: data.date,
             day:  moment(data.date).format("DD"),
@@ -55,7 +55,7 @@ function trainings(app) {
             description: data.description,
             image: data.image
           }
-        })
+        }})
         res.json({
           data
         });
