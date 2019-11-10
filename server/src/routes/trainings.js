@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const multer = require('multer');
-var moment = require('moment');
+let moment = require('moment');
 
 const { validateToken } = require('../middleware/index')
 const upload = multer({ dest: '/tmp/uploads' });
