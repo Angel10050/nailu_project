@@ -118,7 +118,7 @@ class AdminForm extends Component {
               nameBtn={'Confirmar'}
               className="adminButtonForm"
             />
-          </form>
+
           {this.state.error ? (
             <p className="errorMensage">
               Error en los datos intentalo nuevamente
@@ -128,6 +128,7 @@ class AdminForm extends Component {
           ) : (
             ''
           )}
+          </form>
         </div>
       </>
     )

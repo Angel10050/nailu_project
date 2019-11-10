@@ -7,7 +7,7 @@
 
 .caseBox, .caseBoxReverse {
   display: flex;
-  height: 20em;
+  height: 22em;
   margin: 30px 0;
 }
 
@@ -15,15 +15,6 @@
   border-top:solid 3px  rgba(199, 41, 152, 0.938);
   border-bottom:solid  3px rgba(199, 41, 152, 0.938);
   transition: all .1s;
-}
-
-.caseBox > .textBox > .textMainConteiner {
-  text-align: right;
-}
-
-.caseBoxReverse > .textBox > .textMainConteiner {
-  text-align: left;
-  direction: rtl;
 }
 
 .caseBoxReverse {
@@ -88,7 +79,8 @@
 
 .infoBox {
   padding: 0 10px 0 10px;
-  margin: 0;
+  margin: 0 10px 0 10px;
+  text-align: justify;
   align-self: center;
 }
 
@@ -99,7 +91,7 @@
   }
   .img, .textBox {
       min-width: 100%;
-      min-height: auto;
+      height: 22em;
   }
   .textBox {
     align-items: center;

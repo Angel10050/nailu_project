@@ -1,6 +1,7 @@
 .adminForm {
-    width: 500px;
+    width: 700px;
     margin: 20px;
+    margin-top: -5%;
     padding: 15px 30px;
     border: 1px solid #ccc;
     display: flex;
@@ -21,6 +22,7 @@
 .formContainerMain > .errorMensage {
    min-width: 0;
    align-self: flex-end;
+   
 }
 
 .formEventDate, .formEventContent {
@@ -67,12 +69,22 @@
     margin-bottom: 0;
 }
 
-@media (max-width: 826px){
+
+
+@media (max-width: 751px){
     .formContainerMain{
         flex-direction: column;
+        min-width: 100%;
+    }
+    .adminForm{
+        width: 90%;
+        height: auto;
     }
     .formContainerMain > .errorMensage {
         align-self: center;
         font-size: 25px;
+     }
+     .adminInput{
+         margin: 0;
      }
 }

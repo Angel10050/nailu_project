@@ -34,14 +34,6 @@ class Form extends Component {
       }
   }
 
-  handleErros = (validation) => {
-    if(validation){
-      this.setState({error : !validation})
-    }else{
-      this.setState({error : true})
-    }
-}
-
   handleOnChange = event => {
     const { name, value } = event.target
     this.setState(prevStete => ({
@@ -102,11 +94,12 @@ class Form extends Component {
               />
 
               <Button type="submit" nameBtn="Enviar" />
+
             </form>
             {
               this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
                this.state.error === false ? <p className='errorMensage'>Envio exitoso, Gracias</p> : '' 
-            } 
+            }
 
           </div>
       </div>

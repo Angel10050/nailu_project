@@ -42,12 +42,12 @@
   padding: 10px 20px 20px 20px;
   text-align: center;
   font-size: 30px;
-  background-color: rgba(95, 44, 104, 0.322);
+  color: #fff;
+	background-color:rgba(255, 17, 53, 0.856);
   min-width: 70%;
   letter-spacing: 2px;
-  color: #eee;
   border-radius: 10px;
-  border-top: 20px inset #7738388c;
+  border-top: 20px inset #fa5454;
 }
 @media (max-width: 768px) {
     .errorMensage {

@@ -1,3 +1,20 @@
+
+
+.ImgEventOne{
+  width: 100%;
+  height: em;
+  object-fit: cover;
+   
+}
+
+.display-2{
+    font-size: 3rem;
+    text-align: center;
+}
+.display-4{
+    font-size: 2rem;
+    text-align: center;
+}
 .topContent{
     display: flex;
     justify-content: space-evenly;
@@ -5,7 +22,10 @@
     flex-direction: column;
     
 }
-
+.eventDescription{
+    text-align: center;
+    margin: 0 30px 0 30px;
+}
 .adminHeader{
     background-color: #343a40;
     min-width: 100%;
@@ -31,6 +51,13 @@
     flex-direction: column;
 }
 
-
+@media (max-width: 580px){
+    
+    .formContainerMain > .errorMensage {
+        align-self: center;
+        font-size: 25px;
+        width: 80%;
+     }
+}
 
 
