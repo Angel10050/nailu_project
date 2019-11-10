@@ -73,57 +73,23 @@ class AdminForm extends Component {
             onSubmit={this.handleSubmit}
             method="post"
           >
-           {/* <div className="formEventDate">
+           <div className="formEventDate">
               <div>
-                <label htmlFor="day" className="adminLabel">
-                  Dia del evento:
+                <label htmlFor="date" className="adminLabel">
+                  Fecha del evento:
                 </label>
                 <input
-                  value={this.state.eventData.day}
-                  type="number"
-                  name="day"
-                  id="day"
-                  className="adminInput inputDay"
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="month" className="adminLabel">
-                  Mes del evento:
-                </label>
-                <input
-                  value={this.state.eventData.month}
+                  value={this.state.eventData.date}
                   type="text"
-                  list="months"
-                  name="month"
-                  id="month"
-                  className="adminInput"
+                  name="date"
+                  id="date"
+                  className="adminInput inputDate"
                   onChange={this.handleChange}
                 />
-                <datalist id="months">
-                  <option value="Enero" />
-                  <option value="Febrero" />
-                  <option value="Marzo" />
-                  <option value="Abril" />
-                  <option value="Mayo" />
-                  <option value="Junio" />
-                  <option value="Julio" />
-                  <option value="Agosto" />
-                  <option value="Septiembre" />
-                  <option value="Octubre" />
-                  <option value="Noviembre" />
-                  <option value="Diciembre" />
-                </datalist>
               </div>
-            </div> */}
 
-            <div className="formEventContent">
-              <label htmlFor="date" className="adminLabel">
-                Describre el evento (Se breve):
-              </label>
-                <input value={this.state.eventData.date} type='text' id='date' name='date'  onChange={this.handleChange}/>
-           </div>
+          
+            </div> 
 
             <div className="formEventContent">
               <label htmlFor="description" className="adminLabel">
