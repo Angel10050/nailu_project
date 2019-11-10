@@ -25,8 +25,13 @@ class Login extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        localStorage.setItem('token', result.token)
-        this.props.history.push('/admin/content')
+        if (!result.token) {
+          alert('Usuario o contraseña incorrecta')
+        } else {
+          localStorage.setItem('token', result.token)
+          this.props.history.push('/admin/content')
+          console.log(result, 'Error')
+        }
       })
       .catch(error => alert(error.message))
   }
