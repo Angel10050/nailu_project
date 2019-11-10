@@ -46,12 +46,12 @@ function trainings(app) {
   app.get('/api/training', (req, res, next) => {
     getTrainings()
       .then(datas => {
-        datas = (JSON.parse(JSON.stringify(datas)));
+        moment.locale('es')
         let data = datas.map(data => {
           return {
             date: data.date,
-            day: moment(`${data.date}`).format('DD'),
-            month: moment(`${data.date}`).format('MMMM'),
+            day:  moment(data.date).format("DD"),
+            month: moment(data.date).format("MMMM"),
             description: data.description,
             image: data.image
           }
