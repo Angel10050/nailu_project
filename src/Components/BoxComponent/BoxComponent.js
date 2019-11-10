@@ -14,7 +14,7 @@ class BoxComponent extends Component {
             >
               <img
                 className="img"
-                src={training.imagenUrl}
+                src={training.image}
                 alt="imagen del evento"
               />
 
@@ -23,7 +23,11 @@ class BoxComponent extends Component {
                 <small className="dateTextBox">{training.month}</small>
                 <p className="infoBox">{training.description}</p>
 
-                <Route to='/user/contactme' className='link' name='informacion'/>
+                <Route
+                  to="/user/contactme"
+                  className="link"
+                  name="informacion"
+                />
               </div>
             </div>
           )

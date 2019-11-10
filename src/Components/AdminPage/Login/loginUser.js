@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import '../Login/styleLogin.css'
 import Logo from '../../logo/Logo'
 import { Form } from 'react-bootstrap'
+import { withRouter } from 'react-router'
 
 class Login extends Component {
   state = {
@@ -23,8 +24,11 @@ class Login extends Component {
       body: JSON.stringify(this.state.login)
     })
       .then(response => response.json())
-      .then(console.log)
-      .catch(this.setState({ error: true }))
+      .then(result => {
+        localStorage.setItem('token', result.token)
+        this.props.history.push('/admin/content')
+      })
+      .catch(error => alert(error.message))
   }
 
   handleOnChange = event => {
@@ -122,4 +126,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login)
