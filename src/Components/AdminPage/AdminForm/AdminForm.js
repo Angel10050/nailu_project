@@ -7,8 +7,7 @@ class AdminForm extends Component {
   state = {
     error: null,
     eventData: {
-      day: '',
-      month: '',
+      date: '',
       description: '',
       image: ''
     }
@@ -22,13 +21,11 @@ class AdminForm extends Component {
   }
 
   handleSubmit = event => {
-    // console.log(`Bearer ${localStorage.getItem('token')}`)
-
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',
-      header: {
-        authorization: `Bearer ${localStorage.getItem('token')}`
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: this.formData()
     })
@@ -51,8 +48,7 @@ class AdminForm extends Component {
   formData = () => {
     const value = new FormData()
     value.append('image', this.state.eventData.image)
-    value.append('day', this.state.eventData.day)
-    value.append('month', this.state.eventData.month)
+    value.append('date', this.state.eventData.date)
     value.append('description', this.state.eventData.description)
     return value
   }
@@ -78,46 +74,17 @@ class AdminForm extends Component {
           >
             <div className="formEventDate">
               <div>
-                <label htmlFor="day" className="adminLabel">
+                <label htmlFor="date" className="adminLabel">
                   Dia del evento:
                 </label>
                 <input
-                  value={this.state.eventData.day}
-                  type="number"
-                  name="day"
-                  id="day"
-                  className="adminInput inputDay"
-                  onChange={this.handleChange}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="month" className="adminLabel">
-                  Mes del evento:
-                </label>
-                <input
-                  value={this.state.eventData.month}
+                  value={this.state.eventData.date}
                   type="text"
-                  list="months"
-                  name="month"
-                  id="month"
-                  className="adminInput"
+                  name="date"
+                  id="date"
+                  className="adminInput inputdate"
                   onChange={this.handleChange}
                 />
-                <datalist id="months">
-                  <option value="Enero" />
-                  <option value="Febrero" />
-                  <option value="Marzo" />
-                  <option value="Abril" />
-                  <option value="Mayo" />
-                  <option value="Junio" />
-                  <option value="Julio" />
-                  <option value="Agosto" />
-                  <option value="Septiembre" />
-                  <option value="Octubre" />
-                  <option value="Noviembre" />
-                  <option value="Diciembre" />
-                </datalist>
               </div>
             </div>
 

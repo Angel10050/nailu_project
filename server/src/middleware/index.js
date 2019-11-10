@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 const key = process.env.SECRET_KEY
 async function validateToken(req, res, next) {
   const { authorization } = req.headers
-  console.log(authorization)
 
   const auth = authorization || ''
   if (!auth.startsWith('Bearer')) {
