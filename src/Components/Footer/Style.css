@@ -59,9 +59,9 @@ a:hover {
 }
 .footer:last-child {
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 .footer > p {
   text-align: center;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
 }

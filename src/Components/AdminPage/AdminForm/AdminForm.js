@@ -22,19 +22,21 @@ class AdminForm extends Component {
   }
 
   handleSubmit = event => {
+    // console.log(`Bearer ${localStorage.getItem('token')}`)
+
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',
-      body: this.formData(),
       header: {
-        authorizatio: `Bear ${localStorage.getItem('token')}`
-      }
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: this.formData()
     })
       .then(response => {
         this.handleErros(response.ok)
         return response.json()
       })
-      .then(console.log)
+      .then(data => console.log(data))
       .catch(error => alert(error.message))
   }
 
