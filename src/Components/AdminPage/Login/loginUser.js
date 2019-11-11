@@ -89,7 +89,6 @@ class Login extends Component {
                     ></input>
                   </div>
                 </div>
-
                 <div className="form-group">
                   <label className="col-sm-3 control-label textLogin">
                     Contaseña
@@ -140,5 +139,4 @@ class Login extends Component {
     )
   }
 }
-
 export default withRouter(Login)
