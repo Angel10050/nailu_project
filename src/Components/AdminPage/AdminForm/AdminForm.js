@@ -119,15 +119,15 @@ class AdminForm extends Component {
               className="adminButtonForm"
             />
 
-          {this.state.error ? (
-            <p className="errorMensage">
-              Error en los datos intentalo nuevamente
-            </p>
-          ) : this.state.error === false ? (
-            <p className="errorMensage">Envio exitoso</p>
-          ) : (
-            ''
-          )}
+            {this.state.error ? (
+              <p className="errorMensage">
+                Error en los datos intentalo nuevamente
+              </p>
+            ) : this.state.error === false ? (
+              <p className="errorMensage">Envio exitoso</p>
+            ) : (
+              ''
+            )}
           </form>
         </div>
       </>

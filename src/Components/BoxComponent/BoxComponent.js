@@ -20,10 +20,10 @@ class BoxComponent extends Component {
 
               <div className="textBox">
                 <h4 className="dateNumberBox">{training.day}</h4>
-                  <small className="dateTextBox">{training.month}</small>
-                      <div className='textMainConteiner'>
-                          <p className="infoBox">{training.description}</p>
-                      </div>
+                <small className="dateTextBox">{training.month}</small>
+                <div className="textMainConteiner">
+                  <p className="infoBox">{training.description}</p>
+                </div>
                 <ButtonGeneral type="button" nameBtn="Información" />
               </div>
             </div>
