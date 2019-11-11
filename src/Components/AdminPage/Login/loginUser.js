@@ -56,7 +56,7 @@ class Login extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <div className="container login containerLogin">
           <header className="adminHeader">
             <Logo />
@@ -135,7 +135,7 @@ class Login extends Component {
             )}
           </div>
         </div>
-      </>
+      </div>
     )
   }
 }
