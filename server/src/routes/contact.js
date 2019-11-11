@@ -12,7 +12,7 @@ function initContact(app) {
       })
     })
     .catch(err => {
-      return res.status(400).json({ message: 'el usuario no existe' })
+      return res.status(400).json({ message: 'Error al obtener los datos' })
     })
   })
 
