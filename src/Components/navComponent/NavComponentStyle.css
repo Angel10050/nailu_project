@@ -6,7 +6,7 @@
 .componentFlex {
   display: flex;
   border-bottom: 3px solid rgba(238, 130, 238, 0.918);
-  background-color: #09030aad;
+  background-color: hsla(287, 60%, 3%, 0.918);
 }
 .responsiveNavbar {
   width: 100px;
@@ -37,5 +37,6 @@
 div.fluidNav {
   position: fixed;
   z-index: 2;
+  min-width: 100%;
   padding: 0;
 }

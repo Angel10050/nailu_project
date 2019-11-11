@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import './StyleBoxComponent.css'
-import ButtonGeneral from '../../Components/Button/Button'
+import Route from '../routeComponent/Route';
 
 class BoxComponent extends Component {
   render() {
     return (
-      <div className="mainBoxContainer">
+      <div className="mainBoxContainer" id='boxComponent'>
+        <h2 className='titles' id='titleBoxComponent'>Proximos eventos</h2>
         {this.props.trainings.map((training, index) => {
           return (
             <div
@@ -24,7 +25,8 @@ class BoxComponent extends Component {
                       <div className='textMainConteiner'>
                           <p className="infoBox">{training.description}</p>
                       </div>
-                <ButtonGeneral type="button" nameBtn="Información" />
+
+                      <Route to='/user/contactme' className='link' name='informacion'/>
               </div>
             </div>
           )
