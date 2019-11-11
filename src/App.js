@@ -22,10 +22,6 @@ class App extends React.Component {
     fetch('/api/training')
       .then(response => response.json())
       .then(data => this.setState({ trainings: data.data }))
-
-    fetch('/api/customer')
-      .then(response => response.json())
-      .then(console.log)
   }
 
   handlerClick = () => {}
