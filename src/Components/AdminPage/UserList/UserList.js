@@ -27,16 +27,17 @@ class UserList extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.customers.map((customer, index) => {
-                return (
-                  <tr key={customer.id}>
-                    <th scope="row">{index}</th>
-                    <td>{customer.name}</td>
-                    <td>{customer.email}</td>
-                    <td>{customer.phone}</td>
-                  </tr>
-                )
-              })}
+              {this.state.customers &&
+                this.state.customers.map((customer, index) => {
+                  return (
+                    <tr key={customer.id}>
+                      <th scope="row">{index}</th>
+                      <td>{customer.name}</td>
+                      <td>{customer.email}</td>
+                      <td>{customer.phone}</td>
+                    </tr>
+                  )
+                })}
             </tbody>
           </table>
         </div>
