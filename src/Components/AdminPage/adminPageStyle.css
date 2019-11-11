@@ -1,10 +1,7 @@
-
-
 .ImgEventOne{
   width: 100%;
-  height: em;
+  height: 26em;
   object-fit: cover;
-   
 }
 
 .display-2{
@@ -22,14 +19,19 @@
     flex-direction: column;
     
 }
+
 .eventDescription{
     text-align: center;
-    margin: 0 30px 0 30px;
+    margin: 0 0 20px 0;
+    font-size: 28px;
 }
 .adminHeader{
-    background-color: #343a40;
+    background-color: hsla(287, 60%, 3%, 0.87);
     min-width: 100%;
     display: flex;
+    z-index: 2;
+    top: 0;
+    position: fixed;
     justify-content: center;
     padding: 5px;
 }
@@ -39,7 +41,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    margin: 30px;
+    margin: 70px 0 30px 0;
     padding: 20px;
 }
 
@@ -57,6 +59,9 @@
         align-self: center;
         font-size: 25px;
         width: 80%;
+     }
+     .ImgEventOne{
+        height: 22em;
      }
 }
 
