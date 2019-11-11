@@ -5,15 +5,16 @@ const { getCustomers } = require('../libs/query')
 
 function initContact(app) {
   app.post('/api/customer', controller.contact)
-  app.get('/api/customer', (req, res) => {
-    getCustomers().then(data => {
-      res.json({
-        data
+  app.get('/api/customer', async (req, res) => {
+    await getCustomers()
+      .then(data => {
+        res.json({
+          data
+        })
       })
-    })
-    .catch(err => {
-      return res.status(400).json({ message: 'Error al obtener los datos' })
-    })
+      .catch(err => {
+        return res.status(400).json({ message: 'Error al obtener los datos' })
+      })
   })
 
   return app
