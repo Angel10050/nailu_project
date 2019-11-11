@@ -5,16 +5,22 @@ import '../UserList/Styles.css'
 class UserList extends Component {
   state = {
     customers: [],
-    select: false,
-    currentIndex: -1
+    isLoading: true,
+    error: null
   }
 
   componentDidMount() {
     fetch('/api/customer')
       .then(response => response.json())
-      .then(data => this.setState({ customers: data.data }))
+      .then(data =>
+        this.setState({
+          customers: data.data
+        })
+      )
+      .catch(error => {
+        this.setState({ isLoading: false, error: error })
+      })
   }
-
   render() {
     return (
       <div className="UserListContainer">
@@ -29,16 +35,17 @@ class UserList extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.customers.map((customer, index) => {
-                return (
-                  <tr key={customer.id}>
-                    <th scope="row">{index}</th>
-                    <td>{customer.name}</td>
-                    <td>{customer.email}</td>
-                    <td>{customer.phone}</td>
-                  </tr>
-                )
-              })}
+              {this.state.customers &&
+                this.state.customers.map((customer, index) => {
+                  return (
+                    <tr key={customer.id}>
+                      <th scope="row">{index}</th>
+                      <td>{customer.name}</td>
+                      <td>{customer.email}</td>
+                      <td>{customer.phone}</td>
+                    </tr>
+                  )
+                })}
             </tbody>
           </table>
         </div>

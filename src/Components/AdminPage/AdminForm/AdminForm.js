@@ -21,7 +21,6 @@ class AdminForm extends Component {
   }
 
   handleSubmit = event => {
-    console.log(this.state)
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',

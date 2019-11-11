@@ -1,15 +1,24 @@
 'use strict'
+const moment = require('moment')
 
-const { validateData, validateEmail, validatePhone , validateTexto} = require('../utils')
+const {
+  validateData,
+  validateEmail,
+  validatePhone,
+  validateTexto
+} = require('../utils')
 const contactRepository = require('../repositories/contact')
 
-async function contact (data) {
-  const valid = validateData(
-    ['name', 'email', 'phone'],
-    data
-  )
+async function contact(data) {
+  data.date = moment().format('YYYY-MM-DD')
+  const valid = validateData(['name', 'email', 'phone'], data)
 
-  if (!valid || !validateEmail(data.email) || !validatePhone(data.phone) || !validateTexto(data.name)) {
+  if (
+    !valid ||
+    !validateEmail(data.email) ||
+    !validatePhone(data.phone) ||
+    !validateTexto(data.name)
+  ) {
     return { failed: true, status: 400, message: 'Datos invalidos' }
   }
 
