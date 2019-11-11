@@ -21,7 +21,6 @@ class AdminForm extends Component {
   }
 
   handleSubmit = event => {
-    console.log(this.state)
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',
@@ -119,15 +118,15 @@ class AdminForm extends Component {
               className="adminButtonForm"
             />
 
-          {this.state.error ? (
-            <p className="errorMensage">
-              Error en los datos intentalo nuevamente
-            </p>
-          ) : this.state.error === false ? (
-            <p className="errorMensage">Envio exitoso</p>
-          ) : (
-            ''
-          )}
+            {this.state.error ? (
+              <p className="errorMensage">
+                Error en los datos intentalo nuevamente
+              </p>
+            ) : this.state.error === false ? (
+              <p className="errorMensage">Envio exitoso</p>
+            ) : (
+              ''
+            )}
           </form>
         </div>
       </>
