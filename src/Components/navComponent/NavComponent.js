@@ -13,7 +13,6 @@ const NavComponent = props => {
         collapseOnSelect
         sticky="top"
         expand="sm"
-        variant="dark"
       >
         <Navbar.Brand className="componentFlexLogo">
           <Logo onClick={props.toScrollup} />
@@ -22,7 +21,7 @@ const NavComponent = props => {
         <Navbar.Collapse id="responsiveNavbar">
           <Nav className="componentFlexButton mr-auto">
             <NavButton onClick={props.toScrollup} link="#home" name="Inicio" />
-            <NavButton link="#boxComponent" name="Reservas" />
+            <NavButton link="#titleBoxComponent" name="Eventos" />
             <NavButton link="#gallery" name="Galeria" />
             <NavButton link="#footer" name="Contacto" />
           </Nav>

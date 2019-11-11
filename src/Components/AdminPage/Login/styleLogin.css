@@ -1,6 +1,7 @@
 .adminHeader {
   padding: 0;
   margin: 0;
+  background-color: hsla(287, 60%, 3%, 0.87);
 }
 .login {
   background: rgba(238, 130, 238, 0.918);
@@ -22,12 +23,20 @@
 }
 .login-wrap {
   align-self: center;
-  width: auto;
+  width: 500px;
   border: 1px solid #eee;
   padding: 30px;
   background: #343a40;
   border-radius: 4px;
+  margin: 100px 0 0 0;
+  transition: all 1s;
 }
+
+.loginRow:focus-within  .login-wrap{
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
 .inputLogin {
   height: 50px;
 }
@@ -49,7 +58,8 @@
   border-radius: 10px;
   border-top: 20px inset #fa5454;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 700px) {
     .errorMensage {
       font-size: 15px;
       min-width: 100%;
@@ -58,4 +68,12 @@
     .loginRow {
       margin: 25px;
     }
+    .login-wrap {
+      width: 100%;
+    }
+    .loginRow:focus-within .login-wrap{
+      transform: scale(1);
+      transition: all 0.3s;
+  }
+    
 }

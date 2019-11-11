@@ -3,17 +3,34 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    height: 100vh;
-    background-color: aqua;
+    background : url(person-s-hand-with-pink-manicure-939835.jpg) center/cover;
+    height: 700px;
 }
 
-.mainFormCustomer {
+.adminHeaderCustomer{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    min-width: 100%;
+    z-index: 2;
+    background-color: hsla(287, 60%, 3%, 0.87);
+    padding: 5px 20px;
 }
-.mainFormCustomer > .errorMensage {
-    margin: 20px;
+
+.volver > .btn-primary {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+
+.formContainer > .errorMensage {
+    margin: 20px 100px 0px 100px;
+}
+
+.formContainer:hover .form {
+    border: 6px solid #dda6c6;
+    transition: all 0.5s
 }
 
 .form {
@@ -21,16 +38,17 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
-    border: 2px solid blueviolet;
+    margin-top: 80px;
+    border: 2px solid rgb(121, 104, 138);
     border-radius: 25px;
     color: white;
     align-items: center;
     background-color: #343a40;
+    transition: all 1s
 }
 
 .label {
-    font-size: 13px;
+    font-size: 15px;
     margin: 10px 0 1px 0;
     padding: 1px 0 1px 12px;
     align-self: self-start
