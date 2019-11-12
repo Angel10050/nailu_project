@@ -19,6 +19,16 @@
   align-self: center;
   max-width: 200px;
 }
+
+.navbar-light .navbar-toggler {
+  color: transparent;
+  border: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: invert(100%);
+}
+
 .navbar-branddiv.fluidNav {
   display: inline-block;
   padding-top: 0;
