@@ -29,8 +29,8 @@
 }
 
 .formContainer:hover .form {
-    border: 6px solid #dda6c6;
-    transition: all 0.5s
+    border: 4px solid #dda6c6;
+    transition: all .2s
 }
 
 .form {
@@ -44,7 +44,7 @@
     color: white;
     align-items: center;
     background-color: #343a40;
-    transition: all 1s
+    transition: all .2s
 }
 
 .label {
@@ -76,6 +76,11 @@
     }
     .input {
         margin-bottom: 0px;
+    }
+
+    .formContainer:hover .form {
+        border: none;
+        transition: none;
     }
 }
 
