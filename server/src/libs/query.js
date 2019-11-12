@@ -21,14 +21,18 @@ const doQuery = query => client.query(query).then(({ rows = [] }) => rows)
 
 const getCustomers = () =>
   doQuery(
-    `SELECT * FROM customer WHERE date BETWEEN '${moment().format(
-      'YYYY-MM-DD'
-    )}' AND '${moment()
-      .add(15, 'days')
-      .format('YYYY-MM-DD')}'`
+    `SELECT * FROM customer WHERE date BETWEEN '${moment()
+      .subtract(15, 'days')
+      .format('YYYY-MM-DD')}' AND  '${moment().format(
+        'YYYY-MM-DD'
+      )}'`
   )
 const getAdmin = () => doQuery('SELECT * FROM admin')
-const getTrainings = () => doQuery('SELECT * FROM trainings WHERE date > now()')
+const getTrainings = () => doQuery(`SELECT * FROM trainings WHERE date BETWEEN '${moment().format(
+  'YYYY-MM-DD'
+)}' AND '${moment()
+  .add(30, 'days')
+  .format('YYYY-MM-DD')}'`)
 
 module.exports = {
   getCustomers,
