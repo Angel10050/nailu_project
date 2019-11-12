@@ -125,9 +125,7 @@ class Login extends Component {
               </Form>
             </div>
             {this.state.error ? (
-              <p className="errorMensage">
-                Error en los datos intentalo nuevamente
-              </p>
+              <p className="errorMensage">Usuario o contraseña invalidos</p>
             ) : this.state.error === false ? (
               <p className="errorMensage">Autenticacion exitosa</p>
             ) : (
