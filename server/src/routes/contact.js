@@ -8,7 +8,7 @@ function initContact(app) {
   app.get('/api/customer', (req, res) => {
     getCustomers()
       .then(data => {
-        data.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+        data.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
         res.json({
           data
         })
