@@ -60,6 +60,9 @@ class AdminForm extends Component {
         [name]: name === 'image' ? files[0] : value
       }
     }))
+    this.setState({
+      error: null
+    })
   }
 
   render() {
