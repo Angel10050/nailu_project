@@ -60,6 +60,9 @@ class AdminForm extends Component {
         [name]: name === 'image' ? files[0] : value
       }
     }))
+    this.setState({
+      error: null
+    })
   }
 
   render() {
@@ -114,7 +117,7 @@ class AdminForm extends Component {
 
             <Button
               type={'submit'}
-              nameBtn={'Confirmar'}
+              nameBtn={'Enviar'}
               className="adminButtonForm"
             />
 

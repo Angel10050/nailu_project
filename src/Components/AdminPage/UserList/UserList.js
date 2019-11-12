@@ -4,23 +4,15 @@ import '../UserList/Styles.css'
 
 class UserList extends Component {
   state = {
-    customers: [],
-    isLoading: true,
-    error: null
+    customers: []
   }
 
   componentDidMount() {
     fetch('/api/customer')
       .then(response => response.json())
-      .then(data =>
-        this.setState({
-          customers: data.data
-        })
-      )
-      .catch(error => {
-        this.setState({ isLoading: false, error: error })
-      })
+      .then(data => this.setState({ customers: data.data }))
   }
+
   render() {
     return (
       <div className="UserListContainer">
