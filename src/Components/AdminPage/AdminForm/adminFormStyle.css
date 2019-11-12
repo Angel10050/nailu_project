@@ -13,7 +13,7 @@
 }
 
 .adminForm:hover {
-    border: 5px solid rgb(190, 70, 72);
+    border: 4px solid rgb(190, 70, 72);
     transition: all 1s;
 }
 
@@ -84,17 +84,26 @@
 @media (max-width: 751px){
     .formContainerMain{
         flex-direction: column;
-        min-width: 100%;
+        width: 100%;
     }
+
     .adminForm{
         width: 90%;
         height: auto;
     }
+
     .formContainerMain > .errorMensage {
         align-self: center;
         font-size: 25px;
      }
+
      .adminInput{
          margin: 0;
      }
+     
+     .adminForm:hover {
+        border: none;
+        transition: none;
+    }
+    
 }
