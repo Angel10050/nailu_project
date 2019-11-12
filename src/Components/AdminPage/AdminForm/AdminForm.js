@@ -117,7 +117,7 @@ class AdminForm extends Component {
 
             <Button
               type={'submit'}
-              nameBtn={'Confirmar'}
+              nameBtn={'Enviar'}
               className="adminButtonForm"
             />
 

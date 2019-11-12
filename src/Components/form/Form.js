@@ -86,7 +86,7 @@ class Form extends Component {
             />
 
             <label htmlFor="tlfNumber" className="label">
-              Numero De Telefono:
+              Numero De Teléfono:
             </label>
             <input
               type="tel"
