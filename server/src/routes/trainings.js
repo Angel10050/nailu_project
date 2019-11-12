@@ -47,6 +47,8 @@ function trainings(app) {
     getTrainings()
       .then(datas => {
         moment.locale('es')
+        datas.sort((a, b) => Date.parse(a.date) - Date.parse(b.date));
+        datas = datas.slice(0,5)
         let data = datas.map(data => {
           return {
             date: data.date,
@@ -56,6 +58,7 @@ function trainings(app) {
             image: data.image
           }
         })
+
         res.json({
           data
         });
