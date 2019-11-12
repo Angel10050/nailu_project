@@ -23,18 +23,13 @@
 }
 .login-wrap {
   align-self: center;
-  width: 500px;
+  width: 400px;
   border: 1px solid #eee;
   padding: 30px;
   background: #343a40;
   border-radius: 4px;
   margin: 100px 0 0 0;
   transition: all 1s;
-}
-
-.loginRow:focus-within  .login-wrap{
-    transform: scale(1.2);
-    transition: all 0.3s;
 }
 
 .inputLogin {
@@ -46,17 +41,8 @@
 .textLogin {
   color: #fff;
 }
-.errorMensage{
-  margin: 30px;
-  padding: 10px 20px 20px 20px;
-  text-align: center;
-  font-size: 30px;
-  color: #fff;
-	background-color:rgba(255, 17, 53, 0.856);
-  min-width: 70%;
-  letter-spacing: 2px;
-  border-radius: 10px;
-  border-top: 20px inset #fa5454;
+.login-wrap .errorMensage{
+  font-size: 20px;
 }
 
 @media (max-width: 700px) {
@@ -71,9 +57,5 @@
     .login-wrap {
       width: 100%;
     }
-    .loginRow:focus-within .login-wrap{
-      transform: scale(1);
-      transition: all 0.3s;
-  }
     
 }

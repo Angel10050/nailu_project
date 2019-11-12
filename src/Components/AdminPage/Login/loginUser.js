@@ -124,8 +124,7 @@ class Login extends Component {
                   </div>
                 </div>
               </Form>
-            </div>
-            {this.state.error ? (
+              {this.state.error ? (
               <p className="errorMensage">
                 Error en los datos intentalo nuevamente
               </p>
@@ -134,6 +133,8 @@ class Login extends Component {
             ) : (
               ''
             )}
+            </div>
+           
           </div>
         </div>
       </>
