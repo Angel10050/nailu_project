@@ -37,9 +37,7 @@ class Login extends Component {
   }
 
   handleErros = validation => {
-    if (validation) {
-      this.setState({ error: !validation })
-    } else {
+    if (!validation) {
       this.setState({ error: true })
     }
   }
@@ -52,6 +50,9 @@ class Login extends Component {
         [name]: value
       }
     }))
+    this.setState({
+      error: null
+    })
   }
 
   render() {
@@ -126,8 +127,6 @@ class Login extends Component {
             </div>
             {this.state.error ? (
               <p className="errorMensage">Usuario o contraseña invalidos</p>
-            ) : this.state.error === false ? (
-              <p className="errorMensage">Autenticacion exitosa</p>
             ) : (
               ''
             )}
