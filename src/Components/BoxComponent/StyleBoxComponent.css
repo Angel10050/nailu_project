@@ -89,6 +89,12 @@
       flex-direction: column;
       height: auto;
   }
+  .caseBox:hover, .caseBoxReverse:hover {
+    border-top: none;
+    border-bottom:none;
+    transition: none;
+  }
+
   .img, .textBox {
       min-width: 100%;
       height: 22em;
