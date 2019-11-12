@@ -5,10 +5,18 @@
   min-width: 100%;
 }
 
+.mainBoxContainer > .titles {
+  margin: 10px;
+} 
+
+.titles + .caseBox {
+  margin-top: 0px;
+}
+
 .caseBox, .caseBoxReverse {
   display: flex;
   height: 22em;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
 
 .caseBox:hover, .caseBoxReverse:hover {
