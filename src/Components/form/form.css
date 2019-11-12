@@ -23,9 +23,9 @@
     border: none;
 }
 
-
-.formContainer > .errorMensage {
+.form > .errorMensage {
     margin: 20px 100px 0px 100px;
+    font-size: 25px;
 }
 
 .formContainer:hover .form {
@@ -81,6 +81,10 @@
     .formContainer:hover .form {
         border: none;
         transition: none;
+    }
+    .form > .errorMensage {
+        margin: 20px 100px 0px 100px;
+        font-size: 20px;
     }
 }
 
