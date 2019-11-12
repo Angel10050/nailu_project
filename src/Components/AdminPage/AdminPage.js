@@ -14,7 +14,7 @@ class AdminPage extends Component {
             <Logo />
           </header>
           <div className="admintitle">
-            <h1 className="display-2">Bienvenido Administrador</h1>
+            <h1 className="display-2">Bienvenido Lida</h1>
             <h3 className="display-4">
               Desde aqui puedes actualizar tu contenido
             </h3>
@@ -22,9 +22,7 @@ class AdminPage extends Component {
         </div>
 
         <section className="adminSection">
-          <h4 className="eventDescription">
-            actualiza tus eventos mas proximos
-          </h4>
+          <h4 className="eventDescription">Actualiza tus próximos eventos.</h4>
 
           <img
             className="ImgEventOne"
