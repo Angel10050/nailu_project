@@ -19,7 +19,7 @@ const Gallery = () => {
                 <div className="box i"><img src={require('./img/9.jpg')} alt="imagen de uñas"></img></div>
                 <div className="box j"><img src={require('./img/10.jpeg')} alt="imagen de uñas"></img></div>
             </div>
-        </>
+       </>
      );
 }
  

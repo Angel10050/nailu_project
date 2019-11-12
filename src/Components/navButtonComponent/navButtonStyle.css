@@ -1,4 +1,4 @@
-.text {
+.text:not([href]):not([tabindex]) {
   color: rgb(255, 255, 255);
   font-size: 12px;
   text-align: center;
@@ -7,7 +7,7 @@
   outline: none;
 }
 
-.text:hover {
+.text:not([href]):not([tabindex]):hover {
   color: violet;
   text-decoration: none;
   transform: scale(1);
