@@ -1,20 +1,12 @@
 .adminForm {
     width: 700px;
-    margin: 20px;
-    margin-top: -20%;
+    margin: -20% 0 0 0;
     padding: 15px 30px;
-    border: 2px solid rgba(86, 81, 88, 0.685);
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
     background-color:#343a40;
     border-radius:10px;
-    transition: all 1s;
-}
-
-.adminForm:hover {
-    border: 4px solid rgb(190, 70, 72);
-    transition: all 1s;
+    border: 4px solid rgba(190, 70, 72, 0.801);
 }
 
 .formContainerMain {
@@ -101,9 +93,4 @@
          margin: 0;
      }
      
-     .adminForm:hover {
-        border: none;
-        transition: none;
-    }
-    
 }
