@@ -1,15 +1,14 @@
-.text:not([href]):not([tabindex]) {
-  color: rgb(255, 255, 255);
+.componentFlexButton > a.text{
+  color: white;;
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
   margin: 12px 15px;
   outline: none;
+  cursor: pointer;
 }
 
-.text:not([href]):not([tabindex]):hover {
+.componentFlexButton > a.text:hover {
   color: violet;
-  text-decoration: none;
-  transform: scale(1);
 }
 
