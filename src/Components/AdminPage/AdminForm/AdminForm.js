@@ -27,7 +27,7 @@ class AdminForm extends Component {
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',
-      header: {
+      headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`
       },
       body: this.formData()
