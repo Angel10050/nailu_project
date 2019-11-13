@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import '../AdminForm/adminFormStyle.css'
 import Button from '../../Button/Button'
 import { withRouter } from 'react-router'
+import './spinner.css'
 
 class AdminForm extends Component {
   state = {
     error: null,
+    isloading: false,
     eventData: {
       date: '',
       description: '',
@@ -21,6 +23,7 @@ class AdminForm extends Component {
   }
 
   handleSubmit = event => {
+    this.setState({ isloading: true });
     event.preventDefault()
     fetch('/api/training', {
       method: 'POST',
@@ -30,10 +33,11 @@ class AdminForm extends Component {
       body: this.formData()
     })
       .then(response => {
+        this.setState({ isloading: false }) 
         this.handleErros(response.ok)
         return response.json()
       })
-      .catch(console.log)
+      .catch((err)=>{console.log(err); this.setState({ isloading: false })})
   }
 
   handleErros = validation => {
@@ -60,9 +64,13 @@ class AdminForm extends Component {
         [name]: name === 'image' ? files[0] : value
       }
     }))
+    this.setState({
+      error: null
+    })
   }
 
   render() {
+    const {isloading} = this.state;
     return (
       <>
         <div className="formContainerMain">
@@ -112,12 +120,15 @@ class AdminForm extends Component {
               />
             </div>
 
-            <Button
+            {isloading ?
+            <div className = 'tAlignCenter'>
+              <i className="spinner spinnerSteps icon-spinner fa  fa-spinner fa-5x" aria-hidden="true"/>
+            </div> : <Button
               type={'submit'}
-              nameBtn={'Confirmar'}
+              nameBtn={'Enviar'}
               className="adminButtonForm"
-            />
-
+            /> }
+            
             {this.state.error ? (
               <p className="errorMensage">
                 Error en los datos intentalo nuevamente

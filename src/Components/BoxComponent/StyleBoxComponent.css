@@ -98,9 +98,7 @@
       height: auto;
   }
   .caseBox:hover, .caseBoxReverse:hover {
-    border-top: none;
-    border-bottom:none;
-    transition: none;
+    border: none;
   }
 
   .img, .textBox {

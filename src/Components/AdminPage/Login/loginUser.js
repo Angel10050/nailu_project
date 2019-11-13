@@ -37,9 +37,7 @@ class Login extends Component {
   }
 
   handleErros = validation => {
-    if (validation) {
-      this.setState({ error: !validation })
-    } else {
+    if (!validation) {
       this.setState({ error: true })
     }
   }
@@ -52,11 +50,14 @@ class Login extends Component {
         [name]: value
       }
     }))
+    this.setState({
+      error: null
+    })
   }
 
   render() {
     return (
-      <>
+      <div>
         <div className="container login containerLogin">
           <header className="adminHeader">
             <Logo />
@@ -89,7 +90,6 @@ class Login extends Component {
                     ></input>
                   </div>
                 </div>
-
                 <div className="form-group">
                   <label className="col-sm-3 control-label textLogin">
                     Contaseña
@@ -124,12 +124,18 @@ class Login extends Component {
                   </div>
                 </div>
               </Form>
+<<<<<<< HEAD
               {this.state.error ? (
               <p className="errorMensage">
                 Error en los datos intentalo nuevamente
               </p>
             ) : this.state.error === false ? (
               <p className="errorMensage">Autenticacion exitosa</p>
+=======
+            </div>
+            {this.state.error ? (
+              <p className="errorMensage">Usuario o contraseña invalidos</p>
+>>>>>>> f2bae5b88be1909106b22ae0b3b59f735cd3cca1
             ) : (
               ''
             )}
@@ -137,9 +143,8 @@ class Login extends Component {
            
           </div>
         </div>
-      </>
+      </div>
     )
   }
 }
-
 export default withRouter(Login)

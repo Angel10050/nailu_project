@@ -27,11 +27,6 @@
     transition: .3s ease-in-out;
 }
 
-
-.galleryContainer .box img:hover{
-   margin-top: 5px;
-}
-
 .galleryContainer .box.a{
     grid-row: span 2;
 }
