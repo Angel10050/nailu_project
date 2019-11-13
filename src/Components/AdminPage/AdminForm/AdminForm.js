@@ -37,7 +37,7 @@ class AdminForm extends Component {
         this.handleErros(response.ok)
         return response.json()
       })
-      .catch((err)=>{console.log(err); this.setState({ isloading: false }) })
+      .catch((err)=>{console.log(err); this.setState({ isloading: false })})
   }
 
   handleErros = validation => {

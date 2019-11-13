@@ -16,13 +16,6 @@
 	animation: anim-rotate 1s infinite steps(8);
 }
 
-body {
-	font-family: sans-serif;
-	color: #ccc;
-	line-height: 1.5;
-	font-size: 1em;
-	background: #181818;
-}
 .tAlignCenter {
 	text-align: center;
 }
