@@ -98,16 +98,6 @@ class Form extends Component {
               className="input"
             />
 
-<<<<<<< HEAD
-                    {
-                    this.state.error ? <p className='errorMensage'>Error en los datos intentalo nuevamente</p> :
-                    this.state.error === false ? <p className='errorMensage'>Envio exitoso, Gracias</p> : '' 
-                  }
-
-                  </form>
-                 
-          </div>
-=======
             <Button type="submit" nameBtn="Enviar" />
           </form>
           {this.state.error ? (
@@ -122,7 +112,6 @@ class Form extends Component {
             ''
           )}
         </div>
->>>>>>> f2bae5b88be1909106b22ae0b3b59f735cd3cca1
       </>
     )
   }
