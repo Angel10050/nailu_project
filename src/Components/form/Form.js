@@ -105,7 +105,7 @@ class Form extends Component {
               Error en los datos intentalo nuevamente
             </p>
           ) : this.state.error === false ? (
-            <p className="errorMensage">
+            <p className="succesMessage">
               pronto nos estaremos poniendo en contacto con usted, Gracias
             </p>
           ) : (
