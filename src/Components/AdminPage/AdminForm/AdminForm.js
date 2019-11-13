@@ -118,8 +118,8 @@ class AdminForm extends Component {
             </div>
 
             {isloading ?
-            <div className = 'talign-center'>
-              <i className="spinner spinner--steps icon-spinner fa  fa-spinner fa-5x" aria-hidden="true"/>
+            <div className = 'tAlignCenter'>
+              <i className="spinner spinnerSteps icon-spinner fa  fa-spinner fa-5x" aria-hidden="true"/>
             </div> : <Button
               type={'submit'}
               nameBtn={'Enviar'}
