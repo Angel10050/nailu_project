@@ -18,7 +18,7 @@ function trainings(app) {
     const valid = validateData(['date', 'description'], form)
 
     if (!valid || !req.file) {
-      return res.status(400).json({ message: 'los datos no son validos' })
+      return res.status(404).json({ message: 'los datos no son validos' })
     }
   
     cloudinary.uploader.upload(req.file.path, (err, result) => {
