@@ -1,0 +1,28 @@
+@keyframes anim-rotate {
+	0% {
+		transform: rotate(360deg);
+	}
+}
+.spinner {
+	display: inline-block;
+	font-size:4em;
+	height: 1em;
+	line-height: 1;
+	margin: .5em;
+	color: #fff;
+	text-shadow: 0 0 .25em rgba(255,255,255, .3);
+}
+.spinner--steps {
+	animation: anim-rotate 1s infinite steps(8);
+}
+
+body {
+	font-family: sans-serif;
+	color: #ccc;
+	line-height: 1.5;
+	font-size: 1em;
+	background: #181818;
+}
+.talign-center {
+	text-align: center;
+}
