@@ -13,6 +13,7 @@
 }
 .imgLogo {
   width: 100px;
+  cursor: pointer;
 }
 .componentFlexLogo {
   flex: 1 1 auto;
