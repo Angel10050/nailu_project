@@ -25,7 +25,7 @@
 }
 
 .form > .errorMensage {
-    margin: 20px 100px 0px 100px;
+    margin: 20px 50px 0px 50px;
     font-size: 25px;
     border: 4px solid #dda6c6;
 }
@@ -35,7 +35,7 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 100px;
     border-radius: 25px;
     color: white;
     align-items: center;

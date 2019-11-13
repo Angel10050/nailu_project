@@ -99,8 +99,8 @@ class Form extends Component {
             />
 
             <Button type="submit" nameBtn="Enviar" />
-          </form>
-          {this.state.error ? (
+
+            {this.state.error ? (
             <p className="errorMensage">
               Error en los datos intentalo nuevamente
             </p>
@@ -111,6 +111,7 @@ class Form extends Component {
           ) : (
             ''
           )}
+          </form>
         </div>
       </>
     )
