@@ -122,7 +122,7 @@ class AdminForm extends Component {
               <i className="spinner spinnerSteps icon-spinner fa  fa-spinner fa-5x" aria-hidden="true"/>
             </div> : <Button
               type={'submit'}
-              nameBtn={'Enviar'}
+              nameBtn={'Confirmar'}
               className="adminButtonForm"
             /> }
             
