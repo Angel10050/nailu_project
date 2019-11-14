@@ -16,7 +16,17 @@ class AdminForm extends Component {
   }
 
   componentDidMount() {
-    const token = localStorage.getItem('token')
+    fetch('api/autorizacion', {method: 'POST',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  })
+  .then(response => {
+    if(response.ok === false){localStorage.removeItem('token'); this.props.history.push('/admin')}
+  })
+  .catch(err => console.log(err))
+  
+  const token = localStorage.getItem('token')
     if (!token) {
       this.props.history.push('/admin')
     }
