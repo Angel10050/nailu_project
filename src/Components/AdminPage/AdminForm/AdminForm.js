@@ -38,12 +38,11 @@ class AdminForm extends Component {
         return response.json()
       })
       .then(response => {
-        console.log(response);
-        
-        if(response.ok === false)
+        if(response.ok)
         {
           alert('La sesión ha caducado, ingrese nuevamente');
-          localStorage.removeItem('token'); this.props.history.push('/admin')
+          localStorage.removeItem('token'); 
+          this.props.history.push('/admin')
         }
       })
       .catch((err)=>{console.log(err); this.setState({ isloading: false })})
