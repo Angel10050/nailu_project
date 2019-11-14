@@ -38,7 +38,7 @@ class AdminForm extends Component {
         return response.json()
       })
       .then(response => {
-        if(response.ok)
+        if(response.ok === false)
         {
           alert('La sesión ha caducado, ingrese nuevamente');
           localStorage.removeItem('token'); 

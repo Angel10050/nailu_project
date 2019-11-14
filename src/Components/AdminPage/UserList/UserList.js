@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 
 import '../UserList/Styles.css'
 
@@ -18,11 +19,12 @@ class UserList extends Component {
     })
       .then(response => response.json())
       .then(data =>{
-        if(data.ok){
-          this.setState({
-          customers: data.data
-        })
-      }
+        if(data.ok === false){
+          this.props.history.push('/admin')
+          localStorage.removeItem('token') 
+        }
+        
+        this.setState({ customers: data.data })
     })
       .catch(error => {
         this.setState({ isLoading: false, error: error })
@@ -60,4 +62,4 @@ class UserList extends Component {
     )
   }
 }
-export default UserList
+export default withRouter(UserList)
