@@ -10,13 +10,20 @@ class UserList extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/customer')
+    fetch('/api/customer', {
+      method: 'Get',
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
       .then(response => response.json())
-      .then(data =>
-        this.setState({
+      .then(data =>{
+        if(data.ok !== false){
+          this.setState({
           customers: data.data
         })
-      )
+      }
+    })
       .catch(error => {
         this.setState({ isLoading: false, error: error })
       })
