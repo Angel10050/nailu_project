@@ -18,7 +18,7 @@ class UserList extends Component {
     })
       .then(response => response.json())
       .then(data =>{
-        if(data.ok !== false){
+        if(data.ok){
           this.setState({
           customers: data.data
         })
