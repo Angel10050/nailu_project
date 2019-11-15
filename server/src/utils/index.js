@@ -13,7 +13,7 @@ function validateEmail(value) {
 
 function validatePhone(value) {
   const regExpPassword = new RegExp(/^([0-9])*$/)
-  return regExpPassword.test(value)
+  return regExpPassword.test(value) && value.length > 6 
 }
 
 function validateTexto(value) {
