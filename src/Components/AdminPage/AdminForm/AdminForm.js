@@ -72,6 +72,9 @@ class AdminForm extends Component {
         [name]: name === 'image' ? files[0] : value
       }
     }))
+    this.setState({
+      error: null
+    })
   }
 
   render() {
@@ -130,7 +133,7 @@ class AdminForm extends Component {
               <i className="spinner spinnerSteps icon-spinner fa  fa-spinner fa-5x" aria-hidden="true"/>
             </div> : <Button
               type={'submit'}
-              nameBtn={'Confirmar'}
+              nameBtn={'Enviar'}
               className="adminButtonForm"
             /> }
             

@@ -5,7 +5,7 @@ const bodyParse = require('body-parser')
 const path = require('path')
 const cors = require('cors')
 
-const distDir = path.join(__dirname, "../../", "build");
+const distDir = path.join(__dirname, '../../', 'build')
 
 const authInit = require('./routes/user')
 const contactInit = require('./routes/contact')
@@ -16,7 +16,7 @@ function initApp() {
 
   app.use(cors())
   app.use(bodyParse.json())
-  app.use(express.static(distDir));
+  app.use(express.static(distDir))
 
   authInit(app)
   contactInit(app)

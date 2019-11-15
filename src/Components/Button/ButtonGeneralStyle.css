@@ -8,5 +8,6 @@
 }
 
 .button:hover {
-  background: #ff2957;
+  background: #1a191998;
+  border: rgb(59, 58, 58);
 }
