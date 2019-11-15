@@ -31,7 +31,7 @@ const getAdmin = () => doQuery('SELECT * FROM admin')
 const getTrainings = () => doQuery(`SELECT * FROM trainings WHERE date BETWEEN '${moment().format(
   'YYYY-MM-DD'
 )}' AND '${moment()
-  .add(30, 'days')
+  .add(90, 'days')
   .format('YYYY-MM-DD')}'`)
 
 module.exports = {

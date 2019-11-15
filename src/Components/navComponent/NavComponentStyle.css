@@ -3,6 +3,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
 .componentFlex {
   display: flex;
   border-bottom: 3px solid rgba(238, 130, 238, 0.918);
