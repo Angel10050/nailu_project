@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { Link } from 'react-scroll'
 import './navButtonStyle.css'; 
 
-const Button = ({ name, link, onClick }) => {
+const Button = ({ name, to, offset }) => {
   return (
-    <a className='text' href={link} onClick={onClick}>
+    <Link className='text' to={to} offset={offset} spy={true} smooth={true} duration={850} >
       {name}
-    </a>
+    </Link>
   );
 };
 

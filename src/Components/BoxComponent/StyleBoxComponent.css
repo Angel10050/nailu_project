@@ -62,8 +62,7 @@
 
 .textMainConteiner {
   overflow: auto;
-  height: 33%;
-  display: flex;
+  height: 80%;
 }
 
 .textMainConteiner::-webkit-scrollbar{
@@ -81,7 +80,6 @@
   padding: 0 10px 0 10px;
   margin: 0 10px 0 10px;
   text-align: justify;
-  align-self: center;
 }
 
 @media (max-width: 761px) {
@@ -102,7 +100,6 @@
   }
   .infoBox {
     text-align: center;
-    margin-bottom: 70px;
   }
 }
  
