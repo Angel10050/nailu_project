@@ -57,11 +57,7 @@ class Form extends Component {
 
         <div className="formContainer">
           <form onSubmit={this.handleSubmit} className="form">
-<<<<<<< HEAD
-            <h4>Déjanos tu datos para contactarte</h4>
-=======
             <h4>Déjanos tus datos para contactarte</h4>
->>>>>>> c11d1ae5e4de1c6274743d315d2c5048fcac5547
 
             <label htmlFor="name" className="label">
               Nombre:
