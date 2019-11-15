@@ -3,6 +3,7 @@ import './form.css'
 import Button from '../Button/Button'
 import Logo from '../logo/Logo'
 import Route from '../routeComponent/Route'
+import { withRouter } from 'react-router'
 
 class Form extends Component {
   state = {
@@ -29,7 +30,10 @@ class Form extends Component {
 
   handleErros = validation => {
     if (validation) {
-      this.setState({ error: !validation })
+      this.setState({ error: !validation }) 
+      return setTimeout(() => { 
+        this.props.history.push('/')
+       }, 1000)
     } else {
       this.setState({ error: true })
     }
@@ -118,4 +122,4 @@ class Form extends Component {
   }
 }
 
-export default Form
+export default withRouter(Form)
