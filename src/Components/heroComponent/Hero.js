@@ -3,11 +3,13 @@ import './Hero.css'
 
 function Hero(props){
     return(
+        <div id="home">
         <img className='heroMainImage'
          src={props.heroMainImage}
          alt='Nail_Salon'
-         id="home"
-          ></img>
+         
+          />
+          </div>
     )
 }
 
