@@ -6,11 +6,11 @@ async function validateToken (req, res, next) {
   const { authorization } = req.headers
   const auth = authorization || ''
   if (!auth.startsWith('Bearer')) {
-    return res.status(403).send('Invalid')
+    return res.status(403).json({ ok: false, message: 'Invalid'})
   }
   const split = authorization.split(' ')
   if (split.length !== 2) {
-    return res.status(403).send('Forbiden')
+    return res.status(403).json({ ok: false, message: 'Forbiden'})
   }
   const token = split[1]
   jwt.verify(token, key , async (err, token) => {
@@ -18,7 +18,7 @@ async function validateToken (req, res, next) {
       return res.status(401).json({ ok: false, message: 'La sesión ha caducado'});
     }
   })
-  
+
   next()
 }
 

@@ -16,11 +16,11 @@ class AdminForm extends Component {
   }
 
   componentDidMount() {
-    const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token')
     if (!token) {
       this.props.history.push('/admin')
     }
-  }
+  } 
 
   handleSubmit = event => {
     this.setState({ isloading: true });
@@ -36,6 +36,14 @@ class AdminForm extends Component {
         this.setState({ isloading: false }) 
         this.handleErros(response.ok)
         return response.json()
+      })
+      .then(response => {
+        if(response.ok === false)
+        {
+          alert('La sesión ha caducado, ingrese nuevamente');
+          localStorage.removeItem('token'); 
+          this.props.history.push('/admin')
+        }
       })
       .catch((err)=>{console.log(err); this.setState({ isloading: false })})
   }

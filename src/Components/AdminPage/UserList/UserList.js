@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 
 import '../UserList/Styles.css'
 
@@ -8,9 +9,28 @@ class UserList extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/customer')
+    fetch('/api/customer', {
+      method: 'Get',
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
       .then(response => response.json())
+<<<<<<< HEAD
+      .then(data =>{
+        if(data.ok === false){
+          this.props.history.push('/admin')
+          localStorage.removeItem('token') 
+        }
+        
+        this.setState({ customers: data.data })
+    })
+      .catch(error => {
+        this.setState({ isLoading: false, error: error })
+      })
+=======
       .then(data => this.setState({ customers: data.data }))
+>>>>>>> 05924102752ec890edc3c6888746b3c765b6f8d9
   }
 
   render() {
@@ -45,4 +65,4 @@ class UserList extends Component {
     )
   }
 }
-export default UserList
+export default withRouter(UserList)
