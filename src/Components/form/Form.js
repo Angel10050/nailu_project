@@ -61,7 +61,7 @@ class Form extends Component {
 
         <div className="formContainer">
           <form onSubmit={this.handleSubmit} className="form">
-            <h4>Déjanos tu Datos para contactarte</h4>
+            <h4>Déjanos tus datos para contactarte</h4>
 
             <label htmlFor="name" className="label">
               Nombre:
@@ -103,18 +103,19 @@ class Form extends Component {
             />
 
             <Button type="submit" nameBtn="Enviar" />
-          </form>
-          {this.state.error ? (
+
+            {this.state.error ? (
             <p className="errorMensage">
               Error en los datos intentalo nuevamente
             </p>
           ) : this.state.error === false ? (
             <p className="errorMensage">
-              pronto nos estaremos poniendo en contacto con usted, Gracias
+              Pronto nos estaremos contacto con usted, gracias.
             </p>
           ) : (
             ''
           )}
+          </form>
         </div>
       </>
     )

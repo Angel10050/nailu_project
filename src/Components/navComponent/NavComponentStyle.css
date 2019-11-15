@@ -3,22 +3,34 @@
   display: flex;
   justify-content: flex-end;
 }
+
 .componentFlex {
   display: flex;
   border-bottom: 3px solid rgba(238, 130, 238, 0.918);
-  background-color: hsla(287, 60%, 3%, 0.918);
+  background-color: hsla(287, 60%, 3%, 0.89);
 }
 .responsiveNavbar {
   width: 100px;
 }
 .imgLogo {
   width: 100px;
+  cursor: pointer;
 }
 .componentFlexLogo {
   flex: 1 1 auto;
   align-self: center;
   max-width: 200px;
 }
+
+.navbar-light .navbar-toggler {
+  color: transparent;
+  border: none;
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: invert(100%);
+}
+
 .navbar-branddiv.fluidNav {
   display: inline-block;
   padding-top: 0;
