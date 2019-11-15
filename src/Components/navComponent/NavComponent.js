@@ -21,8 +21,8 @@ function NavComponent(props){
         <Navbar.Collapse id="responsiveNavbar">
           <Nav className="componentFlexButton mr-auto">
             <NavButton to='home' name="Inicio" />
-            <NavButton to="titleBoxComponent" offset={-105} name="Eventos" />
-            <NavButton to='gallery' offset={-120} name="Galeria" />
+            <NavButton to="titleBoxComponent" offset={-95} name="Eventos" />
+            <NavButton to='gallery' offset={-95} name="Galeria" />
             <NavButton to="footer" name="Contacto" />
           </Nav>
         </Navbar.Collapse>
