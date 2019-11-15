@@ -1,20 +1,12 @@
 .adminForm {
     width: 700px;
-    margin: 20px;
-    margin-top: -20%;
+    margin: -20% 0 0 0;
     padding: 15px 30px;
-    border: 2px solid rgba(86, 81, 88, 0.685);
     display: flex;
-    justify-content: space-around;
     flex-direction: column;
     background-color:#343a40;
     border-radius:10px;
-    transition: all 1s;
-}
-
-.adminForm:hover {
-    border: 5px solid rgb(190, 70, 72);
-    transition: all 1s;
+    border: 4px solid rgba(190, 70, 72, 0.801);
 }
 
 .formContainerMain {
@@ -83,17 +75,21 @@
 @media (max-width: 751px){
     .formContainerMain{
         flex-direction: column;
-        min-width: 100%;
+        width: 100%;
     }
+
     .adminForm{
         width: 90%;
         height: auto;
     }
+
     .formContainerMain > .errorMensage {
         align-self: center;
         font-size: 25px;
      }
+
      .adminInput{
          margin: 0;
      }
+     
 }

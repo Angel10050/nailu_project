@@ -7,6 +7,20 @@
 .titles{
     color: rgb(163, 77, 130);
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 10px 0 10px 0;
     font-size: 2em;
 }
+
+.errorMensage{
+    margin: 10px;
+    padding: 10px 20px 20px 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+      background-color:rgba(255, 17, 53, 0.856);
+    min-width: 70%;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border-top: 20px inset #fa5454;
+  }
+  
