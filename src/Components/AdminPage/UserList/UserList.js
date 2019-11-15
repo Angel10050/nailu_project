@@ -16,7 +16,6 @@ class UserList extends Component {
       }
     })
       .then(response => response.json())
-<<<<<<< HEAD
       .then(data =>{
         if(data.ok === false){
           this.props.history.push('/admin')
@@ -28,9 +27,6 @@ class UserList extends Component {
       .catch(error => {
         this.setState({ isLoading: false, error: error })
       })
-=======
-      .then(data => this.setState({ customers: data.data }))
->>>>>>> 05924102752ec890edc3c6888746b3c765b6f8d9
   }
 
   render() {
