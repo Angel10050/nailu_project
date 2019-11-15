@@ -142,7 +142,7 @@ class AdminForm extends Component {
                 Error en los datos intentalo nuevamente
               </p>
             ) : this.state.error === false ? (
-              <p className="errorMensage">Envio exitoso</p>
+              <p className="messageGreen">Envio exitoso</p>
             ) : (
               ''
             )}

@@ -15,12 +15,24 @@
     margin: 10px;
     padding: 10px 20px 20px 20px;
     text-align: center;
-    font-size: 30px;
-    color: #fff;
-      background-color:rgba(255, 17, 53, 0.856);
+    font-size: 20px;
+    color: #752129;
+    background-color: rgb(226, 113, 124);
     min-width: 70%;
     letter-spacing: 2px;
     border-radius: 10px;
-    border-top: 20px inset #fa5454;
+    border-top: 20px inset #ff4545;
   }
   
+.messageGreen{
+    margin: 10px;
+    padding: 10px 20px 20px 20px;
+    text-align: center;
+    font-size: 20px;
+    color: #1D5E2C;
+    background: #8dc298;
+    min-width: 70%;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border-top: 20px inset #93dd7e;    
+}

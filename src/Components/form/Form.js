@@ -33,7 +33,7 @@ class Form extends Component {
       this.setState({ error: !validation }) 
       return setTimeout(() => { 
         this.props.history.push('/')
-       }, 1000)
+       }, 4000)
     } else {
       this.setState({ error: true })
     }
@@ -109,7 +109,7 @@ class Form extends Component {
               Error en los datos intentalo nuevamente
             </p>
           ) : this.state.error === false ? (
-            <p className="errorMensage">
+            <p className="messageGreen">
               Pronto nos estaremos contacto con usted, gracias.
             </p>
           ) : (
