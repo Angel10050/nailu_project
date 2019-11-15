@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { animateScroll as scroll } from 'react-scroll'
+
 import Hero from './Components/heroComponent/Hero'
 import heroImage from './Components/heroComponent/pink-manicure-939836.jpg'
 import NavComponent from './Components/navComponent/NavComponent'
@@ -21,6 +23,10 @@ class App extends React.Component {
     fetch('/api/training')
       .then(response => response.json())
       .then(data => this.setState({ trainings: data.data }))
+  }
+
+  toScrollup = () => {
+    scroll.scrollToTop()
   }
 
   render() {
